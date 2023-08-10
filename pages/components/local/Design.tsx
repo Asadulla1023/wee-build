@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "@/styles/design.module.css";
-import ICardProps from "@/pages/interfaces/ICardProps";
+import ICardProps from "@/interfaces/ICardProps";
 import Image from "next/image";
-import ICard from "@/pages/interfaces/ICard";
+import ICard from "@/interfaces/ICard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
 import "swiper/css";

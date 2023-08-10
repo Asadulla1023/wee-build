@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import styles from "@/styles/aboutUs.module.css"
 import Image from 'next/image'
-import IAdvantages from '@/pages/interfaces/IAdvantages'
+import IAdvantages from '@/interfaces/IAdvantages'
 import Aos from 'aos'
 const AboutUs: React.FC = () => {
 
