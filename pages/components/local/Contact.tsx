@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "@/styles/questions.module.css";
 // import Map from './Map'
+import AOS from  'aos'
+import 'aos/dist/aos.css';
 import Image from "next/image";
 
 const Contact = () => {
+
+  useEffect(() => {
+    AOS.init();
+  })
+
   return (
-    <div className={styles.questions}>
+    <div data-aos="zoom-in" id="contact" className={styles.questions}>
       <div className={styles.container}>
         <div className={styles.questionsSection}>
           <div className={styles.questionsTitle}>

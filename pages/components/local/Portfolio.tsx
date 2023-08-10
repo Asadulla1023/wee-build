@@ -190,7 +190,7 @@ const Portfolio = () => {
   ];
 
   return (
-    <div className={styles.portfolio}>
+    <div id="portfolio" className={styles.portfolio}>
       <div className={styles.container}>
         <div className={styles.portfolioSection}>
           <div className={styles.portfolioTitle}>

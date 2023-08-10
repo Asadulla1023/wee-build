@@ -3,7 +3,7 @@ import styles from "@/styles/blog.module.css";
 
 const Blog = () => {
   return (
-    <div className={styles.blog}>
+    <div id="blog" className={styles.blog}>
       <div className={styles.container}>
         <div className={styles.blogSection}>
           <div className={styles.blogTitle}>
@@ -15,7 +15,7 @@ const Blog = () => {
                 <div className={styles.card}>
                   <div className={styles.table}>
                     <video
-                      style={{ width: 380, height: 274, borderRadius: 20 }}
+                      style={{ width: 380, height: "auto", borderRadius: 20 }}
                       controls
                       src={"/blur.mp4"}
                     />
