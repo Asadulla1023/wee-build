@@ -9,7 +9,7 @@ interface IContainer {
 
 const Container = ({ id, children }: IContainer) => {
     return (
-        <div id={id} className={styles.block}>
+        <div id={id}  data-aos="fade-up" data-aos-duration="500" className={styles.block}>
             <div className={styles.container}>
                 {children}
             </div>

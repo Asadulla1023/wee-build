@@ -190,7 +190,7 @@ const Portfolio = () => {
   ];
 
   return (
-    <div id="portfolio" className={styles.portfolio}>
+    <div id="portfolio"  data-aos="fade-up" data-aos-duration="500" className={styles.portfolio}>
       <div className={styles.container}>
         <div className={styles.portfolioSection}>
           <div className={styles.portfolioTitle}>
@@ -199,14 +199,14 @@ const Portfolio = () => {
           <div className={styles.portfolioCard}>
             <Swiper
               modules={[Navigation, Pagination]}
-              spaceBetween={50}
+              spaceBetween={30}
               slidesPerView={3}
               pagination={{ clickable: true }}
               style={{ width: 1250, paddingBottom: 70 }}
             >
               {objCard.map((e: ICard, index: number) => {
                 return (
-                  <>
+                  <div key={index}>
                     {" "}
                     <SwiperSlide>
                       <div className={styles.card} key={index}>
@@ -250,7 +250,7 @@ const Portfolio = () => {
                           <div className={styles.global}>
                             {e.props.map((prop: ICardProps) => {
                               return (
-                                <div>
+                                <div key={prop.title}>
                                   <Image
                                     src={prop.image}
                                     width={41}
@@ -265,7 +265,7 @@ const Portfolio = () => {
                         </div>
                       </div>
                     </SwiperSlide>
-                  </>
+                  </div>
                 );
               })}
             </Swiper>

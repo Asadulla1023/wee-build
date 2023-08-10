@@ -9,6 +9,7 @@
 
 a {
   text-decoration: none;
+  transition: 0.3s linear;
 }
 
 li {
@@ -32,4 +33,8 @@ li {
   outline: none !important;
   font-size: 17px !important;
   width: 100% !important;
+}
+
+#advantages {
+  transition: 0.5s linear;
 }

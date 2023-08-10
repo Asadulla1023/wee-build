@@ -3,9 +3,9 @@ import Image from 'next/image'
 import styles from "@/styles/designer.module.css"
 import Link from 'next/link'
 
-export const Designer = () => {
+export default function Designer() {
     return (
-        <div className={styles.designer} style={{
+        <div  data-aos="fade-up" data-aos-duration="500" className={styles.designer} style={{
             backgroundImage: `url(images/bg.png)`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover"
