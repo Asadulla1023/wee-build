@@ -11,8 +11,8 @@ import Design from "./components/local/Design";
 import Cooperation from "./components/local/Cooperation";
 import Blog from "./components/local/Blog";
 import Faq from "./components/local/Faq";
-import Questions from "./components/local/Questions";
 import Footer from "./components/global/Footer";
+import Contact from "./components/local/Contact";
 export default function Home() {
   return (
     <>
@@ -33,7 +33,7 @@ export default function Home() {
         <Cooperation />
         <Blog />
         <Faq />
-        <Questions />
+        <Contact/>
         <Footer />
       </main>
     </>

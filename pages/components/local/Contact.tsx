@@ -3,7 +3,7 @@ import styles from "@/styles/questions.module.css";
 // import Map from './Map'
 import Image from "next/image";
 
-const Questions = () => {
+const Contact = () => {
   return (
     <div className={styles.questions}>
       <div className={styles.container}>
@@ -67,4 +67,4 @@ const Questions = () => {
   );
 };
 
-export default Questions;
+export default Contact;
