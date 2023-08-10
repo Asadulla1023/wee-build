@@ -5,4 +5,5 @@ export default interface ICard {
     title: string
     location: string
     props: ICardProps[]
+    process: string
 }

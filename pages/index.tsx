@@ -1,11 +1,18 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '@/styles/index.module.css'
-import Header from './components/global/Header'
-import { Designer } from './components/local/Designer'
-import Company from './components/local/Company'
-import AboutUs from './components/local/AboutUs'
-import Cost from './components/local/Cost'
+import Head from "next/head";
+import Image from "next/image";
+import styles from "@/styles/index.module.css";
+import Header from "./components/global/Header";
+import { Designer } from "./components/local/Designer";
+import Company from "./components/local/Company";
+import AboutUs from "./components/local/AboutUs";
+import Cost from "./components/local/Cost";
+import Portfolio from "./components/local/Portfolio";
+import Design from "./components/local/Design";
+import Cooperation from "./components/local/Cooperation";
+import Blog from "./components/local/Blog";
+import Faq from "./components/local/Faq";
+import Questions from "./components/local/Questions";
+import Footer from "./components/global/Footer";
 export default function Home() {
   return (
     <>
@@ -21,7 +28,14 @@ export default function Home() {
         <Company />
         <AboutUs />
         <Cost />
+        <Portfolio />
+        <Design />
+        <Cooperation />
+        <Blog />
+        <Faq />
+        <Questions />
+        <Footer />
       </main>
     </>
-  )
+  );
 }
