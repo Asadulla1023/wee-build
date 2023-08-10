@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "@/styles/index.module.css";
 import Header from "./components/global/Header";
-import { Designer } from "./components/local/Designer";
+import Designer from "./components/local/Designer";
 import Company from "./components/local/Company";
 import AboutUs from "./components/local/AboutUs";
 import Cost from "./components/local/Cost";

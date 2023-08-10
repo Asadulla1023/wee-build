@@ -3,7 +3,7 @@ import Image from 'next/image'
 import styles from "@/styles/designer.module.css"
 import Link from 'next/link'
 
-export const Designer = () => {
+export default function Designer() {
     return (
         <div className={styles.designer} style={{
             backgroundImage: `url(images/bg.png)`,
