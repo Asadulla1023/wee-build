@@ -3,7 +3,7 @@ import styles from "@/styles/cooperation.module.css";
 
 const Cooperation = () => {
   return (
-    <div className={styles.cooperation}>
+    <div id="coop"  data-aos="fade-up" data-aos-duration="500" className={styles.cooperation}>
       <div className={styles.container}>
         <div className={styles.cooperationSection}>
           <div className={styles.cooperationTitle}>

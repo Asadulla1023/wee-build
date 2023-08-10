@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from "@/styles/aboutUs.module.css"
 import Image from 'next/image'
 import IAdvantages from '@/pages/interfaces/IAdvantages'
-
+import Aos from 'aos'
 const AboutUs: React.FC = () => {
 
     const advantages: IAdvantages[] = [
@@ -42,14 +42,17 @@ const AboutUs: React.FC = () => {
             image: ""
         }
     ]
+    useEffect(() => {
+        Aos.init()
+    }, [])
 
     return (
-        <div id='advantages' className={styles.aboutUs}>
+        <div id='advantages' data-aos="fade-up" data-aos-duration="500" className={styles.aboutUs}>
             <div className={styles.container}>
                 <h1>У нас:</h1>
                 <div className={styles.wrapper}>
                     {advantages.map(({ title, desc, image }: IAdvantages) => {
-                        return <div key={title} className={image === "" ? styles.advantage: styles.advantageImg}>
+                        return <div key={title} className={image === "" ? styles.advantage : styles.advantageImg}>
                             {image !== "" ? <>
                                 <div className={styles.left}>
                                     <h3>{title}</h3>

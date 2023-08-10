@@ -7,7 +7,7 @@ const Faq = () => {
   const [isOpened, setIsOpened] = useState<boolean>(false);
   const [isSelected, setIsSelected] = useState<number>(0);
   return (
-    <div className={styles.faq}>
+    <div id="faq"  data-aos="fade-up" data-aos-duration="500" className={styles.faq}>
       <div className={styles.container}>
         <div className={styles.faqSection}>
           <div className={styles.faqTitle}>

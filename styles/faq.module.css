@@ -5,11 +5,12 @@
     display: flex;
     background-color: #F2F2F2;
     border-radius: 100px;
+    padding-top: 5.5rem;
+    padding-bottom: 5.5rem;
 }
 
 .container {
     width: 1180px;
-    padding: 76px 0px;
     justify-content: center;
     align-items: center;
     display: flex;

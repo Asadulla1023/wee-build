@@ -9,6 +9,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import Container from "../global/Container";
 
 const Design = () => {
   const objCard: ICard[] = [
@@ -189,93 +190,89 @@ const Design = () => {
   ];
 
   return (
-    <div className={styles.design}>
-      <div className={styles.container}>
-        <div className={styles.designSection}>
-          <div className={styles.designTitle}>
-            <h1>ДИЗАЙН</h1>
-            <p>
-              Наша команда профессиональных дизайнеров разработают дизайн проект
-              Вашего помещения по Вашему желанию. При заказе услуги Платинум,
-              дизайн в подарок
-            </p>
-          </div>
-          <div className={styles.designCard}>
-            <Swiper
-              modules={[Navigation, Pagination]}
-              spaceBetween={50}
-              slidesPerView={3}
-              pagination={{ clickable: true }}
-              style={{ width: 1250, paddingBottom: 70 }}
-            >
-              {objCard.map((e: ICard, index: number) => {
-                return (
-                  <>
-                    <SwiperSlide>
-                      <div className={styles.card} key={index}>
-                        <div className={styles.image}>
-                          <div className={styles.process}>
-                            <p>{e.process}</p>
-                          </div>
-                          <Swiper
-                            modules={[Navigation, Pagination]}
-                            spaceBetween={10}
-                            slidesPerView={1}
-                            pagination={{ clickable: true }}
-                          >
-                            {e.images.map((image: string) => {
-                              return (
-                                <>
-                                  <SwiperSlide>
-                                    <Image
-                                      src={image}
-                                      width={380}
-                                      height={246}
-                                      alt="wefwef"
-                                    />
-                                  </SwiperSlide>
-                                </>
-                              );
-                            })}
-                          </Swiper>
-                        </div>
-                        <div className={styles.cardSection}>
-                          <h1 className={styles.cardTitle}>{e.title}</h1>
-                          <div className={styles.location}>
-                            <Image
-                              src={"icons/local.svg"}
-                              width={16}
-                              height={20}
-                              alt="scs"
-                            />
-                            <p>{e.location}</p>
-                          </div>
-                          <div className={styles.global}>
-                            {e.props.map((prop: ICardProps) => {
-                              return (
-                                <div>
-                                  <Image
-                                    src={prop.image}
-                                    width={41}
-                                    height={40}
-                                    alt="wefwef"
-                                  />
-                                  <p>{prop.title}</p>
-                                </div>
-                              );
-                            })}
-                          </div>
-                        </div>
-                      </div>
-                    </SwiperSlide>
-                  </>
-                );
-              })}
-            </Swiper>
-          </div>
-        </div>
+    <Container id="design" children={<div className={styles.designSection}>
+      <div className={styles.designTitle}>
+        <h1>ДИЗАЙН</h1>
+        <p>
+          Наша команда профессиональных дизайнеров разработают дизайн проект
+          Вашего помещения по Вашему желанию. При заказе услуги Платинум,
+          дизайн в подарок
+        </p>
       </div>
-    </div>
+      <div className={styles.designCard}>
+        <Swiper
+          modules={[Navigation, Pagination]}
+          spaceBetween={50}
+          slidesPerView={3}
+          pagination={{ clickable: true }}
+          style={{ width: 1250, paddingBottom: 70 }}
+        >
+          {objCard.map((e: ICard, index: number) => {
+            return (
+              <>
+                <SwiperSlide>
+                  <div className={styles.card} key={index}>
+                    <div className={styles.image}>
+                      <div className={styles.process}>
+                        <p>{e.process}</p>
+                      </div>
+                      <Swiper
+                        modules={[Navigation, Pagination]}
+                        spaceBetween={10}
+                        slidesPerView={1}
+                        pagination={{ clickable: true }}
+                      >
+                        {e.images.map((image: string) => {
+                          return (
+                            <>
+                              <SwiperSlide>
+                                <Image
+                                  src={image}
+                                  width={380}
+                                  height={246}
+                                  alt="wefwef"
+                                />
+                              </SwiperSlide>
+                            </>
+                          );
+                        })}
+                      </Swiper>
+                    </div>
+                    <div className={styles.cardSection}>
+                      <h1 className={styles.cardTitle}>{e.title}</h1>
+                      <div className={styles.location}>
+                        <Image
+                          src={"icons/local.svg"}
+                          width={16}
+                          height={20}
+                          alt="scs"
+                        />
+                        <p>{e.location}</p>
+                      </div>
+                      <div className={styles.global}>
+                        {e.props.map((prop: ICardProps) => {
+                          return (
+                            <div>
+                              <Image
+                                src={prop.image}
+                                width={41}
+                                height={40}
+                                alt="wefwef"
+                              />
+                              <p>{prop.title}</p>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              </>
+            );
+          })}
+        </Swiper>
+      </div>
+    </div>} />
   );
 };
 
