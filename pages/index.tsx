@@ -1,6 +1,11 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '@/styles/index.module.css'
+import Header from './components/global/Header'
+import { Designer } from './components/local/Designer'
+import Company from './components/local/Company'
+import AboutUs from './components/local/AboutUs'
+import Cost from './components/local/Cost'
 export default function Home() {
   return (
     <>
@@ -11,7 +16,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        
+        <Header />
+        <Designer />
+        <Company />
+        <AboutUs />
+        <Cost />
       </main>
     </>
   )

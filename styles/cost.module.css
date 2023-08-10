@@ -1,0 +1,155 @@
+.content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.content > h1 {
+  color: #454545;
+  text-align: right;
+  font-family: Futura PT;
+  font-size: 62px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.content > p {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #787878;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.controller {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(156deg, #46247c 0%, #a66fff 0%, #46247c 55.21%);
+  filter: drop-shadow(0px 4px 4px #1e1132);
+  border-radius: 100px;
+  color: #fff;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.selection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  box-shadow: 0px 1px 17px 0px rgba(202, 202, 202, 0.25);
+  border-radius: 20px;
+  padding: 2rem;
+}
+
+.selection > .container {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.selection h3 {
+  color: #454545;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 450;
+  line-height: normal;
+  margin-bottom: 20px;
+}
+
+.checks {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.checkbox > p {
+  color: #787878;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 450;
+  line-height: normal;
+}
+
+.checkbox > input[type="checkbox"] {
+  border-radius: 5px;
+  width: 21px;
+  height: 21px;
+  background: #f2f2f2;
+  border: none;
+  outline: none;
+  border: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.images {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.selection button {
+  margin-top: 2rem;
+  background: linear-gradient(0deg, #44217b 0%, rgb(144, 29, 197) 100%);
+  box-shadow: 0px 4px 4px 0px #1e1035;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  text-align: center;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  padding: 17px 60px;
+  border-radius: 10px;
+  line-height: normal;
+  letter-spacing: 1.1px;
+  cursor: pointer;
+}
