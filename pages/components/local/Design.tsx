@@ -190,7 +190,7 @@ const Design = () => {
   ];
 
   return (
-    <Container id="design" children={<div className={styles.designSection}>
+    <Container id="design">{<div key={"design"} className={styles.designSection}>
       <div className={styles.designTitle}>
         <h1>ДИЗАЙН</h1>
         <p>
@@ -209,7 +209,7 @@ const Design = () => {
         >
           {objCard.map((e: ICard, index: number) => {
             return (
-              <>
+              <div key={index}>
                 <SwiperSlide>
                   <div className={styles.card} key={index}>
                     <div className={styles.image}>
@@ -252,7 +252,7 @@ const Design = () => {
                       <div className={styles.global}>
                         {e.props.map((prop: ICardProps) => {
                           return (
-                            <div>
+                            <div key={prop.title}>
                               <Image
                                 src={prop.image}
                                 width={41}
@@ -267,12 +267,12 @@ const Design = () => {
                     </div>
                   </div>
                 </SwiperSlide>
-              </>
+              </div>
             );
           })}
         </Swiper>
       </div>
-    </div>} />
+    </div>}</Container>
   );
 };
 

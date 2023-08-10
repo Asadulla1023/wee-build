@@ -55,7 +55,7 @@ const Header = () => {
                 </Link>
                 <ul className={styles.navigation}>
                     {nav.map(({ title, url }: INav) => {
-                        return <li>
+                        return <li key={title}>
                             <Link href={url}>{title}</Link>
                         </li>
                     })}

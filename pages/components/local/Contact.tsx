@@ -6,7 +6,7 @@ import Container from "../global/Container";
 
 const Contact = () => {
   return (
-    <Container id="contact" children={<div className={styles.questionsSection}>
+    <Container id="contact" >{<><div className={styles.questionsSection}>
       <div className={styles.questionsTitle}>
         <h1>ОСТАЛИСЬ ВОПРОСЫ?</h1>
       </div>
@@ -60,7 +60,7 @@ const Contact = () => {
           <button className={styles.button}>ОТПРАВИТЬ</button>
         </form>
       </div>
-    </div>} />
+    </div></>}</Container>
 
   );
 };

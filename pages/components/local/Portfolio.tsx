@@ -206,7 +206,7 @@ const Portfolio = () => {
             >
               {objCard.map((e: ICard, index: number) => {
                 return (
-                  <>
+                  <div key={index}>
                     {" "}
                     <SwiperSlide>
                       <div className={styles.card} key={index}>
@@ -250,7 +250,7 @@ const Portfolio = () => {
                           <div className={styles.global}>
                             {e.props.map((prop: ICardProps) => {
                               return (
-                                <div>
+                                <div key={prop.title}>
                                   <Image
                                     src={prop.image}
                                     width={41}
@@ -265,7 +265,7 @@ const Portfolio = () => {
                         </div>
                       </div>
                     </SwiperSlide>
-                  </>
+                  </div>
                 );
               })}
             </Swiper>

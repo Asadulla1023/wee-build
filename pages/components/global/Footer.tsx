@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "@/styles/footer.module.css";
 import Image from "next/image";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -28,9 +29,9 @@ const Footer = () => {
               height={25.2}
               alt="locate"
             />
-            <a href="/">
+            <Link href="/">
               100059, г.Ташкент, Яккасарайский район, Ул. Шота Руставели, д.58
-            </a>
+            </Link>
           </div>
         </div>
       </div>

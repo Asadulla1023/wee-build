@@ -10,9 +10,9 @@ const Cooperation = () => {
             <h1>СОТРУДНИЧЕСТВО</h1>
           </div>
           <div className={styles.cooperationCard}>
-            {[1, 2, 3, 4].map(() => {
+            {[1, 2, 3, 4].map((e) => {
               return (
-                <div className={styles.card}>
+                <div key={e} className={styles.card}>
                   <h1>LOGO</h1>
                 </div>
               );
