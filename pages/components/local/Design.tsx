@@ -190,113 +190,117 @@ const Design = () => {
   ];
 
   return (
-    <Container id="design">{<div key={"design"} className={styles.designSection}>
-      <div className={styles.designTitle}>
-        <h1>ДИЗАЙН</h1>
-        <p>
-          Наша команда профессиональных дизайнеров разработают дизайн проект
-          Вашего помещения по Вашему желанию. При заказе услуги Платинум,
-          дизайн в подарок
-        </p>
-      </div>
-      <div className={styles.designCard}>
-        <Swiper
-          modules={[Navigation, Pagination]}
-          spaceBetween={20}
-          breakpoints={{
-            1250: {
-              width: 1250,
-              slidesPerView: 3,
-            },
-            976: {
-              width: 976,
-              slidesPerView: 2,
-            },
-            768: {
-              width: 768,
-              slidesPerView: 2,
-            },
+    <div className={styles.design}>
+      <div className={styles.container}>
+        <div key={"design"} className={styles.designSection}>
+          <div className={styles.designTitle}>
+            <h1>ДИЗАЙН</h1>
+            <p>
+              Наша команда профессиональных дизайнеров разработают дизайн проект
+              Вашего помещения по Вашему желанию. При заказе услуги Платинум,
+              дизайн в подарок
+            </p>
+          </div>
+          <div className={styles.designCard}>
+            <Swiper
+              modules={[Navigation, Pagination]}
+              spaceBetween={20}
+              breakpoints={{
+                1250: {
+                  width: 1250,
+                  slidesPerView: 3,
+                },
+                976: {
+                  width: 976,
+                  slidesPerView: 2,
+                },
+                768: {
+                  width: 768,
+                  slidesPerView: 2,
+                },
 
-            620: {
-              width: 620,
-              slidesPerView: 2,
-            },
+                620: {
+                  width: 620,
+                  slidesPerView: 2,
+                },
 
-            380: {
-              width: 380,
-              slidesPerView: 1
-            }
-          }}
-          pagination={{ clickable: true }}
-          style={{paddingBottom: 70 }}
-          className={styles.swiper}
-        >
-          {objCard.map((e: ICard, index: number) => {
-            return (
-              <div key={index}>
-                <SwiperSlide key={index}>
-                  <div className={styles.card} key={index}>
-                    <div className={styles.image}>
-                      <div className={styles.process}>
-                        <p>{e.process}</p>
+                380: {
+                  width: 380,
+                  slidesPerView: 1
+                }
+              }}
+              pagination={{ clickable: true }}
+              style={{ paddingBottom: 70 }}
+              className={styles.swiper}
+            >
+              {objCard.map((e: ICard, index: number) => {
+                return (
+                  <div key={index}>
+                    <SwiperSlide key={index}>
+                      <div className={styles.card} key={index}>
+                        <div className={styles.image}>
+                          <div className={styles.process}>
+                            <p>{e.process}</p>
+                          </div>
+                          <Swiper
+                            modules={[Navigation, Pagination]}
+                            spaceBetween={10}
+                            slidesPerView={1}
+                            pagination={{ clickable: true }}
+                          >
+                            {e.images.map((image: string) => {
+                              return (
+                                <>
+                                  <SwiperSlide>
+                                    <Image
+                                      src={image}
+                                      width={380}
+                                      height={246}
+                                      alt="wefwef"
+                                    />
+                                  </SwiperSlide>
+                                </>
+                              );
+                            })}
+                          </Swiper>
+                        </div>
+                        <div className={styles.cardSection}>
+                          <h1 className={styles.cardTitle}>{e.title}</h1>
+                          <div className={styles.location}>
+                            <Image
+                              src={"icons/local.svg"}
+                              width={16}
+                              height={20}
+                              alt="scs"
+                            />
+                            <p>{e.location}</p>
+                          </div>
+                          <div className={styles.global}>
+                            {e.props.map((prop: ICardProps) => {
+                              return (
+                                <div key={prop.title}>
+                                  <Image
+                                    src={prop.image}
+                                    width={41}
+                                    height={40}
+                                    alt={prop.title}
+                                  />
+                                  <p>{prop.title}</p>
+                                </div>
+                              );
+                            })}
+                          </div>
+                        </div>
                       </div>
-                      <Swiper
-                        modules={[Navigation, Pagination]}
-                        spaceBetween={10}
-                        slidesPerView={1}
-                        pagination={{ clickable: true }}
-                      >
-                        {e.images.map((image: string) => {
-                          return (
-                            <>
-                              <SwiperSlide>
-                                <Image
-                                  src={image}
-                                  width={380}
-                                  height={246}
-                                  alt="wefwef"
-                                />
-                              </SwiperSlide>
-                            </>
-                          );
-                        })}
-                      </Swiper>
-                    </div>
-                    <div className={styles.cardSection}>
-                      <h1 className={styles.cardTitle}>{e.title}</h1>
-                      <div className={styles.location}>
-                        <Image
-                          src={"icons/local.svg"}
-                          width={16}
-                          height={20}
-                          alt="scs"
-                        />
-                        <p>{e.location}</p>
-                      </div>
-                      <div className={styles.global}>
-                        {e.props.map((prop: ICardProps) => {
-                          return (
-                            <div key={prop.title}>
-                              <Image
-                                src={prop.image}
-                                width={41}
-                                height={40}
-                                alt={prop.title}
-                              />
-                              <p>{prop.title}</p>
-                            </div>
-                          );
-                        })}
-                      </div>
-                    </div>
+                    </SwiperSlide>
                   </div>
-                </SwiperSlide>
-              </div>
-            );
-          })}
-        </Swiper>
+                );
+              })}
+            </Swiper>
+          </div>
+        </div>
       </div>
-    </div>}</Container>
+    </div>
   );
 };
 

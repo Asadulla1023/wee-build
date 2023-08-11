@@ -27,3 +27,11 @@
   font-weight: 400;
   line-height: normal;
 }
+
+
+@media screen and (max-width: 1200px) {
+  .content > img {
+    width: 100%;
+    height: auto;
+  } 
+}

@@ -10,7 +10,6 @@
 }
 
 .container {
-  position: relative;
   display: flex;
   width: 1180px;
   flex-direction: column;
@@ -63,13 +62,25 @@
   cursor: pointer;
 }
 
-.contact {
-  position: fixed;
-  background: transparent;
-  border: none;
-  top: 90%;
-  left: 90%;
-  width: fit-content;
-  cursor: pointer;
-}
 
+
+@media screen and (max-width: 1200px) {
+  .container {
+    width: 100%;
+    padding: 0 1%;
+  }
+  .container > h1 {
+    font-size: 48px;
+  }
+  .container > p {
+    font-size: 18px;
+  }
+  .container > a > svg {
+    width: 20px;
+    height: auto;
+  }
+  .container > button {
+    padding: 25px 45px;
+    font-size: 20px;
+  }
+}

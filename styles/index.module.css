@@ -1,7 +1,18 @@
 .main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.contact {
+  position: fixed;
+  background: transparent;
+  border: none;
+  top: 90%;
+  left: 90%;
+  width: fit-content;
+  cursor: pointer;
+  z-index: 1000;
 }

@@ -20,9 +20,6 @@ export default function Designer() {
                 </Link>
                 <button>ОБСУДИТЬ ПРОЕКТ</button>
             </div>
-            <button className={styles.contact}>
-                <Image src={"/icons/contact.svg"} alt='contact svg' width={70} height={70} />
-            </button>
         </div>
     )
 }

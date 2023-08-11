@@ -43,6 +43,9 @@ export default function Home() {
         <Faq />
         <Contact />
         <Footer />
+        <button className={styles.contact}>
+          <Image src={"/icons/contact.svg"} alt='contact svg' width={70} height={70} />
+        </button>
       </main>
     </>
   );

@@ -7,7 +7,7 @@
 
 .container {
     width: 1200px;
-    padding: 76px 0;
+    padding: 76px 0 !important;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -116,10 +116,6 @@
 
 
 @media only screen and (max-width: 1300px) and (min-width: 1180px) {
-    .swiper {
-        width: 1180px;
-    }
-
     .container {
         width: 100%;
     }
