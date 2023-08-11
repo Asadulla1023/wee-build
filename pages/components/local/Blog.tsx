@@ -17,7 +17,8 @@ const Blog = () => {
             <div key={e} className={styles.card}>
               <div className={styles.table}>
                 <video
-                  style={{ width: 380, height: 274, borderRadius: 20 }}
+                  style={{ borderRadius: 20 }}
+                  className={styles.video}
                   controls
                   src={"/blur.mp4"}
                 />

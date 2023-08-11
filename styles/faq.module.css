@@ -4,7 +4,6 @@
     align-items: center;
     display: flex;
     background-color: #F2F2F2;
-    border-radius: 100px;
     padding-top: 5.5rem;
     padding-bottom: 5.5rem;
 }
@@ -90,10 +89,6 @@
 
 @media screen and (max-width: 960px) {
 
-    .faq {
-        border-radius: 80px;
-    }
-
     .container {
         width: 100%;
     }
@@ -104,10 +99,6 @@
 }
 
 @media screen and (max-width: 530px) {
-
-    .faq {
-        border-radius: 60px;
-    }
 
     .container {
         padding: 20px 20px;
@@ -120,10 +111,6 @@
 }
 
 @media screen and (max-width: 400px) {
-
-    .faq {
-        border-radius: 40px;
-    }
 
     .container {
         width: 100%;

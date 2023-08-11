@@ -321,3 +321,37 @@
     }
   
 }
+
+
+@media screen and (max-width: 360px) {
+    .container {
+        width: 100%;
+    }
+
+    .map {
+        width: 260px !important; 
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        margin: auto;
+    }
+
+    .card {
+        width: 260px;
+        padding: 27px 12px;
+    }
+
+    .form {
+        width: 100%;
+    }
+
+    .button {
+        margin-top: 100px;
+    }
+
+    .questionsTitle h1 {
+        font-size: 35px;
+    }
+  
+}
+

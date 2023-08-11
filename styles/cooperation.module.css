@@ -4,7 +4,6 @@
     justify-content: center;
     align-content: center;
     background-color: #F2F2F2;
-    border-radius: 100px;
 }
 
 .container {
@@ -62,9 +61,6 @@
 }
 
 @media screen and (max-width: 990px) {
-    .cooperation {
-        border-radius: 80px;
-    }
 
     .cardTitle {
         font-size: 18px;
@@ -88,11 +84,6 @@
     .container {
         width: 100%;
     }
-
-    .cooperation {
-        border-radius: 60px;
-    }
-
     .cooperationTitle h1 {
         font-size: 40px;
     }
@@ -116,9 +107,7 @@
         width: 100%;
     }
 
-    .cooperation {
-        border-radius: 40px;
-    }
+
 
     .cooperationTitle h1 {
         font-size: 35px;
@@ -126,5 +115,25 @@
     }
     .container {
         width: 100%;
+    }
+
+} 
+
+
+@media screen and (max-width: 360px) {
+    .container {
+        width: 100%;
+    }
+
+    .cooperationTitle h1 {
+        font-size: 30px;
+        font-weight: 500;
+    }
+    .container {
+        width: 100%;
+    }
+
+    .card{
+        width: 250px;
     }
 } 

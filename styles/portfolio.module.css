@@ -4,7 +4,6 @@
     align-items: center;
     display: flex;
     background-color: #F2F2F2;
-    border-radius: 100px;
 }
 
 .container {
@@ -176,10 +175,6 @@
 }
 
 @media only screen and (max-width: 996px) and (min-width: 768px) {
-    .portfolio {
-        border-radius: 80px;
-    }
-    
     .container {
         width: 100%;
     }
@@ -209,10 +204,6 @@
 }
 
 @media only screen and (max-width: 780px) and (min-width: 620px) {
-    .portfolio {
-        border-radius: 60px;
-    }
-
     .container {
         width: 100%;
     }
@@ -241,9 +232,6 @@
 }
 
 @media only screen and (max-width: 620px) and (min-width: 380px) {
-    .portfolio {
-        border-radius: 40px;
-    }
     .container {
         width: 100%;
     }
@@ -272,9 +260,6 @@
 }
 
 @media only screen and (max-width: 380px) and (min-width: 340px) {
-    .portfolio {
-        border-radius: 20px;
-    }
     .container {
         width: 100%;
     }
@@ -286,6 +271,45 @@
     .card {
         margin: auto !important;
         width: 300px;
+    }
+
+    .cardTitle {
+        font-size: 16px;
+    }
+
+    .image img {
+        width: 100%;
+    }
+
+
+    .global {
+        padding-top: 18px;
+    }
+}
+
+@media only screen and (max-width: 340px) and (min-width: 300px) {
+    .portfolio {
+        border-radius: 20px;
+    }
+    .container {
+        width: 100%;
+    }
+
+    .portfolioTitle h1 {
+        font-size: 50px;
+    }
+
+    .swiper {
+        width: 280px;
+    }
+
+    .card {
+        margin: auto !important;
+        width: 280px;
+    }
+
+    .cardSection {
+        padding: 15px 20px;
     }
 
     .cardTitle {
