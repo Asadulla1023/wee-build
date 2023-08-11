@@ -10,6 +10,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import "swiper/css/effect-cards";
 
 const Portfolio = () => {
   const objCard: ICard[] = [
@@ -190,7 +191,12 @@ const Portfolio = () => {
   ];
 
   return (
-    <div id="portfolio"  data-aos="fade-up" data-aos-duration="500" className={styles.portfolio}>
+    <div
+      id="portfolio"
+      data-aos="fade-up"
+      data-aos-duration="500"
+      className={styles.portfolio}
+    >
       <div className={styles.container}>
         <div className={styles.portfolioSection}>
           <div className={styles.portfolioTitle}>
@@ -199,16 +205,41 @@ const Portfolio = () => {
           <div className={styles.portfolioCard}>
             <Swiper
               modules={[Navigation, Pagination]}
-              spaceBetween={30}
-              slidesPerView={3}
+              spaceBetween={20}
+              // slidesPerView={3}
+              breakpoints={{
+                1250: {
+                  width: 1250,
+                  slidesPerView: 3,
+                },
+                976: {
+                  width: 976,
+                  slidesPerView: 2,
+                },
+                768: {
+                  width: 768,
+                  slidesPerView: 2,
+                },
+
+                620: {
+                  width: 620,
+                  slidesPerView: 2,
+                },
+
+                380: {
+                  width: 380,
+                  slidesPerView: 1
+                }
+              }}
               pagination={{ clickable: true }}
-              style={{ width: 1250, paddingBottom: 70 }}
+              style={{ paddingBottom: 70 }}
+              className={styles.swiper}
             >
               {objCard.map((e: ICard, index: number) => {
                 return (
                   <div key={index}>
                     {" "}
-                    <SwiperSlide>
+                    <SwiperSlide className={styles.addItem}>
                       <div className={styles.card} key={index}>
                         <div className={styles.image}>
                           <div className={styles.process}>

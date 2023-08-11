@@ -25,6 +25,8 @@ li {
   user-select: none;
 }
 
+
+
 .react-datepicker__input-container>input {
   padding: 20px !important;
   padding-left: 0px !important;
@@ -37,4 +39,8 @@ li {
 
 #advantages {
   transition: 0.5s linear;
+}
+
+.swiper {
+  width: 100%;
 }

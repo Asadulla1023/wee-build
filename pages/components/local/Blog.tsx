@@ -4,29 +4,32 @@ import Container from "../global/Container";
 import AOS from "aos";
 const Blog = () => {
   useEffect(() => {
-    AOS.init()
-  }, [])
+    AOS.init();
+  }, []);
   return (
-    <Container id="blog" data-aos="fade-up" data-aos-duration="500" >{<div className={styles.blogSection}>
-      <div className={styles.blogTitle}>
-        <h1>БЛОГ</h1>
-      </div>
-      <div className={styles.blogCard}>
-        {[1, 2, 3].map((e) => {
-          return (
-            <div key={e} className={styles.card}>
-              <div className={styles.table}>
-                <video
-                  style={{ width: 380, height: "auto", borderRadius: 20 }}
-                  controls
-                  src={"/blur.mp4"}
-                />
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    </div>}</Container>
+    <Container id="blog" data-aos="fade-up" data-aos-duration="500">
+      {
+        <div className={styles.blogSection}>
+          <div className={styles.blogTitle}>
+            <h1>БЛОГ</h1>
+          </div>
+          <div className={styles.blogCard}>
+            {[1, 2, 3].map((e) => {
+              return (
+                <div key={e} className={styles.card}>
+                  <video
+                    style={{ borderRadius: 20 }}
+                    className={styles.video}
+                    controls
+                    src={"/blur.mp4"}
+                  />
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      }
+    </Container>
   );
 };
 

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import styles from "@/styles/questions.module.css";
+import styles from "@/styles/contact.module.css";
 // import Map from './Map'
 import AOS from  'aos'
 import 'aos/dist/aos.css';
@@ -24,6 +24,7 @@ const Contact = () => {
             width={680}
             height={339}
             alt="map"
+            className={styles.map}
           />
           <div className={styles.contactForm}>
             <div className={styles.card}>

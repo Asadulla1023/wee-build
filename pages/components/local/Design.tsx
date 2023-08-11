@@ -202,10 +202,34 @@ const Design = () => {
       <div className={styles.designCard}>
         <Swiper
           modules={[Navigation, Pagination]}
-          spaceBetween={50}
-          slidesPerView={3}
+          spaceBetween={20}
+          breakpoints={{
+            1250: {
+              width: 1250,
+              slidesPerView: 3,
+            },
+            976: {
+              width: 976,
+              slidesPerView: 2,
+            },
+            768: {
+              width: 768,
+              slidesPerView: 2,
+            },
+
+            620: {
+              width: 620,
+              slidesPerView: 2,
+            },
+
+            380: {
+              width: 380,
+              slidesPerView: 1
+            }
+          }}
           pagination={{ clickable: true }}
-          style={{ width: 1250, paddingBottom: 70 }}
+          style={{paddingBottom: 70 }}
+          className={styles.swiper}
         >
           {objCard.map((e: ICard, index: number) => {
             return (
