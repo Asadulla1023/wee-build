@@ -159,6 +159,12 @@
     font-weight: 400;
 }
 
+.map {
+    border-radius: 20px;
+    height: auto;
+    position: relative;
+} 
+
 @media screen and (max-width: 1210px) {
     .container {
         width: 100%;
@@ -227,7 +233,12 @@
     }
 
     .map {
-        width: 100%;
+        width: 500px !important;
+        /* padding: 0px 20px; */
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        margin: auto;
     }
 
     .form {
@@ -245,10 +256,6 @@
         width: 100%;
     }
 
-    .map {
-        width: 100%;
-        height: auto;
-    }
 
     .form {
         width: 100%;
@@ -267,6 +274,33 @@
     }
   
 }
+
+
+@media screen and (max-width: 541px) {
+
+    .map {
+        width: 400px !important;
+        /* padding: 0px 20px; */
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        margin: auto;
+    }
+}
+
+
+@media screen and (max-width: 440px) {
+
+    .map {
+        width: 300px !important;
+        /* padding: 0px 20px; */
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        margin: auto;
+    }
+}
+
 
 @media screen and (max-width: 425px) {
     .container {
