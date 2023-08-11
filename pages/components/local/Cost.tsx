@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styles from "@/styles/cost.module.css"
 import Container from '../global/Container'
 import Image from 'next/image'
+import MultipleRange from './MultipleRange'
 interface IStyleRepair {
     image: string,
     title: string
@@ -123,7 +124,7 @@ const Cost = () => {
                                         <div className={styles.sectS}>
                                             <div className={styles.sect}>
                                                 <h4>Выберите общую площадь квартиры</h4>
-                                                <div className={styles.multiRange}>169 м²</div>
+                                                <div className={styles.multiRange}><MultipleRange/></div>
                                             </div>
                                             <div className={styles.sect}>
                                                 <h4>Количество комнат</h4>

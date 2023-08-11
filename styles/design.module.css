@@ -295,3 +295,39 @@
         padding-top: 18px;
     }
 }
+
+
+@media only screen and (max-width: 340px) and (min-width: 300px) {
+    .design {
+        border-radius: 20px;
+    }
+    .container {
+        width: 100%;
+    }
+
+    .swiper {
+        width: 280px;
+    }
+
+    .card {
+        margin: auto !important;
+        width: 280px;
+    }
+
+    .cardSection {
+        padding: 15px 20px;
+    }
+
+    .cardTitle {
+        font-size: 16px;
+    }
+
+    .image img {
+        width: 100%;
+    }
+
+
+    .global {
+        padding-top: 18px;
+    }
+}
