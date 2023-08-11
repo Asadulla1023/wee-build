@@ -1,10 +1,17 @@
-import React from "react";
-import styles from "@/styles/questions.module.css";
+import React, { useEffect } from "react";
+import styles from "@/styles/contact.module.css";
 // import Map from './Map'
+import AOS from  'aos'
+import 'aos/dist/aos.css';
 import Image from "next/image";
 import Container from "../global/Container";
 
 const Contact = () => {
+
+  useEffect(() => {
+    AOS.init();
+  })
+
   return (
     <Container id="contact" >{<><div className={styles.questionsSection}>
       <div className={styles.questionsTitle}>
@@ -17,6 +24,7 @@ const Contact = () => {
             width={680}
             height={339}
             alt="map"
+            className={styles.map}
           />
           <div className={styles.contactForm}>
             <div className={styles.card}>

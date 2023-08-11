@@ -9,7 +9,7 @@
 
 .container {
     width:  1180px;
-    padding: 76px 370px;
+    padding: 76px 0;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -42,6 +42,89 @@
     font-weight: 400;
     color: #E0E0E0;
     text-align: center;
-    padding: 119px 57px;
+    padding: 119px 0;
     margin: auto;
 }
+
+
+@media screen and (max-width: 1250px) {
+    .container {
+        width: 100%;
+    }
+
+    .cooperationCard {
+        width: 100%;
+    }
+
+    .card {
+        width: 220px;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    .cooperation {
+        border-radius: 80px;
+    }
+
+    .cardTitle {
+        font-size: 18px;
+    }
+    .container {
+        width: 100%;
+    }
+
+    .cooperationCard {
+        /* flex-direction: column; */
+        flex-wrap: wrap-reverse;
+        width: 100%;
+    }
+
+    .card {
+        width: 220px;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .container {
+        width: 100%;
+    }
+
+    .cooperation {
+        border-radius: 60px;
+    }
+
+    .cooperationTitle h1 {
+        font-size: 40px;
+    }
+    .container {
+        width: 100%;
+    }
+
+    .cooperationCard {
+        flex-wrap: wrap-reverse;
+        width: 100%;
+    }
+
+    .card {
+        width: 300px;
+    }
+} 
+
+
+@media screen and (max-width: 620px) {
+    .container {
+        width: 100%;
+    }
+
+    .cooperation {
+        border-radius: 40px;
+    }
+
+    .cooperationTitle h1 {
+        font-size: 35px;
+        font-weight: 500;
+    }
+    .container {
+        width: 100%;
+    }
+} 

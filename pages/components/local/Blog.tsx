@@ -4,8 +4,8 @@ import Container from "../global/Container";
 import AOS from "aos";
 const Blog = () => {
   useEffect(() => {
-    AOS.init()
-  }, [])
+    AOS.init();
+  }, []);
   return (
     <Container id="blog" data-aos="fade-up" data-aos-duration="500" >{<div className={styles.blogSection}>
       <div className={styles.blogTitle}>
