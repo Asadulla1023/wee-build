@@ -210,7 +210,7 @@ const Design = () => {
           {objCard.map((e: ICard, index: number) => {
             return (
               <div key={index}>
-                <SwiperSlide>
+                <SwiperSlide key={index}>
                   <div className={styles.card} key={index}>
                     <div className={styles.image}>
                       <div className={styles.process}>
@@ -257,7 +257,7 @@ const Design = () => {
                                 src={prop.image}
                                 width={41}
                                 height={40}
-                                alt="wefwef"
+                                alt={prop.title}
                               />
                               <p>{prop.title}</p>
                             </div>
