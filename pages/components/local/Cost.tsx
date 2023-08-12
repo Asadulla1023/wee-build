@@ -3,10 +3,6 @@ import styles from "@/styles/cost.module.css"
 import Container from '../global/Container'
 import Image from 'next/image'
 import MultipleRange from './MultipleRange'
-interface IStyleRepair {
-    image: string,
-    title: string
-}
 const Cost = () => {
     const [checked, setChecked] = useState<boolean>(false)
     const contoller: number[] = [1, 2, 3, 4]
@@ -15,26 +11,6 @@ const Cost = () => {
     const ads: string[] = ["Новостройка", "Вторичка"]
     const ads2: string[] = ["Межкомнатные перегородки", "Демонтаж"]
     const [counter, setCounter] = useState<number>(1)
-
-    const styleObj: Array<IStyleRepair> = [
-        {
-            image: "/images/repair1.png",
-            title: "Стандарт"
-        },
-        {
-            image: "/images/repair2.png",
-            title: "Неоклассика"
-        },
-        {
-            image: "/images/repair3.png",
-            title: "Классика"
-        },
-        {
-            image: "/images/repair4.png",
-            title: "Под дизайн"
-        }
-    ]
-
     return (
         <Container id='cost' >
             {<>
