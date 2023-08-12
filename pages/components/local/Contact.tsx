@@ -89,9 +89,13 @@ const Contact = () => {
                   <p>Почта</p>
                   <input type="email" />
                 </div>
-                <div style={{ marginTop: 18 }} className={styles.inputForm}>
+                <div style={{ marginTop: 10 }} className={styles.inputForm}>
                   <p>Номер телефона</p>
                   <input type="text" />
+                </div>
+                <div style={{ marginTop: 10 }} className={styles.inputForm}>
+                  <p>Cообщение</p>
+                  <textarea className={styles.textarea}/>
                 </div>
                 <button className={styles.button}>ОТПРАВИТЬ</button>
               </form>
