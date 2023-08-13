@@ -63,9 +63,52 @@
   transition: 0.2s ease-in-out;
 }
 
-.container > button:hover {
-  box-shadow: none;
-} 
+.arrow {
+  margin-top: 15px;
+  display: block;
+  z-index: -150px;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.arrow span {
+  display: block;
+  width: 1vw;
+  height: 1vw;
+  border-bottom: 3px solid rgba(120, 120, 120, 1);
+  border-right: 3px solid rgba(120, 120, 120, 1);
+  transform: rotate(45deg);
+  margin: -10px;
+  animation: animate 2s infinite;
+}
+
+.arrow span:nth-child(2) {
+  animation-delay: -0.2s;
+}
+
+.arrow span:nth-child(3) {
+  animation-delay: -0.4s;
+}
+
+.arrow__nd {
+  display: none;
+}
+
+@keyframes animate {
+  0% {
+      opacity: 0;
+      transform: rotate(45deg) translate(-20px, -20px);
+  }
+
+  50% {
+      opacity: 1;
+  }
+
+  100% {
+      opacity: 0;
+      transform: rotate(45deg) translate(20px, 20px);
+  }
+}
 
 
 @media screen and (max-width: 1200px) {
