@@ -8,7 +8,7 @@
 
 .container {
     width: 1200px;
-    padding: 76px 0;
+    padding: 5.5rem 0;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -259,7 +259,7 @@
     }
 }
 
-@media only screen and (max-width: 380px) and (min-width: 340px) {
+@media screen and (max-width: 380px) and (min-width: 340px) {
     .container {
         width: 100%;
     }
@@ -287,7 +287,7 @@
     }
 }
 
-@media only screen and (max-width: 340px) and (min-width: 300px) {
+@media screen and (max-width: 340px) and (min-width: 300px) {
     .portfolio {
         border-radius: 20px;
     }

@@ -2,20 +2,16 @@ import React, { useEffect } from 'react'
 import styles from "@/styles/aboutUs.module.css"
 import Image from 'next/image'
 import IAdvantages from '@/interfaces/IAdvantages'
-import Aos from 'aos'
 import { ADVANTAGES } from '@/constant'
+import { v4 as uuidv4 } from 'uuid';
 const AboutUs: React.FC = () => {
-    useEffect(() => {
-        Aos.init()
-    }, [])
-
     return (
-        <div id='advantages' data-aos="fade-up" data-aos-duration="500" className={styles.aboutUs}>
+        <div id='advantages' className={styles.aboutUs}>
             <div className={styles.container}>
                 <h1>У нас:</h1>
                 <div className={styles.wrapper}>
                     {ADVANTAGES.map(({ title, desc, image }: IAdvantages) => {
-                        return <div key={title} className={image === "" ? styles.advantage : styles.advantageImg}>
+                        return <div key={uuidv4()} className={image === "" ? styles.advantage : styles.advantageImg}>
                             {image !== "" ? <>
                                 <div className={styles.left}>
                                     <h3>{title}</h3>

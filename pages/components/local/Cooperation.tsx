@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "@/styles/cooperation.module.css";
-
+import { v4 as uuidv4 } from 'uuid';
 const Cooperation = () => {
   return (
-    <div id="coop"  data-aos="fade-up" data-aos-duration="500" className={styles.cooperation}>
+    <div id="coop" className={styles.cooperation}>
       <div className={styles.container}>
         <div className={styles.cooperationSection}>
           <div className={styles.cooperationTitle}>
@@ -12,7 +12,7 @@ const Cooperation = () => {
           <div className={styles.cooperationCard}>
             {[1, 2, 3, 4].map((e) => {
               return (
-                <div key={e} className={styles.card}>
+                <div key={uuidv4()} className={styles.card}>
                   <h1>LOGO</h1>
                 </div>
               );

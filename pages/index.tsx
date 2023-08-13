@@ -13,15 +13,7 @@ import Blog from "./components/local/Blog";
 import Faq from "./components/local/Faq";
 import Footer from "./components/global/Footer";
 import Contact from "./components/local/Contact";
-import { useEffect } from "react";
-import AOS from "aos"
-import 'aos/dist/aos.css';
 export default function Home() {
-
-  useEffect(() => {
-    AOS.init()
-  }, [])
-
   return (
     <>
       <Head>

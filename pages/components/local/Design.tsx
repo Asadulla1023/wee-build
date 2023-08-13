@@ -10,11 +10,12 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { CARD_OBJECT } from "@/constant";
+import { v4 as uuidv4 } from 'uuid';
 const Design = () => {
   return (
-    <div className={styles.design}>
+    <div id="design" className={styles.design}>
       <div className={styles.container}>
-        <div key={"design"} className={styles.designSection}>
+        <div className={styles.designSection}>
           <div className={styles.designTitle}>
             <h1>ДИЗАЙН</h1>
             <p>
@@ -56,8 +57,9 @@ const Design = () => {
               className={styles.swiper}
             >
               {CARD_OBJECT.map((e: ICard, index: number) => {
+                const id = uuidv4()
                 return (
-                  <div key={index}>
+                  <div key={id}>
                     <SwiperSlide key={index}>
                       <div className={styles.card} key={index}>
                         <div className={styles.image}>
@@ -71,9 +73,9 @@ const Design = () => {
                             pagination={{ clickable: true }}
                           >
                             {e.images.map((image: string) => {
+                              const id = uuidv4()
                               return (
-                                <>
-                                  <SwiperSlide>
+                                  <SwiperSlide key={id}>
                                     <Image
                                       src={image}
                                       width={380}
@@ -81,7 +83,6 @@ const Design = () => {
                                       alt="wefwef"
                                     />
                                   </SwiperSlide>
-                                </>
                               );
                             })}
                           </Swiper>
@@ -99,8 +100,9 @@ const Design = () => {
                           </div>
                           <div className={styles.global}>
                             {e.props.map((prop: ICardProps) => {
+                              const id = uuidv4()
                               return (
-                                <div key={prop.title}>
+                                <div key={id}>
                                   <Image
                                     src={prop.image}
                                     width={41}

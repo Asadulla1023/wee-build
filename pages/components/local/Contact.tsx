@@ -1,15 +1,10 @@
 import React, { useEffect } from "react";
 import styles from "@/styles/contact.module.css";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import Image from "next/image";
 import Container from "../global/Container";
 import Maps from "./Map";
-
+import { v4 as uuidv4 } from 'uuid';
 const Contact = () => {
-  useEffect(() => {
-    AOS.init();
-  });
 
   return (
     <Container id="contact">

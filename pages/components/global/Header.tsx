@@ -1,11 +1,18 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from "@/styles/header.module.css"
 import Image from 'next/image'
 import Link from 'next/link'
 import { NAV } from '@/constant'
-
+import Burger from '../local/Burger'
+import { v4 as uuidv4 } from 'uuid';
+import { Navigation } from '../local/Navigation'
 const Header = () => {
-    
+    const [open, setOpen] = useState<boolean>(false)
+    useEffect(() => {
+        if (open === true) {
+            document.body.style.overflow = "hidden"
+        }
+    }, [open])
     return (
         <header className={styles.header}>
             <div className={styles.container}>
@@ -14,11 +21,17 @@ const Header = () => {
                 </Link>
                 <ul className={styles.navigation}>
                     {NAV.map(({ title, url }) => {
-                        return <li key={title}>
+                        return <li key={uuidv4()}>
                             <Link href={url}>{title}</Link>
                         </li>
                     })}
                 </ul>
+                <div onClick={() => {
+                    setOpen(!open)
+                }}>
+                    <Burger />
+                </div>
+                {open === true ? <Navigation /> : null}
             </div>
         </header>
     )

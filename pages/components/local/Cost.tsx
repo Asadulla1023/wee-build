@@ -3,6 +3,8 @@ import styles from "@/styles/cost.module.css"
 import Container from '../global/Container'
 import Image from 'next/image'
 import MultipleRange from './MultipleRange'
+import { v4 as uuidv4 } from 'uuid';
+import MultiRangeSlider from './MultiRangeSlider'
 const Cost = () => {
     const [checked, setChecked] = useState<boolean>(false)
     const contoller: number[] = [1, 2, 3, 4]
@@ -11,6 +13,8 @@ const Cost = () => {
     const ads: string[] = ["Новостройка", "Вторичка"]
     const ads2: string[] = ["Межкомнатные перегородки", "Демонтаж"]
     const [counter, setCounter] = useState<number>(1)
+    const [val, setVal] = useState<number>(1)
+    const [selectedRoom, setSelectedRoom] = useState<number>(1)
     return (
         <Container id='cost' >
             {<>
@@ -20,13 +24,16 @@ const Cost = () => {
                         <>
                             <div className={styles.controller}>
                                 {contoller.map((e: number) => {
-                                    return <div key={e} className={styles.control}>
+                                    const id = uuidv4()
+                                    return <div key={id} className={styles.control}>
                                         {e > 1 ? <div className={styles.line}>
                                             <svg width="78" height="3" viewBox="0 0 78 3" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <line y1="1.5" x2="78" y2="1.5" stroke={counter < e ? "#E0E0E0" : "#46247c"} stroke-width="3" stroke-dasharray="7 7" />
                                             </svg>
                                         </div> : null}
-                                        <div className={styles.circle} style={counter < e ? {
+                                        <div onClick={() => {
+                                            setCounter(e)
+                                        }} className={styles.circle} style={counter < e ? {
                                             background: "#F2F2F2",
                                             filter: "none"
                                         } : {}}>
@@ -40,32 +47,24 @@ const Cost = () => {
                                 <div className={styles.container}>
                                     <h3>Тип помещения</h3>
                                     <div className={styles.checks}>
-                                        {ads.map((e: string) => {
-                                            return <div key={e} className={styles.checkbox}>
-                                                <input onClick={() => {
-                                                    setChecked(!checked)
-                                                    setSelected(e)
-                                                }} checked={checked} style={e === selected ? {
-                                                    background: "#46247c"
-                                                } : {}} type="checkbox" name="" id="" />
+                                        {ads.map((e: string, index: number) => {
+                                            return <div key={e} className={e === selected ? `${styles.checkbox} ${styles.boxShadow}` : styles.checkbox} onClick={() => {
+                                                setChecked(!checked)
+                                                setSelected(e)
+                                            }}>
+                                                <Image src={`/images/select${index + 1}.png`} alt='decorate' width={380} height={245} />
                                                 <p>{e}</p>
                                             </div>
                                         })}
                                     </div>
-                                    <div className={styles.images}>
-                                        <Image src={"/images/select1.png"} alt='decorate' width={380} height={245} />
-                                        <Image src={"/images/select2.png"} alt='decorate' width={380} height={245} />
-                                    </div>
                                     <h3>Доп.услуги</h3>
                                     <div className={styles.checks}>
-                                        {ads2.map((e: string) => {
-                                            return <div key={e} className={styles.checkbox}>
-                                                <input onClick={() => {
-                                                    setChecked(!checked)
-                                                    setSelected2(e)
-                                                }} checked={checked} style={e === selected2 ? {
-                                                    background: "#46247c"
-                                                } : {}} type="checkbox" name="" id="" />
+                                        {ads2.map((e: string, index: number) => {
+                                            return <div key={e} className={e === selected2 ? `${styles.checkbox} ${styles.boxShadow}` : styles.checkbox} onClick={() => {
+                                                setChecked(!checked)
+                                                setSelected2(e)
+                                            }}>
+                                                <Image src={`/images/select${index + 3}.png`} alt='decorate' width={380} height={245} />
                                                 <p>{e}</p>
                                             </div>
                                         })}
@@ -79,13 +78,16 @@ const Cost = () => {
                             <>
                                 <div className={styles.controller}>
                                     {contoller.map((e: number) => {
-                                        return <div key={e} className={styles.control}>
+                                        const id = uuidv4()
+                                        return <div key={id} className={styles.control}>
                                             {e > 1 ? <div className={styles.line}>
                                                 <svg width="78" height="3" viewBox="0 0 78 3" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <line y1="1.5" x2="78" y2="1.5" stroke={counter < e ? "#E0E0E0" : "#46247c"} stroke-width="3" stroke-dasharray="7 7" />
                                                 </svg>
                                             </div> : null}
-                                            <div className={styles.circle} style={counter < e ? {
+                                            <div className={styles.circle} onClick={() => {
+                                                setCounter(e)
+                                            }} style={counter < e ? {
                                                 background: "#F2F2F2",
                                                 filter: "none"
                                             } : {}}>
@@ -100,11 +102,27 @@ const Cost = () => {
                                         <div className={styles.sectS}>
                                             <div className={styles.sect}>
                                                 <h4>Выберите общую площадь квартиры</h4>
-                                                <div className={styles.multiRange}><MultipleRange/></div>
+                                                <Image src={'/images/livinroom.png'} alt=' image of livin room' width={780} height={387} />
+                                                <div className={styles.multiRange}>
+                                                    <MultiRangeSlider max={350} min={0} onChange={(num: {
+                                                        min: number
+                                                        max: number
+                                                    }) => { setVal(num.max) }} />
+                                                </div>
+                                                <div className={styles.val}>{val}м²</div>
                                             </div>
                                             <div className={styles.sect}>
                                                 <h4>Количество комнат</h4>
-                                                <div></div>
+                                                <div className={styles.selectImageOfLivingRoom}>
+                                                    {[1, 2, 3, 4, 5, 6].map((iterable: number) => {
+                                                        return <div key={uuidv4()} onClick={() => {
+                                                            setSelectedRoom(iterable)
+                                                        }} className={selectedRoom === iterable ? styles.selectImageS : styles.selectImage}>
+                                                            <p>{iterable}</p>
+                                                        </div>
+                                                    })}
+                                                </div>
+
                                             </div>
                                         </div>
                                         <button onClick={() => {
@@ -116,13 +134,16 @@ const Cost = () => {
                                 <>
                                     <div className={styles.controller}>
                                         {contoller.map((e: number) => {
-                                            return <div key={e} className={styles.control}>
+                                            const id = uuidv4()
+                                            return <div key={id} className={styles.control}>
                                                 {e > 1 ? <div className={styles.line}>
                                                     <svg width="78" height="3" viewBox="0 0 78 3" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <line y1="1.5" x2="78" y2="1.5" stroke={counter < e ? "#E0E0E0" : "#46247c"} stroke-width="3" stroke-dasharray="7 7" />
                                                     </svg>
                                                 </div> : null}
-                                                <div className={styles.circle} style={counter < e ? {
+                                                <div className={styles.circle} onClick={() => {
+                                                    setCounter(e)
+                                                }} style={counter < e ? {
                                                     background: "#F2F2F2",
                                                     filter: "none"
                                                 } : {}}>
@@ -137,7 +158,8 @@ const Cost = () => {
                                             <h3>Стиль ремонта</h3>
                                             <div className={styles.checks}>
                                                 {ads.map((e: string) => {
-                                                    return <div key={e} className={styles.checkbox}>
+                                                    const id = uuidv4()
+                                                    return <div key={id} className={styles.checkbox}>
                                                         <input onClick={() => {
                                                             setChecked(!checked)
                                                             setSelected(e)
@@ -155,7 +177,7 @@ const Cost = () => {
                                             <h3>Доп.услуги</h3>
                                             <div className={styles.checks}>
                                                 {ads2.map((e: string) => {
-                                                    return <div key={e} className={styles.checkbox}>
+                                                    return <div key={uuidv4()} className={styles.checkbox}>
                                                         <input onClick={() => {
                                                             setChecked(!checked)
                                                             setSelected2(e)
@@ -175,13 +197,15 @@ const Cost = () => {
                                     <>
                                         <div className={styles.controller}>
                                             {contoller.map((e: number) => {
-                                                return <div key={e} className={styles.control}>
+                                                return <div key={uuidv4()} className={styles.control}>
                                                     {e > 1 ? <div className={styles.line}>
                                                         <svg width="78" height="3" viewBox="0 0 78 3" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                             <line y1="1.5" x2="78" y2="1.5" stroke={counter < e ? "#E0E0E0" : "#46247c"} stroke-width="3" stroke-dasharray="7 7" />
                                                         </svg>
                                                     </div> : null}
-                                                    <div className={styles.circle} style={counter < e ? {
+                                                    <div className={styles.circle} onClick={() => {
+                                                        setCounter(e)
+                                                    }} style={counter < e ? {
                                                         background: "#F2F2F2",
                                                         filter: "none"
                                                     } : {}}>
@@ -196,7 +220,7 @@ const Cost = () => {
                                                 <h3>Итого</h3>
                                                 <div className={styles.checks}>
                                                     {ads.map((e: string) => {
-                                                        return <div key={e} className={styles.checkbox}>
+                                                        return <div key={uuidv4()} className={styles.checkbox}>
                                                             <input onClick={() => {
                                                                 setChecked(!checked)
                                                                 setSelected(e)
@@ -214,7 +238,7 @@ const Cost = () => {
                                                 <h3>Доп.услуги</h3>
                                                 <div className={styles.checks}>
                                                     {ads2.map((e: string) => {
-                                                        return <div key={e} className={styles.checkbox}>
+                                                        return <div key={uuidv4()} className={styles.checkbox}>
                                                             <input onClick={() => {
                                                                 setChecked(!checked)
                                                                 setSelected2(e)

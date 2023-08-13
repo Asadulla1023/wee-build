@@ -12,13 +12,11 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "swiper/css/effect-cards";
 import { CARD_OBJECT } from "@/constant";
-
+import { v4 as uuidv4 } from 'uuid';
 const Portfolio = () => {
   return (
     <div
       id="portfolio"
-      data-aos="fade-up"
-      data-aos-duration="500"
       className={styles.portfolio}
     >
       <div className={styles.container}>
@@ -59,12 +57,13 @@ const Portfolio = () => {
               style={{ paddingBottom: 70 }}
               className={styles.swiper}
             >
-              {CARD_OBJECT.map((e: ICard, index: number) => {
+              {CARD_OBJECT.map((e: ICard) => {
+                const id = uuidv4()
                 return (
-                  <div key={index}>
+                  <div key={id}>
                     {" "}
                     <SwiperSlide className={styles.addItem}>
-                      <div className={styles.card} key={index}>
+                      <div className={styles.card}>
                         <div className={styles.image}>
                           <div className={styles.process}>
                             <p>{e.process}</p>
@@ -76,9 +75,9 @@ const Portfolio = () => {
                             pagination={{ clickable: true }}
                           >
                             {e.images.map((image: string) => {
+                              const id = uuidv4()
                               return (
-                                <>
-                                  <SwiperSlide>
+                                  <SwiperSlide key={id}>
                                     <Image
                                       src={image}
                                       width={380}
@@ -86,7 +85,6 @@ const Portfolio = () => {
                                       alt="wefwef"
                                     />
                                   </SwiperSlide>
-                                </>
                               );
                             })}
                           </Swiper>
@@ -104,8 +102,9 @@ const Portfolio = () => {
                           </div>
                           <div className={styles.global}>
                             {e.props.map((prop: ICardProps) => {
+                              const id = uuidv4()
                               return (
-                                <div key={prop.title}>
+                                <div key={id}>
                                   <Image
                                     src={prop.image}
                                     width={41}

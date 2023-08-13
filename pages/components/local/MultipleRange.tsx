@@ -20,7 +20,7 @@ const MultipleRange = () => {
       trackColor="#eeeeee"
       trackSize={24}
       data={arrayOfNumbers}
-      dataIndex={169}      
+      dataIndex={169}     
     />
   );
 };

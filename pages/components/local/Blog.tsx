@@ -1,20 +1,17 @@
 import React, { useEffect } from "react";
 import styles from "@/styles/blog.module.css";
 import Container from "../global/Container";
-import AOS from "aos";
+import { v4 as uuidv4 } from 'uuid';
 const Blog = () => {
-  useEffect(() => {
-    AOS.init();
-  }, []);
   return (
-    <Container id="blog" data-aos="fade-up" data-aos-duration="500" >{<div className={styles.blogSection}>
+    <Container id="blog">{<div className={styles.blogSection}>
       <div className={styles.blogTitle}>
         <h1>БЛОГ</h1>
       </div>
       <div className={styles.blogCard}>
         {[1, 2, 3].map((e) => {
           return (
-            <div key={e} className={styles.card}>
+            <div key={uuidv4()} className={styles.card}>
               <div className={styles.table}>
                 <video
                   style={{ borderRadius: 20 }}

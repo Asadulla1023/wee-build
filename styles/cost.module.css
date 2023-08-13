@@ -97,8 +97,24 @@
 .checks {
   display: flex;
   width: 100%;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 1.5rem;
   align-items: center;
+}
+
+.checkbox {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+  box-shadow: 0px 1px 17px 0px rgba(87, 87, 87, 0.14);
+  border-radius: 20px;
+  transition: 0.2s ease-in-out;
+}
+
+.boxShadow {
+  transition: 0.2s ease-in-out;
+  box-shadow: 0px 1px 17px 0px rgba(68, 33, 123, 0.73) !important;
 }
 
 .checkbox > p {
@@ -157,13 +173,14 @@
 .sectS {
   display: flex;
   justify-content: space-evenly;
-  width: 100%;
+  flex-direction: column;
+  width: fit-content;
 }
 
 .sect {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .sect > h4 {
@@ -171,5 +188,48 @@
   font-size: 19px;
   font-style: normal;
   font-weight: 450;
+  text-align: center;
   line-height: normal;
+}
+
+.sect:last-child {
+  margin-top: 3rem;
+}
+
+.selectImageOfLivingRoom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.selectImage, .selectImageS {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 71px;
+  height: 69px;
+  border-radius: 20px;
+  cursor: pointer;
+  background: #fff;
+  box-shadow: 0px 1px 17px 0px rgba(87, 87, 87, 0.14);
+  transition: 0.5s ease-in-out;
+}
+
+.selectImage:hover, .selectImageS {
+  transition: 0.5s ease-in-out;
+  box-shadow: 0px 1px 17px 0px #44217B;
+}
+
+.val {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  font-size: 35px;
+}
+
+.selectImage > p, .selectImageS > p {
+  color: #454545;
+  font-size: 35px !important;
 }

@@ -7,6 +7,10 @@
   font-family: 'Futura PT', sans-serif;
 }
 
+html {
+  scroll-behavior: smooth !important;
+}
+
 a {
   text-decoration: none;
   transition: 0.3s linear;
@@ -44,3 +48,4 @@ li {
 .swiper {
   width: 100%;
 }
+
