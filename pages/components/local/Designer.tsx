@@ -1,25 +1,38 @@
-import React from 'react'
-import Image from 'next/image'
-import styles from "@/styles/designer.module.css"
-import Link from 'next/link'
+import React from "react";
+import Image from "next/image";
+import styles from "@/styles/designer.module.css";
+import Link from "next/link";
 
 export default function Designer() {
-    return (
-        <div  data-aos="fade-up" data-aos-duration="500" className={styles.designer} style={{
-            backgroundImage: `url(images/bg.png)`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover"
-        }}>
-            <div className={styles.container}>
-                <h1>Дизайнерский Ремонт под ключ</h1>
-                <p>Выполним без вашего участия, точно в срок, по договору и фиксированной цене</p>
-                <Link href={"#company"}>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="14" viewBox="0 0 26 14" fill="none">
+  return (
+    <div
+      data-aos="fade-up"
+      data-aos-duration="500"
+      className={styles.designer}
+      style={{
+        backgroundImage: `url(images/bg.png)`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
+    >
+      <div className={styles.container}>
+        <h1>Дизайнерский Ремонт под ключ</h1>
+        <p>
+          Выполним без вашего участия, точно в срок, по договору и фиксированной
+          цене
+        </p>
+        <Link href={"#company"}>
+          {/* <svg xmlns="http://www.w3.org/2000/svg" width="26" height="14" viewBox="0 0 26 14" fill="none">
                         <path d="M23.8079 0.376226C23.9319 0.256047 24.0778 0.162095 24.2373 0.0997322C24.3967 0.0373696 24.5666 0.00781772 24.7372 0.0127656C24.9078 0.0177134 25.0758 0.0570635 25.2315 0.128569C25.3873 0.200074 25.5278 0.302333 25.645 0.42951C25.7622 0.556686 25.8538 0.706289 25.9147 0.869775C25.9755 1.03326 26.0043 1.20743 25.9995 1.38234C25.9947 1.55724 25.9563 1.72946 25.8865 1.88916C25.8168 2.04886 25.7171 2.19291 25.593 2.31309L13.8999 13.6359C13.6586 13.8697 13.3393 14 13.0073 14C12.6753 14 12.356 13.8697 12.1147 13.6359L0.420288 2.31309C0.293533 2.1937 0.191177 2.04968 0.119167 1.8894C0.0471573 1.72911 0.0069294 1.55575 0.000818253 1.37939C-0.00529289 1.20303 0.0228348 1.02718 0.0835686 0.862059C0.144302 0.696937 0.236429 0.545833 0.354601 0.417525C0.472773 0.289217 0.614632 0.186262 0.77194 0.11464C0.929247 0.0430185 1.09887 0.0041582 1.27095 0.000315818C1.44303 -0.00352656 1.61414 0.0277253 1.77434 0.0922572C1.93454 0.156789 2.08063 0.253314 2.20414 0.376226L13.0073 10.8358L23.8079 0.376226Z" fill="#787878" />
-                    </svg>
-                </Link>
-                <button>ОБСУДИТЬ ПРОЕКТ</button>
-            </div>
-        </div>
-    )
+                    </svg> */}
+          <div className={styles.arrow}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </Link>
+        <button>ОБСУДИТЬ ПРОЕКТ</button>
+      </div>
+    </div>
+  );
 }

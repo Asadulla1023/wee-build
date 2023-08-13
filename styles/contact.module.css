@@ -313,7 +313,6 @@
 
     .map {
         width: 300px !important;
-        /* padding: 0px 20px; */
         justify-content: center;
         display: flex;
         align-items: center;
