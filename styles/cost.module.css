@@ -109,20 +109,46 @@
   height: 350px;
   box-shadow: 0px 1px 17px 0px rgba(87, 87, 87, 0.14);
   border-radius: 20px;
-  transition: 0.2s ease-in-out;
+  transition: 0.5s linear;
+}
+
+.checkboxRep {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+  box-shadow: 0px 1px 17px 0px rgba(87, 87, 87, 0.14);
+  border-radius: 20px;
+  transition: box-shadow 0.5s linear;
+  -moz-transition: box-shadow 0.5s linear; /* Firefox 4 */
+  -webkit-transition: box-shadow 0.5s linear; /* Safari and Chrome */
+  -o-transition: box-shadow 0.5s linear; /* Opera */
+  -ms-transition: box-shadow 0.5s linear; /* Explorer 10 */
+}
+
+.boxShadowRep {
+  transition: 0.2s linear;
+  box-shadow: 0px 1px 17px 0px rgba(68, 33, 123, 0.73) !important;
+  transition: box-shadow 0.2s linear;
+  -moz-transition: box-shadow 0.2s linear; /* Firefox 4 */
+  -webkit-transition: box-shadow 0.2s linear; /* Safari and Chrome */
+  -o-transition: box-shadow 0.2s linear; /* Opera */
+  -ms-transition: box-shadow 0.2s linear; /* Explorer 10 */
 }
 
 .boxShadow {
-  transition: 0.2s ease-in-out;
+  transition: 0.2s linear;
   box-shadow: 0px 1px 17px 0px rgba(68, 33, 123, 0.73) !important;
 }
 
-.checkbox > p {
+.checkbox > p,
+.checkboxRep > p {
   color: #787878;
   font-size: 18px;
   font-style: normal;
   font-weight: 450;
   line-height: normal;
+  margin: auto;
 }
 
 .checkbox > input[type="checkbox"] {
@@ -203,7 +229,8 @@
   gap: 0.5rem;
 }
 
-.selectImage, .selectImageS {
+.selectImage,
+.selectImageS {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -216,9 +243,10 @@
   transition: 0.5s ease-in-out;
 }
 
-.selectImage:hover, .selectImageS {
+.selectImage:hover,
+.selectImageS {
   transition: 0.5s ease-in-out;
-  box-shadow: 0px 1px 17px 0px #44217B;
+  box-shadow: 0px 1px 17px 0px #44217b;
 }
 
 .val {
@@ -229,7 +257,8 @@
   font-size: 35px;
 }
 
-.selectImage > p, .selectImageS > p {
+.selectImage > p,
+.selectImageS > p {
   color: #454545;
   font-size: 35px !important;
 }
