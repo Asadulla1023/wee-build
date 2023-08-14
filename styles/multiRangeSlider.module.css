@@ -113,12 +113,24 @@
 }
 
 @media screen and (max-width: 815px) {
-    .thumb {
-      width: 90%;
-    }
+  .thumb {
+    width: 60%;
+  }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 815px) {
+  .thumb {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 555px) {
+  .thumb {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 465px) {
   .thumb {
     width: 100%;
   }
