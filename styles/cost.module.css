@@ -7,7 +7,7 @@
   gap: 2.5rem;
 }
 
-.content>h1 {
+.content > h1 {
   color: #454545;
   text-align: right;
   font-family: Futura PT;
@@ -18,7 +18,7 @@
   text-transform: uppercase;
 }
 
-.content>p {
+.content > p {
   text-align: center;
   margin-bottom: 2rem;
   color: #787878;
@@ -76,7 +76,7 @@
   padding: 2rem;
 }
 
-.selection>.container {
+.selection > .container {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -88,7 +88,7 @@
 .container2 {
   width: 100%;
   display: flex;
-  gap: 2rem;
+  justify-content: center;
   gap: 1.5rem;
 }
 
@@ -156,8 +156,8 @@
   box-shadow: 0px 1px 17px 0px rgba(68, 33, 123, 0.73) !important;
 }
 
-.checkbox>p,
-.checkboxRep>p {
+.checkbox > p,
+.checkboxRep > p {
   color: #787878;
   font-size: 18px;
   font-style: normal;
@@ -172,7 +172,7 @@
   cursor: pointer;
 }
 
-.checkboxInput>p {
+.checkboxInput > p {
   color: #787878;
   font-size: 18px;
   font-style: normal;
@@ -187,12 +187,12 @@
   flex-direction: column;
 }
 
-.type>h3 {
+.type > h3 {
   font-size: 19px !important;
   margin-bottom: 0.5rem !important;
 }
 
-.checkboxInput>input[type="checkbox"] {
+.checkboxInput > input[type="checkbox"] {
   border-radius: 5px;
   width: 21px;
   height: 21px;
@@ -210,6 +210,12 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  transition: 0.2s linear;
+}
+
+.checkbox:hover {
+  box-shadow: 0px 1px 17px 0px rgba(68, 33, 123, 0.73) !important;
+  transition: 0.2s linear;
 }
 
 .images {
@@ -219,27 +225,31 @@
   gap: 1.25rem;
 }
 
-
 .images img {
   width: 380px;
 }
 
 .selection button {
   margin-top: 2rem;
-  background: linear-gradient(0deg, #44217b 0%, rgb(144, 29, 197) 100%);
-  box-shadow: 0px 4px 4px 0px #1e1035;
-  border: none;
+  border: 5px solid #44217b;
+  border-radius: 20px;
+  height: 80px;
+  background: linear-gradient(#44217b 0 0) no-repeat
+    calc(200% - var(--i, 0) * 100%) 100% / 200%
+    calc(100% * var(--i, 0) + 0.08em);
+  transition: 0.2s calc(var(--i, 0) * 0.4s),
+    background-position 0.2s calc(0.3s - calc(var(--i, 0) * 0.3s));
+  font-size: 19px;
   cursor: pointer;
+  width: 300px;
+}
+
+.selection button:hover {
+  box-shadow: none;
+  opacity: 0.9;
+  --i: 1;
   color: #fff;
-  text-align: center;
-  font-size: 22px;
-  font-style: normal;
-  font-weight: 400;
-  padding: 17px 60px;
-  border-radius: 10px;
-  line-height: normal;
-  letter-spacing: 1.1px;
-  cursor: pointer;
+  transition: 0.2s linear;
 }
 
 .sectS {
@@ -255,7 +265,7 @@
   gap: 1.5rem;
 }
 
-.sect>h4 {
+.sect > h4 {
   color: #454545;
   font-size: 19px;
   font-style: normal;
@@ -303,8 +313,8 @@
   font-size: 35px;
 }
 
-.selectImage>p,
-.selectImageS>p {
+.selectImage > p,
+.selectImageS > p {
   color: #454545;
   font-size: 35px !important;
 }
@@ -323,7 +333,7 @@
   align-items: center;
 }
 
-.totalArea>h3 {
+.totalArea > h3 {
   font-size: 19px;
   text-align: center;
 }
@@ -333,19 +343,20 @@
   flex-direction: column;
 }
 
-.rooms>h3 {
+.rooms > h3 {
   font-size: 19px !important;
 }
 
-.rooms>div {
+.rooms input {
   background: #fbfbfb;
+  outline: none;
+  border: none;
+  /* padding: 10px; */
+  padding-left: 30%;
   border-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  font-size: 18px;
-  height: 63px;
+  font-size: 20px;
+  width: 100px;
+  height: 50px;
   box-shadow: 0px 1px 17px 0px rgba(87, 87, 87, 0.14);
   cursor: pointer;
 }
@@ -371,25 +382,25 @@
   width: 380px;
 }
 
-.cardPriceItem>button {
+.cardPriceItem > button {
   width: 100%;
-  margin-top: 2rem;
-  background: linear-gradient(0deg, #44217b 0%, rgb(144, 29, 197) 100%);
-  box-shadow: 0px 4px 4px 0px #1e1035;
-  border: none;
-  cursor: pointer;
   margin-top: auto;
+  border: 5px solid #44217b;
+  border-radius: 20px;
+  height: 100px;
+  background: linear-gradient(#44217b 0 0) no-repeat
+    calc(200% - var(--i, 0) * 100%) 100% / 200%
+    calc(100% * var(--i, 0) + 0.08em);
+  transition: 0.2s calc(var(--i, 0) * 0.4s),
+    background-position 0.2s calc(0.3s - calc(var(--i, 0) * 0.3s));
+  font-size: 19px;
+}
+
+.cardPriceItem > button:hover {
+  --i: 1;
   color: #fff;
-  text-align: center;
-  font-size: 22px;
-  font-style: normal;
-  font-weight: 400;
-  padding: 34px 60px;
-  border-radius: 10px;
-  line-height: normal;
-  letter-spacing: 1.1px;
   cursor: pointer;
-  transition: 0.2s ease-in-out;
+  box-shadow: 0px 1px 17px 0px rgba(202, 202, 202, 0.25);
 }
 
 .desc {
@@ -399,20 +410,20 @@
   gap: 0.4rem;
 }
 
-.desc>p {
+.desc > p {
   width: 260px;
   text-align: center;
   font-size: 18px;
   color: #787878;
 }
 
-.desc>h3 {
+.desc > h3 {
   font-size: 24px;
   font-weight: 450;
   color: #454545;
 }
 
-.desc>.line {
+.desc > .line {
   width: 55px;
   height: 2px;
   background: #000;
@@ -432,11 +443,11 @@
     height: auto;
   }
 
-  .desc>h3 {
+  .desc > h3 {
     font-size: 20px;
   }
 
-  .cardPriceItem>button {
+  .cardPriceItem > button {
     padding: 25px 0px;
   }
 }
@@ -489,7 +500,6 @@
   .checkbox {
     width: 380px;
     margin: 0 auto;
-
   }
 
   .checkbox:nth-child(2) {
@@ -551,7 +561,6 @@
 }
 
 @media screen and (max-width: 490px) {
-
   .selectImage,
   .selectImageS {
     width: 60px;
@@ -565,7 +574,6 @@
 }
 
 @media screen and (max-width: 460px) {
-
   .checkbox:nth-child(2) {
     margin-top: 50px;
   }
@@ -577,11 +585,9 @@
   .images img {
     width: 100% !important;
   }
-
 }
 
 @media screen and (max-width: 418px) {
-
   .selectImage,
   .selectImageS {
     width: 48px;
@@ -593,7 +599,6 @@
   .selection h3 {
     font-size: 25px;
   }
-
 
   .checks img {
     width: 100% !important;
@@ -618,8 +623,6 @@
 
 /* 4 - section */
 
-
-
 @media screen and (max-width: 1160px) {
   .container2 {
     flex-wrap: wrap;
@@ -643,15 +646,15 @@
     height: auto;
   }
 
-  .desc>h3 {
+  .desc > h3 {
     font-size: 18px;
   }
 
-  .desc>p {
+  .desc > p {
     font-size: 15px !important;
   }
 
-  .cardPriceItem>button {
+  .cardPriceItem > button {
     padding: 25px 0px;
   }
 }
@@ -662,7 +665,6 @@
     margin: auto;
     margin-bottom: 400px !important;
     justify-content: center;
-
   }
 
   .cardPriceItem {
@@ -673,7 +675,6 @@
     width: 300px !important;
     height: auto;
   }
-
 }
 
 @media screen and (max-width: 840px) {
@@ -689,5 +690,4 @@
     width: 320px !important;
     height: auto;
   }
-
 }

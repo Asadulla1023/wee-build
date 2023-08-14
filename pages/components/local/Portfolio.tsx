@@ -77,7 +77,7 @@ const Portfolio = () => {
                             {e.images.map((image: string) => {
                               const id = uuidv4()
                               return (
-                                  <SwiperSlide key={id}>
+                                  <SwiperSlide key={uuidv4()}>
                                     <Image
                                       src={image}
                                       width={380}
@@ -104,7 +104,7 @@ const Portfolio = () => {
                             {e.props.map((prop: ICardProps) => {
                               const id = uuidv4()
                               return (
-                                <div key={id}>
+                                <div key={uuidv4()}>
                                   <Image
                                     src={prop.image}
                                     width={41}

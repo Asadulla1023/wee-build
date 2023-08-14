@@ -7,6 +7,7 @@ import Burger from '../local/Burger'
 import { v4 as uuidv4 } from 'uuid';
 import Navigation from '../local/Navigation'
 const Header = () => {
+    const [hovered, setHovered] = useState<string>("")
     const [open, setOpen] = useState<boolean>(false)
     useEffect(() => {
         if (open === true) {
@@ -23,8 +24,13 @@ const Header = () => {
                 </Link>
                 <ul className={styles.navigation}>
                     {NAV.map(({ title, url }) => {
-                        return <li key={uuidv4()}>
+                        return <li onMouseOver={()=> {
+                            setHovered(title)
+                        }} onMouseLeave={()=> {
+                            setHovered("")
+                        }} key={uuidv4()}>
                             <Link href={url}>{title}</Link>
+                            <div className={hovered === title ? `${styles.line} ${styles.hovered}`: styles.line} />
                         </li>
                     })}
                 </ul>

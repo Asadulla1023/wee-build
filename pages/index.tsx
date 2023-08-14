@@ -15,8 +15,17 @@ import Footer from "./components/global/Footer";
 import Contact from "./components/local/Contact";
 import Container from "./components/global/Container";
 import { useState } from "react";
+
+import { motion, useScroll, useSpring } from "framer-motion";
+
 export default function Home() {
   const [modal, setModal] = useState<boolean>(false)
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
   return (
     <>
       <Head>
@@ -25,6 +34,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/images/logo.png" />
       </Head>
+      <motion.div className={styles.progressBar} style={{ scaleX }} />
       <main className={styles.main}>
         <Header />
         <Designer />

@@ -7,6 +7,8 @@ import MultiRangeSlider from './MultiRangeSlider'
 import RoundSlider from './RoundSlider';
 import { CARD_PRICE } from '@/constant';
 import ICardPrice from '@/interfaces/ICardPrice';
+import OrderModal from './OrderModal';
+import ICardProps from '@/interfaces/ICardProps';
 
 const Cost = () => {
     const [checked, setChecked] = useState<boolean>(false)
@@ -20,6 +22,24 @@ const Cost = () => {
     const [val, setVal] = useState<number>(1)
     const [selectedRoom, setSelectedRoom] = useState<number>(1)
     const [selectedRepair, setSelectedRepair] = useState<string>("")
+    const [abled, setAbled] = useState(false)
+    const [orderOpen, setOrderOpen] = useState(false)
+    const [props, setProps] = useState<ICardPrice | undefined>()
+    useEffect(() => {
+        if (selected2 === "Новостройка") {
+            setSelected2("")
+            console.log(selected2);
+        }
+    }, [selected2])
+
+    useEffect(() => {
+        if (orderOpen === true) {
+          document.body.style.overflow = "hidden"
+        }else {
+          document.body.style.overflow = "auto"
+        }
+      }, [orderOpen])
+    const value = String(selectedRoom).split("")[0]
     return (
         <Container id='cost' >
             {<>
@@ -61,7 +81,7 @@ const Cost = () => {
                                     </div>
                                     <h3>Доп.услуги</h3>
                                     <div className={styles.checks}>
-                                        {ads2.map((e: string, index: number) => {
+                                        {selected !== "Новостройка" ? ads2.map((e: string, index: number) => {
                                             return <div key={e} className={e === selected2 ? `${styles.checkbox} ${styles.boxShadow}` : styles.checkbox} onClick={() => {
                                                 setChecked(!checked)
                                                 setSelected2(e)
@@ -69,7 +89,14 @@ const Cost = () => {
                                                 <Image src={`/images/select${index + 3}.png`} alt='decorate' width={380} height={245} />
                                                 <p>{e}</p>
                                             </div>
-                                        })}
+                                        }) : <div className={selected2 === ads2[0] ? `${styles.checkbox} ${styles.boxShadow}` : styles.checkbox} onClick={() => {
+                                            setChecked(!checked)
+                                            setSelected2(ads2[0])
+                                        }}>
+                                            <Image src={`/images/select3.png`} alt='decorate' width={380} height={245} />
+                                            <p>{ads2[0]}</p>
+                                        </div>
+                                        }
                                     </div>
                                     <button onClick={() => {
                                         setCounter(counter + 1)
@@ -225,11 +252,22 @@ const Cost = () => {
                                                 </div>
                                                 <div className={styles.rooms}>
                                                     <h3>Количество комнат</h3>
-                                                    <div onClick={() => {
-                                                        setCounter(2)
-                                                    }} className={styles.seletedRooms}>
-                                                        {selectedRoom}
-                                                    </div>
+                                                    <div onDoubleClick={() => {
+                                                        setAbled(!abled)
+                                                    }}><input max={6} maxLength={2} disabled={!abled} value={value} onChange={(t) => {
+                                                        const test = /d/.test(t.target.value)
+                                                        if (test === false) {
+                                                            console.log(t.target.value[0])
+                                                            setSelectedRoom(Number(t.target.value))
+                                                            if (Number(t.target.value) === 0) {
+                                                                setSelectedRoom(1)
+                                                            }
+                                                            if (Number(t.target.value) >= 6) {
+                                                                console.log(t.target.value);
+                                                                setSelectedRoom(6)
+                                                            }
+                                                        }
+                                                    }} type='text' className={styles.seletedRooms} /></div>
                                                 </div>
                                                 <div className={styles.roomType}>
                                                     <div className={styles.type}>
@@ -269,10 +307,14 @@ const Cost = () => {
                                                         <div className={styles.line} />
                                                         <p>{prop.desc}</p>
                                                     </div>
-                                                    <button>{prop.price}.000$</button>
+                                                    <button onClick={() => {
+                                                        setOrderOpen(!orderOpen)
+                                                        setProps(prop)
+                                                    }}>{prop.price}.000$</button>
                                                 </div>
                                             })}
                                         </div>
+                                        <OrderModal setOrderOpen={setOrderOpen} price={props?.price} title={props?.title} orderOpen={orderOpen} />
                                     </> : null}
                 </div></>}
 

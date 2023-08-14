@@ -57,7 +57,16 @@
   flex-direction: column;
   gap: 10px;
 }
-
+.progressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10000;
+  height: 10px;
+  background: linear-gradient(-90deg,#44217b, #691eff);
+  transform-origin: 0%;
+}
 .circle {
   background: #44217b;
   width: 80px;
