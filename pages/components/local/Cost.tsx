@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import styles from "@/styles/cost.module.css"
 import Container from '../global/Container'
 import Image from 'next/image'
-import MultipleRange from './MultipleRange'
 import { v4 as uuidv4 } from 'uuid';
 import MultiRangeSlider from './MultiRangeSlider'
 const Cost = () => {
@@ -12,9 +11,11 @@ const Cost = () => {
     const [selected2, setSelected2] = useState<string>("")
     const ads: string[] = ["Новостройка", "Вторичка"]
     const ads2: string[] = ["Межкомнатные перегородки", "Демонтаж"]
+    const ads3: string[] = ["Стандарт", "Неоклассика", "Классика", "Под дизайн"]
     const [counter, setCounter] = useState<number>(1)
     const [val, setVal] = useState<number>(1)
     const [selectedRoom, setSelectedRoom] = useState<number>(1)
+    const [selectedRepair, setSelectedRepair] = useState<string>("")
     return (
         <Container id='cost' >
             {<>
@@ -24,8 +25,7 @@ const Cost = () => {
                         <>
                             <div className={styles.controller}>
                                 {contoller.map((e: number) => {
-                                    const id = uuidv4()
-                                    return <div key={id} className={styles.control}>
+                                    return <div key={uuidv4()} className={styles.control}>
                                         {e > 1 ? <div className={styles.line}>
                                             <svg width="78" height="3" viewBox="0 0 78 3" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <line y1="1.5" x2="78" y2="1.5" stroke={counter < e ? "#E0E0E0" : "#46247c"} stroke-width="3" stroke-dasharray="7 7" />
@@ -117,7 +117,7 @@ const Cost = () => {
                                                     {[1, 2, 3, 4, 5, 6].map((iterable: number) => {
                                                         return <div key={uuidv4()} onClick={() => {
                                                             setSelectedRoom(iterable)
-                                                        }} className={selectedRoom === iterable ? styles.selectImageS : styles.selectImage}>
+                                                        }} className={selectedRoom === iterable ? `${styles.selectImageS} ${styles.selectImage}` : styles.selectImage}>
                                                             <p>{iterable}</p>
                                                         </div>
                                                     })}
@@ -157,33 +157,11 @@ const Cost = () => {
                                         <div className={styles.container}>
                                             <h3>Стиль ремонта</h3>
                                             <div className={styles.checks}>
-                                                {ads.map((e: string) => {
-                                                    const id = uuidv4()
-                                                    return <div key={id} className={styles.checkbox}>
-                                                        <input onClick={() => {
-                                                            setChecked(!checked)
-                                                            setSelected(e)
-                                                        }} checked={checked} style={e === selected ? {
-                                                            background: "#46247c"
-                                                        } : {}} type="checkbox" name="" id="" />
-                                                        <p>{e}</p>
-                                                    </div>
-                                                })}
-                                            </div>
-                                            <div className={styles.images}>
-                                                <Image src={"/images/select1.png"} alt='decorate' width={380} height={245} />
-                                                <Image src={"/images/select2.png"} alt='decorate' width={380} height={245} />
-                                            </div>
-                                            <h3>Доп.услуги</h3>
-                                            <div className={styles.checks}>
-                                                {ads2.map((e: string) => {
-                                                    return <div key={uuidv4()} className={styles.checkbox}>
-                                                        <input onClick={() => {
-                                                            setChecked(!checked)
-                                                            setSelected2(e)
-                                                        }} checked={checked} style={e === selected2 ? {
-                                                            background: "#46247c"
-                                                        } : {}} type="checkbox" name="" id="" />
+                                                {ads3.map((e: string, index: number) => {
+                                                    return <div key={uuidv4()} className={e === selectedRepair ? `${styles.checkboxRep} ${styles.boxShadowRep}` : styles.checkboxRep} onClick={() => {
+                                                        setSelectedRepair(e)
+                                                    }}>
+                                                        <Image src={`/images/repair${index + 1}.png`} alt='decorate' width={244} height={211} />
                                                         <p>{e}</p>
                                                     </div>
                                                 })}
@@ -218,37 +196,13 @@ const Cost = () => {
                                         <div className={styles.selection}>
                                             <div className={styles.container}>
                                                 <h3>Итого</h3>
-                                                <div className={styles.checks}>
-                                                    {ads.map((e: string) => {
-                                                        return <div key={uuidv4()} className={styles.checkbox}>
-                                                            <input onClick={() => {
-                                                                setChecked(!checked)
-                                                                setSelected(e)
-                                                            }} checked={checked} style={e === selected ? {
-                                                                background: "#46247c"
-                                                            } : {}} type="checkbox" name="" id="" />
-                                                            <p>{e}</p>
-                                                        </div>
-                                                    })}
-                                                </div>
-                                                <div className={styles.images}>
-                                                    <Image src={"/images/select1.png"} alt='decorate' width={380} height={245} />
-                                                    <Image src={"/images/select2.png"} alt='decorate' width={380} height={245} />
-                                                </div>
-                                                <h3>Доп.услуги</h3>
-                                                <div className={styles.checks}>
-                                                    {ads2.map((e: string) => {
-                                                        return <div key={uuidv4()} className={styles.checkbox}>
-                                                            <input onClick={() => {
-                                                                setChecked(!checked)
-                                                                setSelected2(e)
-                                                            }} checked={checked} style={e === selected2 ? {
-                                                                background: "#46247c"
-                                                            } : {}} type="checkbox" name="" id="" />
-                                                            <p>{e}</p>
-                                                        </div>
-                                                    })}
-                                                </div>
+                                                <div className={styles.roomType}><div className={styles.type}>
+                                                    </div>
+                                                    <div className={styles.adServices}></div>
+                                                    </div>
+                                                <div className={styles.totalArea}></div>
+                                                <div className={styles.rooms}></div>
+                                                <div className={styles.styleRepair}></div>
                                             </div>
                                         </div>
                                     </> : null}
