@@ -2,7 +2,7 @@ import React from "react";
 import styles from "@/styles/faq.module.css";
 import { useState } from "react";
 import Image from "next/image";
-import { v4 as uuidv4 } from "uuid"
+import { v4 as uuidv4 } from "uuid";
 const Faq = () => {
   const [isOpened, setIsOpened] = useState<boolean>(false);
   const [isSelected, setIsSelected] = useState<number>(0);
@@ -15,7 +15,7 @@ const Faq = () => {
           </div>
           <div className={styles.faqs}>
             {[1, 2, 3, 4, 5].map((e: number) => {
-              const id = uuidv4()
+              const id = uuidv4();
               return (
                 <div
                   key={id}
@@ -36,8 +36,8 @@ const Faq = () => {
                         style={
                           isSelected !== e
                             ? {
-                              transform: "rotate(-180deg)",
-                            }
+                                transform: "rotate(-180deg)",
+                              }
                             : {}
                         }
                         src={"icons/chevron.svg"}

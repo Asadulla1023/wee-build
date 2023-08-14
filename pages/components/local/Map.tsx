@@ -1,16 +1,15 @@
 import React, { useCallback, useState } from "react";
 import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
-import styles from '@/styles/contact.module.css'
+import styles from "@/styles/contact.module.css";
 
 const containerStyle = {
   width: "680px",
   height: "339px",
-
 };
 
 const center = {
-  lat: -3.745,
-  lng: -38.523,
+  lat: -41.2804333,
+  lng: -69.247349,
 };
 
 const Maps = () => {
