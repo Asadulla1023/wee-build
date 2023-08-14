@@ -4,6 +4,10 @@ import Container from '../global/Container'
 import Image from 'next/image'
 import { v4 as uuidv4 } from 'uuid';
 import MultiRangeSlider from './MultiRangeSlider'
+import RoundSlider from './RoundSlider';
+import { CARD_PRICE } from '@/constant';
+import ICardPrice from '@/interfaces/ICardPrice';
+
 const Cost = () => {
     const [checked, setChecked] = useState<boolean>(false)
     const contoller: number[] = [1, 2, 3, 4]
@@ -194,17 +198,84 @@ const Cost = () => {
                                             })}
                                         </div>
                                         <div className={styles.selection}>
-                                            <div className={styles.container}>
-                                                <h3>Итого</h3>
+                                            <h3>Итого</h3>
+                                            <div className={styles.container2}>
                                                 <div className={styles.roomType}><div className={styles.type}>
+                                                    <h3>Тип помещения</h3>
+                                                    {ads.map((e: string, index: number) => {
+                                                        return <div key={e} className={e === selected ? styles.checkboxInput : styles.checkboxInput} onClick={() => {
+                                                            setChecked(!checked)
+                                                            setSelected(e)
+                                                        }}>
+                                                            <input type="checkbox" />
+                                                            <p>{e}</p>
+                                                        </div>
+                                                    })}
+                                                </div>
+                                                    <div className={styles.type}>
+                                                        <h3>Доп.Услуги</h3>
+                                                        {ads2.map((e: string, index: number) => {
+                                                            return <div key={e} className={e === selected ? styles.checkboxInput : styles.checkboxInput} onClick={() => {
+                                                                setChecked(!checked)
+                                                                setSelected(e)
+                                                            }}>
+                                                                <input type="checkbox" />
+                                                                <p>{e}</p>
+                                                            </div>
+                                                        })}
                                                     </div>
-                                                    <div className={styles.adServices}></div>
+                                                </div>
+                                                <div className={styles.totalArea}>
+                                                    <h3>Выберите общую площадь квартиры</h3>
+                                                    {<RoundSlider val={val} max={350} min={0} />}
+                                                </div>
+                                                <div className={styles.rooms}>
+                                                    <h3>Количество комнат</h3>
+                                                    <div onClick={()=> {
+                                                        setCounter(2)
+                                                    }} className={styles.seletedRooms}>
+                                                        {selectedRoom}
                                                     </div>
-                                                <div className={styles.totalArea}></div>
-                                                <div className={styles.rooms}></div>
-                                                <div className={styles.styleRepair}></div>
+                                                </div>
+                                                <div className={styles.roomType}>
+                                                    <div className={styles.type}>
+                                                        <h3>Стиль ремонта</h3>
+                                                        {ads3.map((e: string, index: number) => {
+                                                            return <div key={e} className={e === selected ? styles.checkboxInput : styles.checkboxInput} onClick={() => {
+                                                                setChecked(!checked)
+                                                                setSelected(e)
+                                                            }}>
+                                                                <input type="checkbox" />
+                                                                <p>{e}</p>
+                                                            </div>
+                                                        })}
+                                                    </div>
+                                                    <div className={styles.type}>
+                                                        <h3>Дизайн</h3>
+                                                        <div className={checked ? styles.checkboxInput : styles.checkboxInput} onClick={() => {
+                                                            setChecked(!checked)
+                                                        }}>
+                                                            <input type="checkbox" />
+                                                            <p>Нужен</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
+                                            
                                         </div>
+                                        <div className={styles.cardPriceList}>
+                                                {CARD_PRICE.map((prop: ICardPrice)=> {
+                                                    return <div className={styles.cardPriceItem}>
+                                                        <Image src={prop.image} width={380} height={245} alt={prop.title} />
+                                                        <div className={styles.desc}>
+                                                            <h3>{prop.title}</h3>
+                                                            <div className={styles.line} />
+                                                            <p>{prop.desc}</p>
+                                                        </div>
+                                                        <button>{prop.price}.000$</button>
+                                                    </div>
+                                                })}
+                                            </div>
                                     </> : null}
                 </div></>}
 
