@@ -30,6 +30,7 @@
     margin-top: 42px;
 }
 
+
 .faqCard {
     cursor: pointer;
     width: 100%;
@@ -38,6 +39,13 @@
     padding: 30px 40px;
     border-radius: 20px;
     background: #fff;
+    transition: 0.2s linear;
+}
+
+.faqCard:hover {
+    cursor: pointer;
+    transition: 0.2s linear;
+    box-shadow: 0px 0px 17px 0px rgba(68, 33, 123, 0.73) !important
 }
 
 .faqCard h3 {
