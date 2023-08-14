@@ -17,7 +17,7 @@ const Navigation = ({ open }: Open) => {
             width: 0,
             transition: "0.4s",
             zIndex: -10,
-            transform: "translate(-100px, 0px)",
+            transform: "translate(-300px, 0px)",
         }} className={styles.navbar}>
             <div className={styles.navContainer}>
                 <Link href={"/"} className={styles.logo}>
