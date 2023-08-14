@@ -35,9 +35,7 @@ const Cost = () => {
                                                 <line y1="1.5" x2="78" y2="1.5" stroke={counter < e ? "#E0E0E0" : "#46247c"} stroke-width="3" stroke-dasharray="7 7" />
                                             </svg>
                                         </div> : null}
-                                        <div onClick={() => {
-                                            setCounter(e)
-                                        }} className={styles.circle} style={counter < e ? {
+                                        <div className={styles.circle} style={counter < e ? {
                                             background: "#F2F2F2",
                                             filter: "none"
                                         } : {}}>
@@ -89,9 +87,7 @@ const Cost = () => {
                                                     <line y1="1.5" x2="78" y2="1.5" stroke={counter < e ? "#E0E0E0" : "#46247c"} stroke-width="3" stroke-dasharray="7 7" />
                                                 </svg>
                                             </div> : null}
-                                            <div className={styles.circle} onClick={() => {
-                                                setCounter(e)
-                                            }} style={counter < e ? {
+                                            <div className={styles.circle} style={counter < e ? {
                                                 background: "#F2F2F2",
                                                 filter: "none"
                                             } : {}}>
@@ -145,9 +141,7 @@ const Cost = () => {
                                                         <line y1="1.5" x2="78" y2="1.5" stroke={counter < e ? "#E0E0E0" : "#46247c"} stroke-width="3" stroke-dasharray="7 7" />
                                                     </svg>
                                                 </div> : null}
-                                                <div className={styles.circle} onClick={() => {
-                                                    setCounter(e)
-                                                }} style={counter < e ? {
+                                                <div className={styles.circle} style={counter < e ? {
                                                     background: "#F2F2F2",
                                                     filter: "none"
                                                 } : {}}>
@@ -185,9 +179,7 @@ const Cost = () => {
                                                             <line y1="1.5" x2="78" y2="1.5" stroke={counter < e ? "#E0E0E0" : "#46247c"} stroke-width="3" stroke-dasharray="7 7" />
                                                         </svg>
                                                     </div> : null}
-                                                    <div className={styles.circle} onClick={() => {
-                                                        setCounter(e)
-                                                    }} style={counter < e ? {
+                                                    <div className={styles.circle} style={counter < e ? {
                                                         background: "#F2F2F2",
                                                         filter: "none"
                                                     } : {}}>
