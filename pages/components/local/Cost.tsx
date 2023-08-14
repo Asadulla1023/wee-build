@@ -204,10 +204,11 @@ const Cost = () => {
                                                     <h3>Тип помещения</h3>
                                                     {ads.map((e: string, index: number) => {
                                                         return <div key={e} className={e === selected ? styles.checkboxInput : styles.checkboxInput} onClick={() => {
-                                                            setChecked(!checked)
                                                             setSelected(e)
                                                         }}>
-                                                            <input type="checkbox" />
+                                                            <input style={ e=== selected ? {
+                                                                background: "#46247c"
+                                                            }: {}} type="checkbox" />
                                                             <p>{e}</p>
                                                         </div>
                                                     })}
@@ -215,11 +216,12 @@ const Cost = () => {
                                                     <div className={styles.type}>
                                                         <h3>Доп.Услуги</h3>
                                                         {ads2.map((e: string, index: number) => {
-                                                            return <div key={e} className={e === selected ? styles.checkboxInput : styles.checkboxInput} onClick={() => {
-                                                                setChecked(!checked)
-                                                                setSelected(e)
+                                                            return <div key={e} className={e === selected2 ? styles.checkboxInput : styles.checkboxInput} onClick={() => {
+                                                                setSelected2(e)
                                                             }}>
-                                                                <input type="checkbox" />
+                                                                <input style={ e=== selected2 ? {
+                                                                background: "#46247c"
+                                                            }: {}} type="checkbox" />
                                                                 <p>{e}</p>
                                                             </div>
                                                         })}
@@ -241,11 +243,12 @@ const Cost = () => {
                                                     <div className={styles.type}>
                                                         <h3>Стиль ремонта</h3>
                                                         {ads3.map((e: string, index: number) => {
-                                                            return <div key={e} className={e === selected ? styles.checkboxInput : styles.checkboxInput} onClick={() => {
-                                                                setChecked(!checked)
-                                                                setSelected(e)
+                                                            return <div key={e} className={e === selectedRepair ? styles.checkboxInput : styles.checkboxInput} onClick={() => {
+                                                                setSelectedRepair(e)
                                                             }}>
-                                                                <input type="checkbox" />
+                                                                <input style={ e=== selectedRepair ? {
+                                                                background: "#46247c"
+                                                            }: {}}  type="checkbox" />
                                                                 <p>{e}</p>
                                                             </div>
                                                         })}
@@ -255,7 +258,9 @@ const Cost = () => {
                                                         <div className={checked ? styles.checkboxInput : styles.checkboxInput} onClick={() => {
                                                             setChecked(!checked)
                                                         }}>
-                                                            <input type="checkbox" />
+                                                            <input style={checked ? {
+                                                                background: '#46247c'
+                                                            }: {}} type="checkbox" />
                                                             <p>Нужен</p>
                                                         </div>
                                                     </div>
