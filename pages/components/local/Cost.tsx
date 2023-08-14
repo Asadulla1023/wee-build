@@ -203,7 +203,7 @@ const Cost = () => {
                                                 <div className={styles.roomType}><div className={styles.type}>
                                                     <h3>Тип помещения</h3>
                                                     {ads.map((e: string, index: number) => {
-                                                        return <div key={e} className={e === selected ? styles.checkboxInput : styles.checkboxInput} onClick={() => {
+                                                        return <div key={uuidv4()} className={e === selected ? styles.checkboxInput : styles.checkboxInput} onClick={() => {
                                                             setSelected(e)
                                                         }}>
                                                             <input style={ e=== selected ? {
@@ -216,7 +216,7 @@ const Cost = () => {
                                                     <div className={styles.type}>
                                                         <h3>Доп.Услуги</h3>
                                                         {ads2.map((e: string, index: number) => {
-                                                            return <div key={e} className={e === selected2 ? styles.checkboxInput : styles.checkboxInput} onClick={() => {
+                                                            return <div key={uuidv4()} className={e === selected2 ? styles.checkboxInput : styles.checkboxInput} onClick={() => {
                                                                 setSelected2(e)
                                                             }}>
                                                                 <input style={ e=== selected2 ? {
@@ -243,7 +243,7 @@ const Cost = () => {
                                                     <div className={styles.type}>
                                                         <h3>Стиль ремонта</h3>
                                                         {ads3.map((e: string, index: number) => {
-                                                            return <div key={e} className={e === selectedRepair ? styles.checkboxInput : styles.checkboxInput} onClick={() => {
+                                                            return <div key={uuidv4()} className={e === selectedRepair ? styles.checkboxInput : styles.checkboxInput} onClick={() => {
                                                                 setSelectedRepair(e)
                                                             }}>
                                                                 <input style={ e=== selectedRepair ? {
@@ -270,7 +270,7 @@ const Cost = () => {
                                         </div>
                                         <div className={styles.cardPriceList}>
                                                 {CARD_PRICE.map((prop: ICardPrice)=> {
-                                                    return <div className={styles.cardPriceItem}>
+                                                    return <div key={uuidv4()} className={styles.cardPriceItem}>
                                                         <Image src={prop.image} width={380} height={245} alt={prop.title} />
                                                         <div className={styles.desc}>
                                                             <h3>{prop.title}</h3>
