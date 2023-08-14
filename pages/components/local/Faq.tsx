@@ -6,6 +6,9 @@ import { v4 as uuidv4 } from "uuid";
 const Faq = () => {
   const [isOpened, setIsOpened] = useState<boolean>(false);
   const [isSelected, setIsSelected] = useState<number>(0);
+
+  const [isClose, setIsClose] = useState<boolean>(true)
+
   return (
     <div id="faq" className={styles.faq}>
       <div className={styles.container}>
@@ -16,7 +19,8 @@ const Faq = () => {
           <div className={styles.quests}>
             {[1, 2, 3, 4, 5].map((e: number) => {
               return <div key={e} onClick={() => {
-                setIsOpened(!isOpened)                     
+                setIsOpened(!isOpened)      
+                setIsClose(isClose)               
                 setIsSelected(e)
               }} className={styles.quest}>
                 <div className={styles.questTop}>
