@@ -38,6 +38,7 @@
     align-items: center;
     display: flex;
     border-radius: 20px;
+    transition: .5s ease-in-out;
 }
 
 .card:hover {
