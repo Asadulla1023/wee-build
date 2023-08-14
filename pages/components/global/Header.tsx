@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { NAV } from '@/constant'
 import Burger from '../local/Burger'
 import { v4 as uuidv4 } from 'uuid';
-import { Navigation } from '../local/Navigation'
+import Navigation from '../local/Navigation'
 const Header = () => {
     const [open, setOpen] = useState<boolean>(false)
     useEffect(() => {
@@ -33,10 +33,8 @@ const Header = () => {
                     justifyContent: "center",
                     alignItems: "center",
                     zIndex: 1000
-                }} onClick={() => {
-                    setOpen(!open)
-                }}>
-                    <Burger />
+                }} >
+                    <Burger setOpen={setOpen} open={open} />
                 </div>
                 <Navigation open={open} />
             </div>

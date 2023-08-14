@@ -591,7 +591,7 @@ export const NAV = [
         url: "#design"
     },
     {
-        title: "Сотрудничество",
+        title: "С нами сотрудничают",
         url: "#coop"
     },
     {

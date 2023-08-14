@@ -7,7 +7,7 @@ import Image from 'next/image'
 interface Open {
     open: boolean
 }
-export const Navigation = ({ open }: Open) => {
+const Navigation = ({ open }: Open) => {
     return (
         <div style={open === true ? {
             transition: "0.2s",
@@ -34,3 +34,5 @@ export const Navigation = ({ open }: Open) => {
         </div>
     )
 }
+
+export default Navigation
