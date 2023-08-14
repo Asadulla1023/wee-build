@@ -46,6 +46,7 @@
 
 .image img {
     width: 380px;
+    border-radius: 20px;
 }
 
 .card {

@@ -10,7 +10,7 @@ const Cooperation = () => {
       <div className={styles.container}>
         <div className={styles.cooperationSection}>
           <div className={styles.cooperationTitle}>
-            <h1>СОТРУДНИЧЕСТВО</h1>
+            <h1>С нами сотрудничают</h1>
           </div>
           <div className={styles.cooperationCard}>
             {LOGO.map((e: ILogo) => {

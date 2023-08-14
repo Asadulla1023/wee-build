@@ -9,7 +9,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import { CARD_OBJECT } from "@/constant";
+import { CARD_OBJECT, CARD_OBJECT_DESIGN } from "@/constant";
 import { v4 as uuidv4 } from 'uuid';
 const Design = () => {
   return (
@@ -56,7 +56,7 @@ const Design = () => {
               style={{ paddingBottom: 70 }}
               className={styles.swiper}
             >
-              {CARD_OBJECT.map((e: ICard, index: number) => {
+              {CARD_OBJECT_DESIGN.map((e: ICard, index: number) => {
                 const id = uuidv4()
                 return (
                   <div key={id}>
