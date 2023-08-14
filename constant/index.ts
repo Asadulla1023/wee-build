@@ -294,3 +294,18 @@ export const CARD_PRICE = [
     price: 13.000
   }
 ]
+
+export const LOGO = [
+  {
+    image: '/images/flugger.png'
+  },
+  {
+    image: '/images/flugger.png'
+  },
+  {
+    image: '/images/flugger.png'
+  },
+  {
+    image: '/images/flugger.png'
+  },
+]
