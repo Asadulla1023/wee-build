@@ -85,6 +85,13 @@
   gap: 1.5rem;
 }
 
+.container2 {
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+  gap: 1.5rem;
+}
+
 .selection h3 {
   color: #454545;
   font-size: 28px;
@@ -151,7 +158,33 @@
   margin: auto;
 }
 
-.checkbox > input[type="checkbox"] {
+.checkboxInput {
+  display: flex;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.checkboxInput > p {
+  color: #787878;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 450;
+  width: 190px;
+  line-height: normal;
+}
+
+.type {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.type > h3 {
+  font-size: 19px !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.checkboxInput > input[type="checkbox"] {
   border-radius: 5px;
   width: 21px;
   height: 21px;
@@ -433,4 +466,109 @@
     height: 35px;
     font-size: 18px;
   }
+}
+.roomType {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.totalArea {
+  width: 390px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.totalArea > h3 {
+  font-size: 19px;
+  text-align: center;
+}
+
+.rooms {
+  display: flex;
+  flex-direction: column;
+}
+
+.rooms > h3 {
+  font-size: 19px !important;
+}
+
+.rooms > div {
+  background: #fbfbfb;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-size: 18px;
+  height: 63px;
+  box-shadow: 0px 1px 17px 0px rgba(87, 87, 87, 0.14);
+  cursor: pointer;
+}
+
+.cardPriceList {
+  display: flex;
+  justify-content: space-between;
+  height: 620px;
+  gap: 1rem;
+}
+
+.cardPriceItem {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  gap: 1.5rem;
+  align-items: center;
+  box-shadow: 0px 1px 17px 0px rgba(87, 87, 87, 0.14);
+  border-radius: 20px;
+}
+
+.cardPriceItem > button {
+  width: 100%;
+  margin-top: 2rem;
+  background: linear-gradient(0deg, #44217b 0%, rgb(144, 29, 197) 100%);
+  box-shadow: 0px 4px 4px 0px #1e1035;
+  border: none;
+  cursor: pointer;
+  margin-top: auto;
+  color: #fff;
+  text-align: center;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  padding: 34px 60px;
+  border-radius: 10px;
+  line-height: normal;
+  letter-spacing: 1.1px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.desc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.desc > p {
+  width: 260px;
+  text-align: center;
+  font-size: 18px;
+  color: #787878;
+}
+
+.desc > h3 {
+  font-size: 24px;
+  font-weight: 450;
+  color: #454545;
+}
+
+.desc > .line {
+  width: 55px;
+  height: 2px;
+  background: #000;
 }
