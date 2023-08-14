@@ -28,7 +28,7 @@ const RoundSlider = ({max, min, val}: IProps) => {
             max={max}
             min={min}
             dataIndex={val}
-            onChange={(value: any) => { console.log(value); }}
+            onChange={(value: any) => { console.log(value) }}
         />
     )
 }

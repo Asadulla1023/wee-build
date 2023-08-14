@@ -29,7 +29,7 @@ export default function Designer() {
             <span></span>
           </div>
         </Link>
-        <button>ОБСУДИТЬ ПРОЕКТ</button>
+        <button className={styles.buttonHoverAnimation}>ОБСУДИТЬ ПРОЕКТ</button>
       </div>
     </div>
   );
