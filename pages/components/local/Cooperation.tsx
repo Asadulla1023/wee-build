@@ -1,6 +1,9 @@
 import React from "react";
 import styles from "@/styles/cooperation.module.css";
 import { v4 as uuidv4 } from 'uuid';
+import Image from "next/image";
+import { LOGO } from "@/constant";
+import ILogo from "@/interfaces/ILogo";
 const Cooperation = () => {
   return (
     <div id="coop" className={styles.cooperation}>
@@ -10,10 +13,10 @@ const Cooperation = () => {
             <h1>СОТРУДНИЧЕСТВО</h1>
           </div>
           <div className={styles.cooperationCard}>
-            {[1, 2, 3, 4].map((e) => {
+            {LOGO.map((e: ILogo) => {
               return (
                 <div key={uuidv4()} className={styles.card}>
-                  <h1>LOGO</h1>
+                  <Image src={e.image} width={330} height={200} alt="logo"/>
                 </div>
               );
             })}

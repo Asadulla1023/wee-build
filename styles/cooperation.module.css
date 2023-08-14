@@ -7,7 +7,7 @@
 }
 
 .container {
-    width:  1180px;
+    width: 1180px;
     padding: 5.5rem 0;
     justify-content: center;
     align-items: center;
@@ -26,23 +26,36 @@
     align-items: center;
     gap: 20px;
     justify-content: center;
-    margin-top: 42px;
+    margin-top: 50px;
 }
 
 .card {
-    width: 280px;
-    height: 317px;
-    background-color: #fbfbfb;
+    width: 350px;
+    height: 250px;
+    background-color: #ffff;
+    justify-content: center;
+    align-items: center;
+    display: flex;
     border-radius: 20px;
 }
 
-.card h1 {
-    font-size: 62px;
-    font-weight: 400;
-    color: #E0E0E0;
-    text-align: center;
-    padding: 119px 0;
-    margin: auto;
+.card img {
+    width: 330px;
+    height: 200px;
+}
+
+@media screen and (max-width: 1500px) {
+    .container {
+        width: 100%;
+    }
+    .cooperationCard {
+        flex-wrap: wrap-reverse;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        margin: 50px auto;
+    }
 }
 
 
@@ -50,74 +63,56 @@
     .container {
         width: 100%;
     }
-
-    .cooperationCard {
-        width: 100%;
-    }
-
-    .card {
-        width: 220px;
-    }
 }
 
 @media screen and (max-width: 990px) {
+    .container {
+        width: 100%;
+    }
 
     .cardTitle {
         font-size: 18px;
     }
+
     .container {
         width: 100%;
     }
 
-    .cooperationCard {
-        /* flex-direction: column; */
-        flex-wrap: wrap-reverse;
-        width: 100%;
-    }
-
-    .card {
-        width: 220px;
-    }
 }
 
 @media screen and (max-width: 620px) {
     .container {
         width: 100%;
     }
+
     .cooperationTitle h1 {
         font-size: 40px;
     }
+
     .container {
         width: 100%;
     }
-
-    .cooperationCard {
-        flex-wrap: wrap-reverse;
-        width: 100%;
-    }
-
-    .card {
-        width: 300px;
-    }
-} 
+}
 
 
 @media screen and (max-width: 620px) {
     .container {
         width: 100%;
     }
-
-
-
     .cooperationTitle h1 {
         font-size: 35px;
         font-weight: 500;
     }
+
     .container {
         width: 100%;
     }
 
-} 
+    .card{
+        width: 100%;
+    }
+
+}
 
 
 @media screen and (max-width: 360px) {
@@ -129,11 +124,8 @@
         font-size: 30px;
         font-weight: 500;
     }
+
     .container {
         width: 100%;
     }
-
-    .card{
-        width: 250px;
-    }
-} 
+}
