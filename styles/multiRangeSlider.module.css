@@ -111,3 +111,21 @@
   pointer-events: all;
   position: relative;
 }
+
+@media screen and (max-width: 815px) {
+    .thumb {
+      width: 90%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+  .thumb {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 415px) {
+  .sliderTrack {
+    height: 21px !important;
+  }
+}

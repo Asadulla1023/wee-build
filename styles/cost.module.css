@@ -152,6 +152,11 @@
   gap: 1.25rem;
 }
 
+
+.images img {
+  width: 380px;
+}
+
 .selection button {
   margin-top: 2rem;
   background: linear-gradient(0deg, #44217b 0%, rgb(144, 29, 197) 100%);
@@ -232,4 +237,160 @@
 .selectImage > p, .selectImageS > p {
   color: #454545;
   font-size: 35px !important;
+}
+
+
+@media screen and (max-width: 930px) {
+  .content h1 {
+    font-size: 40px !important;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .images {
+    display: block;
+    justify-content: center;
+    margin: 0 auto;
+    align-items: center;
+    width: 100%;
+  }
+
+  .images img {
+    width: 100%;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 815px) {
+  .content h1 {
+    font-size: 30px !important;
+  }
+
+  .checks {
+    display: block;
+  }
+
+  .checkbox {
+    width: 380px;
+    margin: 0 auto;
+
+  }
+
+  .checkbox:nth-child(2) {
+    margin-top: 50px;
+  }
+
+  .multiRange {
+    width: 100%;
+  }
+
+  .sect img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+@media screen and (max-width: 670px) {
+  .content h1 {
+    font-size: 25px !important;
+  }
+
+  .checkbox:nth-child(2) {
+    margin-top: 50px;
+  }
+
+  .circle {
+    width: 60px;
+    height: 60px;
+    font-size: 25px;
+  }
+
+  .line {
+    width: 60px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .content h1 {
+    font-size: 16px !important;
+  }
+
+  .checkbox:nth-child(2) {
+    margin-top: 50px;
+  }
+
+  .circle {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .line {
+    width: 30px;
+  }
+
+  .selection {
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .selectImage, .selectImageS {
+    width: 60px;
+    height: 60px;
+  }
+
+  .selection button {
+    padding: 15px 50px;
+  }
+}
+
+@media screen and (max-width: 460px) {
+
+  .checkbox:nth-child(2) {
+    margin-top: 50px;
+  }
+
+  .checkbox {
+    width: 100%;
+  }
+
+  .images img {
+    width: 100% !important;
+  }
+
+}
+
+
+@media screen and (max-width: 418px) {
+  .selectImage, .selectImageS {
+    width: 48px;
+    height: 46px;
+    font-size: 15px !important;
+  }
+
+  .selection h3 {
+    font-size: 25px;
+  }
+
+  
+  .checks img {
+    width: 100% !important;
+    height: auto;
+  }
+  
+
+  .selection button {
+    padding: 10px 35px;
+    font-size: 20px;
+  }
+
+  .circle {
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+  }
 }
