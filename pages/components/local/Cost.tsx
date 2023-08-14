@@ -206,9 +206,9 @@ const Cost = () => {
                                                         return <div key={uuidv4()} className={e === selected ? styles.checkboxInput : styles.checkboxInput} onClick={() => {
                                                             setSelected(e)
                                                         }}>
-                                                            <input style={ e=== selected ? {
+                                                            <input style={e === selected ? {
                                                                 background: "#46247c"
-                                                            }: {}} type="checkbox" />
+                                                            } : {}} type="checkbox" />
                                                             <p>{e}</p>
                                                         </div>
                                                     })}
@@ -219,9 +219,9 @@ const Cost = () => {
                                                             return <div key={uuidv4()} className={e === selected2 ? styles.checkboxInput : styles.checkboxInput} onClick={() => {
                                                                 setSelected2(e)
                                                             }}>
-                                                                <input style={ e=== selected2 ? {
-                                                                background: "#46247c"
-                                                            }: {}} type="checkbox" />
+                                                                <input style={e === selected2 ? {
+                                                                    background: "#46247c"
+                                                                } : {}} type="checkbox" />
                                                                 <p>{e}</p>
                                                             </div>
                                                         })}
@@ -233,7 +233,7 @@ const Cost = () => {
                                                 </div>
                                                 <div className={styles.rooms}>
                                                     <h3>Количество комнат</h3>
-                                                    <div onClick={()=> {
+                                                    <div onClick={() => {
                                                         setCounter(2)
                                                     }} className={styles.seletedRooms}>
                                                         {selectedRoom}
@@ -246,9 +246,9 @@ const Cost = () => {
                                                             return <div key={uuidv4()} className={e === selectedRepair ? styles.checkboxInput : styles.checkboxInput} onClick={() => {
                                                                 setSelectedRepair(e)
                                                             }}>
-                                                                <input style={ e=== selectedRepair ? {
-                                                                background: "#46247c"
-                                                            }: {}}  type="checkbox" />
+                                                                <input style={e === selectedRepair ? {
+                                                                    background: "#46247c"
+                                                                } : {}} type="checkbox" />
                                                                 <p>{e}</p>
                                                             </div>
                                                         })}
@@ -260,27 +260,27 @@ const Cost = () => {
                                                         }}>
                                                             <input style={checked ? {
                                                                 background: '#46247c'
-                                                            }: {}} type="checkbox" />
+                                                            } : {}} type="checkbox" />
                                                             <p>Нужен</p>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            
+
                                         </div>
                                         <div className={styles.cardPriceList}>
-                                                {CARD_PRICE.map((prop: ICardPrice)=> {
-                                                    return <div key={uuidv4()} className={styles.cardPriceItem}>
-                                                        <Image src={prop.image} width={380} height={245} alt={prop.title} />
-                                                        <div className={styles.desc}>
-                                                            <h3>{prop.title}</h3>
-                                                            <div className={styles.line} />
-                                                            <p>{prop.desc}</p>
-                                                        </div>
-                                                        <button>{prop.price}.000$</button>
+                                            {CARD_PRICE.map((prop: ICardPrice) => {
+                                                return <div key={uuidv4()} className={styles.cardPriceItem}>
+                                                    <Image src={prop.image} width={380} height={245} alt={prop.title} />
+                                                    <div className={styles.desc}>
+                                                        <h3>{prop.title}</h3>
+                                                        <div className={styles.line} />
+                                                        <p>{prop.desc}</p>
                                                     </div>
-                                                })}
-                                            </div>
+                                                    <button>{prop.price}.000$</button>
+                                                </div>
+                                            })}
+                                        </div>
                                     </> : null}
                 </div></>}
 

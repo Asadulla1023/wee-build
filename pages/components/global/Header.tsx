@@ -11,6 +11,8 @@ const Header = () => {
     useEffect(() => {
         if (open === true) {
             document.body.style.overflow = "hidden"
+        }else {
+            document.body.style.overflow = "auto"
         }
     }, [open])
     return (
@@ -26,12 +28,17 @@ const Header = () => {
                         </li>
                     })}
                 </ul>
-                <div onClick={() => {
+                <div style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    zIndex: 1000
+                }} onClick={() => {
                     setOpen(!open)
                 }}>
                     <Burger />
                 </div>
-                {open === true ? <Navigation /> : null}
+                <Navigation open={open} />
             </div>
         </header>
     )

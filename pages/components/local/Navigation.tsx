@@ -3,10 +3,26 @@ import Link from 'next/link'
 import React from 'react'
 import styles from "@/styles/header.module.css"
 import { v4 as uuidv4 } from "uuid"
-export const Navigation = () => {
+import Image from 'next/image'
+interface Open {
+    open: boolean
+}
+export const Navigation = ({ open }: Open) => {
     return (
-        <div className={styles.navbar}>
+        <div style={open === true ? {
+            transition: "0.2s",
+            width: "100%",
+        } : {
+            opacity: 0,
+            width: 0,
+            transition: "0.4s",
+            zIndex: -10,
+            transform: "translate(-100px, 0px)",
+        }} className={styles.navbar}>
             <div className={styles.navContainer}>
+                <Link href={"/"} className={styles.logo}>
+                    <Image src={"/images/logo.png"} alt='wee logo' width={98} height={82} />
+                </Link>
                 <ul className={styles.navigate}>
                     {NAV.map(({ title, url }) => {
                         return <li key={uuidv4()}>
