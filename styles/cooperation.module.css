@@ -30,6 +30,7 @@
 }
 
 .card {
+    cursor: pointer;
     width: 350px;
     height: 250px;
     background-color: #ffff;
@@ -37,6 +38,12 @@
     align-items: center;
     display: flex;
     border-radius: 20px;
+}
+
+.card:hover {
+    cursor: pointer;
+    transition: 0.2s linear;
+    box-shadow: 0px 1px 17px 0px rgba(68, 33, 123, 0.73) !important;
 }
 
 .card img {
@@ -49,7 +56,7 @@
         width: 100%;
     }
     .cooperationCard {
-        flex-wrap: wrap-reverse;
+        flex-wrap: wrap;
         width: 100%;
         justify-content: center;
         align-items: center;
