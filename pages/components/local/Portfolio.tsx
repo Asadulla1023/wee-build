@@ -28,7 +28,6 @@ const Portfolio = () => {
             <Swiper
               modules={[Navigation, Pagination]}
               spaceBetween={20}
-              // slidesPerView={3}
               breakpoints={{
                 1250: {
                   width: 1250,
@@ -60,8 +59,7 @@ const Portfolio = () => {
               {CARD_OBJECT.map((e: ICard) => {
                 const id = uuidv4()
                 return (
-                  <div key={id}>
-                    {" "}
+                  <div key={uuidv4()}>
                     <SwiperSlide className={styles.addItem}>
                       <div className={styles.card}>
                         <div className={styles.image}>
