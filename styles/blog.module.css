@@ -46,8 +46,7 @@
     }
 
     .blogCard {
-        flex-wrap: wrap-reverse;
-        /* flex-direction: column; */
+        flex-wrap: wrap;
         width: 100%;
     }
 
@@ -65,7 +64,6 @@
 
     .blogCard {
         padding: 0px 10px;
-        flex-wrap: wrap-reverse;
         width: 100%;
     }
 

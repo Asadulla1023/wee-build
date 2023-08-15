@@ -156,6 +156,7 @@
   box-shadow: 0px 1px 17px 0px rgba(68, 33, 123, 0.73) !important;
 }
 
+
 .checkbox > p,
 .checkboxRep > p {
   color: #787878;
@@ -179,6 +180,11 @@
   font-weight: 450;
   width: 190px;
   line-height: normal;
+}
+
+.checkboxRep:hover {
+  transition: 0.2s linear;
+  box-shadow: 0px 1px 17px 0px rgba(68, 33, 123, 0.73) !important;
 }
 
 .type {
@@ -454,7 +460,7 @@
 
 @media screen and (max-width: 1080px) {
   .checks {
-    flex-wrap: wrap-reverse;
+    flex-wrap: wrap;
   }
 }
 
@@ -472,7 +478,7 @@
 
 @media screen and (max-width: 814px) {
   .checks {
-    flex-wrap: wrap-reverse !important;
+    flex-wrap: wrap !important;
     justify-content: center;
     display: flex;
     flex-direction: column;

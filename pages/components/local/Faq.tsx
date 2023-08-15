@@ -5,7 +5,7 @@ import Image from "next/image";
 import { v4 as uuidv4 } from "uuid";
 const Faq = () => {
   const [isOpened, setIsOpened] = useState<boolean>(false);
-  const [isSelected, setIsSelected] = useState<number>(0);
+  const [isSelected, setIsSelected] = useState<number | null>(0);
 
   const [isClose, setIsClose] = useState<boolean>(true)
 
@@ -20,8 +20,11 @@ const Faq = () => {
             {[1, 2, 3, 4, 5].map((e: number) => {
               return <div key={e} onClick={() => {
                 setIsOpened(!isOpened)      
-                setIsClose(isClose)               
-                setIsSelected(e)
+                if(isSelected) {
+                  setIsSelected(null)
+                }else{
+                  setIsSelected(e)
+                }
               }} className={styles.quest}>
                 <div className={styles.questTop}>
                   <h3>Текст вопроса?</h3>
