@@ -89,15 +89,6 @@ const Portfolio = () => {
                         </div>
                         <div className={styles.cardSection}>
                           <h1 className={styles.cardTitle}>{e.title}</h1>
-                          <div className={styles.location}>
-                            <Image
-                              src={"icons/local.svg"}
-                              width={16}
-                              height={20}
-                              alt="scs"
-                            />
-                            <p>{e.location}</p>
-                          </div>
                           <div className={styles.global}>
                             {e.props.map((prop: ICardProps) => {
                               const id = uuidv4()

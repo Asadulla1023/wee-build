@@ -26,12 +26,6 @@ const Cost = () => {
     const [abled, setAbled] = useState(false)
     const [orderOpen, setOrderOpen] = useState(false)
     const [props, setProps] = useState<ICardPrice | undefined>()
-    useEffect(() => {
-        if (selected2 === "Новостройка") {
-            setSelected2("")
-            console.log(selected2);
-        }
-    }, [selected2])
 
     const router = useRouter()
 
