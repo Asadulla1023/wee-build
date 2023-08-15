@@ -3,9 +3,9 @@ import styles from "@/styles/contact.module.css";
 import Image from "next/image";
 import Container from "../global/Container";
 import Maps from "./Map";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
+import Link from "next/link";
 const Contact = () => {
-
   return (
     <Container id="contact">
       {
@@ -29,7 +29,9 @@ const Contact = () => {
                         height={23}
                         alt="box"
                       />
-                      <a href="email:">weebuild.official@gmail.com</a>
+                      <a href="https://mail.google.com/mail/u/0/#search/weebuild.official%40gmail.com?compose=new">
+                        weebuild.official@gmail.com
+                      </a>
                     </div>
                     <div className={styles.call}>
                       <Image
@@ -38,42 +40,60 @@ const Contact = () => {
                         height={32}
                         alt="call"
                       />
-                      <a href="call:">+998990050300</a>
+                      <a href="tel:+998990050300">+998990050300</a>
                     </div>
                     <div className={styles.network}>
                       <p>Соц.сети:</p>
                       <div className={styles.icons}>
-                        <Image
-                          src={"/icons/faceebook.svg"}
-                          width={29}
-                          height={29}
-                          alt="face"
-                        />
-                        <Image
-                          src={"/icons/telegram.svg"}
-                          width={29}
-                          height={25}
-                          alt="face"
-                        />
-                        <Image
-                          src={"/icons/instagram.svg"}
-                          width={28}
-                          height={28}
-                          alt="face"
-                        />
+                        <Link
+                          href={
+                            "https://www.facebook.com/profile.php?id=100095136643324&mibextid=LQQJ4d"
+                          }
+                        >
+                          <Image
+                            src={"/icons/faceebook.svg"}
+                            width={29}
+                            height={29}
+                            alt="face"
+                          />
+                        </Link>
+                        <Link href={"https://t.me/Weebuild"}>
+                          <Image
+                            src={"/icons/telegram.svg"}
+                            width={29}
+                            height={25}
+                            alt="face"
+                          />
+                        </Link>
+                        <Link
+                          href={"https://www.instagram.com/weebuild_official/"}
+                        >
+                          <Image
+                            src={"/icons/instagram.svg"}
+                            width={28}
+                            height={28}
+                            alt="face"
+                          />
+                        </Link>
                       </div>
                     </div>
                   </div>
                   <div className={styles.card}>
                     <h3>Место нахождения</h3>
                     <div className={styles.locate}>
-                      <Image
-                        src={"/icons/location.svg"}
-                        width={21}
-                        height={25}
-                        alt="locate"
-                      />
-                      <a href="locate">Шота Руставели 58</a>
+                      <Link
+                        href={
+                          "https://www.google.com/maps/place/41%C2%B016'49.6%22N+69%C2%B014'50.5%22E/@41.2804373,69.2447741,17z/data=!3m1!4b1!4m4!3m3!8m2!3d41.2804333!4d69.247349?hl=ru-RU&entry=ttu"
+                        }
+                      >
+                        <Image
+                          src={"/icons/location.svg"}
+                          width={21}
+                          height={25}
+                          alt="locate"
+                        />
+                      </Link>
+                      <a href="https://www.google.com/maps/place/41%C2%B016'49.6%22N+69%C2%B014'50.5%22E/@41.2804373,69.2447741,17z/data=!3m1!4b1!4m4!3m3!8m2!3d41.2804333!4d69.247349?hl=ru-RU&entry=ttu">Шота Руставели 58</a>
                     </div>
                   </div>
                 </div>
@@ -90,7 +110,7 @@ const Contact = () => {
                 </div>
                 <div style={{ marginTop: 10 }} className={styles.inputForm}>
                   <p>Cообщение</p>
-                  <textarea className={styles.textarea}/>
+                  <textarea className={styles.textarea} />
                 </div>
                 <button className={styles.button}>ОТПРАВИТЬ</button>
               </form>
