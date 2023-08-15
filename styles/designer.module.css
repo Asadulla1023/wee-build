@@ -41,6 +41,7 @@
 .container > a {
   margin-top: 2rem;
   width: 14px;
+  margin-left: 1rem;
   height: 26px;
 }
 
@@ -57,7 +58,7 @@
   font-weight: 450;
   font-size: 22px;
   font-weight: 400;
-  padding: 34px 60px;
+  padding: 24px 60px;
   letter-spacing: 1.1px;
   cursor: pointer;
 }

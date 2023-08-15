@@ -9,6 +9,7 @@ import { CARD_PRICE } from '@/constant';
 import ICardPrice from '@/interfaces/ICardPrice';
 import OrderModal from './OrderModal';
 import ICardProps from '@/interfaces/ICardProps';
+import { useRouter } from 'next/router';
 
 const Cost = () => {
     const [checked, setChecked] = useState<boolean>(false)
@@ -31,6 +32,12 @@ const Cost = () => {
             console.log(selected2);
         }
     }, [selected2])
+
+    const router = useRouter()
+
+    const pushToCostBlock = () => {
+        router.push("#cost")
+    }
 
     useEffect(() => {
         if (orderOpen === true) {
@@ -98,6 +105,7 @@ const Cost = () => {
                                     </div>
                                     <button onClick={() => {
                                         setCounter(counter + 1)
+                                        pushToCostBlock()
                                     }}>СЛЕДУЮЩИЙ ШАГ</button>
                                 </div>
                             </div>
@@ -152,6 +160,7 @@ const Cost = () => {
                                         </div>
                                         <button onClick={() => {
                                             setCounter(counter + 1)
+                                            pushToCostBlock()
                                         }}>СЛЕДУЮЩИЙ ШАГ</button>
                                     </div>
                                 </div>
@@ -191,6 +200,7 @@ const Cost = () => {
                                             </div>
                                             <button onClick={() => {
                                                 setCounter(counter + 1)
+                                                pushToCostBlock()
                                             }}>СЛЕДУЮЩИЙ ШАГ</button>
                                         </div>
                                     </div>
