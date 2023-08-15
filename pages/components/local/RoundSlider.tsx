@@ -5,9 +5,10 @@ interface IProps {
     max: number
     min: number
     val: number
+    setVal: Function
 }
 
-const RoundSlider = ({max, min, val}: IProps) => {
+const RoundSlider = ({max, min, val, setVal}: IProps) => {
     const arr:string[] = []
 
     for (let i = min; i<=max; i++) {
@@ -28,7 +29,7 @@ const RoundSlider = ({max, min, val}: IProps) => {
             max={max}
             min={min}
             dataIndex={val}
-            onChange={(value: any) => { console.log(value) }}
+            onChange={(value: string) => { setVal(Number(value.split("м²")[0])) }}
         />
     )
 }

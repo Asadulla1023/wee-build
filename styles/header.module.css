@@ -32,7 +32,6 @@
 
 .navigation > li:hover > a {
     color: #46247c;
-    font-weight: 450;
     transition: 0.2s linear;
 }
 

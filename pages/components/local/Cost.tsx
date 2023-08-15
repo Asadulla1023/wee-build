@@ -34,11 +34,11 @@ const Cost = () => {
 
     useEffect(() => {
         if (orderOpen === true) {
-          document.body.style.overflow = "hidden"
-        }else {
-          document.body.style.overflow = "auto"
+            document.body.style.overflow = "hidden"
+        } else {
+            document.body.style.overflow = "auto"
         }
-      }, [orderOpen])
+    }, [orderOpen])
     const value = String(selectedRoom).split("")[0]
     return (
         <Container id='cost' >
@@ -83,14 +83,12 @@ const Cost = () => {
                                     <div className={styles.checks}>
                                         {selected !== "Новостройка" ? ads2.map((e: string, index: number) => {
                                             return <div key={e} className={e === selected2 ? `${styles.checkbox} ${styles.boxShadow}` : styles.checkbox} onClick={() => {
-                                                setChecked(!checked)
                                                 setSelected2(e)
                                             }}>
                                                 <Image src={`/images/select${index + 3}.png`} alt='decorate' width={380} height={245} />
                                                 <p>{e}</p>
                                             </div>
                                         }) : <div className={selected2 === ads2[0] ? `${styles.checkbox} ${styles.boxShadow}` : styles.checkbox} onClick={() => {
-                                            setChecked(!checked)
                                             setSelected2(ads2[0])
                                         }}>
                                             <Image src={`/images/select3.png`} alt='decorate' width={380} height={245} />
@@ -234,8 +232,8 @@ const Cost = () => {
                                                 </div>
                                                     <div className={styles.type}>
                                                         <h3>Доп.Услуги</h3>
-                                                        {ads2.map((e: string, index: number) => {
-                                                            return <div key={uuidv4()} className={e === selected2 ? styles.checkboxInput : styles.checkboxInput} onClick={() => {
+                                                        {selected !== "Новостройка" ? ads2.map((e: string, index: number) => {
+                                                            return <div key={e} className={e === selected2 ? styles.checkboxInput : styles.checkboxInput} onClick={() => {
                                                                 setSelected2(e)
                                                             }}>
                                                                 <input style={e === selected2 ? {
@@ -243,12 +241,24 @@ const Cost = () => {
                                                                 } : {}} type="checkbox" />
                                                                 <p>{e}</p>
                                                             </div>
-                                                        })}
+                                                        }) : <div className={selected2 === ads2[0] ? styles.checkboxInput : styles.checkboxInput} onClick={() => {
+                                                            setSelected2(ads2[0])
+                                                        }}>
+                                                            <input onClick={()=> {
+                                                                setSelected2("")
+                                                            }} style={selected2 === "Межкомнатные перегородки" ? {
+                                                                background: "#46247c"
+                                                            } : {
+                                                                background: "#f2f2f2"
+                                                            }} type="checkbox" />
+                                                            <p>{ads2[0]}</p>
+                                                        </div>
+                                                        }
                                                     </div>
                                                 </div>
                                                 <div className={styles.totalArea}>
                                                     <h3>Выберите общую площадь квартиры</h3>
-                                                    {<RoundSlider val={val} max={350} min={0} />}
+                                                    {<RoundSlider setVal={setVal} val={val} max={350} min={0} />}
                                                 </div>
                                                 <div className={styles.rooms}>
                                                     <h3>Количество комнат</h3>
@@ -314,7 +324,7 @@ const Cost = () => {
                                                 </div>
                                             })}
                                         </div>
-                                        <OrderModal setOrderOpen={setOrderOpen} price={props?.price} title={props?.title} orderOpen={orderOpen} />
+                                        <OrderModal roomType={selectedRoom} addService={selected2} repStyle={selectedRepair} design={checked} totalArea={`${val}м²`} setOrderOpen={setOrderOpen} price={props?.price} title={props?.title} orderOpen={orderOpen} />
                                     </> : null}
                 </div></>}
 
