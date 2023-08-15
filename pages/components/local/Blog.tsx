@@ -12,9 +12,11 @@ const Blog = () => {
         {[1, 2, 3].map((e) => {
           return (
             <div key={uuidv4()} className={styles.card}>
-              <div className={styles.table}>
+              <div style={{width: 380, height: 685,}} className={styles.table}>
                 <video
-                  style={{ borderRadius: 20 }}
+                  style={{ borderRadius: 20}}
+                  width={385}
+                  height={675}
                   className={styles.video}
                   controls
                   src={"/blur.mp4"}
