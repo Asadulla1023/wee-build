@@ -29,7 +29,6 @@ export const CARD_OBJECT: ICard[] = [
       "/images/table.png",
     ],
     process: "Законченный проект",
-    location: "Ташкент, Чиланзар",
     props: [
       {
         image: "icons/global.svg",
@@ -58,7 +57,6 @@ export const CARD_OBJECT: ICard[] = [
       "/images/table.png",
     ],
     process: "На рассмотрении",
-    location: "Ташкент, Чиланзар",
     props: [
       {
         image: "icons/global.svg",
@@ -87,7 +85,6 @@ export const CARD_OBJECT: ICard[] = [
       "/images/table.png",
     ],
     process: "Законченный проект",
-    location: "Ташкент, Чиланзар",
     props: [
       {
         image: "icons/global.svg",
@@ -116,7 +113,6 @@ export const CARD_OBJECT: ICard[] = [
       "/images/table.png",
     ],
     process: "Законченный проект",
-    location: "Ташкент, Чиланзар",
     props: [
       {
         image: "icons/global.svg",
@@ -145,7 +141,6 @@ export const CARD_OBJECT: ICard[] = [
       "/images/table.png",
     ],
     process: "На рассмотрении",
-    location: "Ташкент, Чиланзар",
     props: [
       {
         image: "icons/global.svg",
@@ -174,7 +169,6 @@ export const CARD_OBJECT: ICard[] = [
       "/images/table.png",
     ],
     process: "Законченный проект",
-    location: "Ташкент, Чиланзар",
     props: [
       {
         image: "icons/global.svg",
@@ -207,12 +201,13 @@ export const CARD_OBJECT_DESIGN: ICard[] = [
       "/images/Minimalizm/Zal/5.jpg",
       "/images/Minimalizm/Zal/6.jpg",
       "/images/Minimalizm/Zal/7.jpg",
-      "/images/Minimalizm/Zal/55.jpg",
-      "/images/Minimalizm/Zal/66.jpg",
-      "/images/Minimalizm/Zal/77.jpg",
+      "/images/Minimalizm/Zal/8.jpg",
+      "/images/Minimalizm/Zal/9.jpg",
+      "/images/Minimalizm/Zal/10.jpg",
+      "/images/Minimalizm/Zal/1.jpg",
+
     ],
     process: "Законченный проект",
-    location: "Ташкент, Чиланзар",
     props: [
       {
         image: "icons/global.svg",
@@ -231,7 +226,7 @@ export const CARD_OBJECT_DESIGN: ICard[] = [
         title: "1400$",
       },
     ],
-    title: "Дизайн двухкомнатной квартиры",
+    title: "зал",
   },
   {
     images: [
@@ -243,7 +238,6 @@ export const CARD_OBJECT_DESIGN: ICard[] = [
       "/images/Minimalizm/Sanuzel/6.jpg",
     ],
     process: "На рассмотрении",
-    location: "Ташкент, Чиланзар",
     props: [
       {
         image: "icons/global.svg",
@@ -262,7 +256,7 @@ export const CARD_OBJECT_DESIGN: ICard[] = [
         title: "1400$",
       },
     ],
-    title: "Дизайн двухкомнатной квартиры",
+    title: "Санузел",
   },
   {
     images: [
@@ -277,8 +271,7 @@ export const CARD_OBJECT_DESIGN: ICard[] = [
       "/images/Minimalizm/Kolidor/66.jpg",
       "/images/Minimalizm/Kolidor/77.jpg",
     ],
-    process: "Законченный проект",
-    location: "Ташкент, Чиланзар",
+    process: "Колидор",
     props: [
       {
         image: "icons/global.svg",
@@ -310,7 +303,6 @@ export const CARD_OBJECT_DESIGN: ICard[] = [
       "/images/Minimalizm/Spalnya/7.jpg",
     ],
     process: "Законченный проект",
-    location: "Ташкент, Чиланзар",
     props: [
       {
         image: "icons/global.svg",
@@ -329,7 +321,7 @@ export const CARD_OBJECT_DESIGN: ICard[] = [
         title: "1400$",
       },
     ],
-    title: "Дизайн двухкомнатной квартиры",
+    title: "Спальня",
   },
   
   {
@@ -342,7 +334,6 @@ export const CARD_OBJECT_DESIGN: ICard[] = [
       "/images/NeoCasik/Detiski/6.jpg",
     ],
     process: "На рассмотрении",
-    location: "Ташкент, Чиланзар",
     props: [
       {
         image: "icons/global.svg",
@@ -361,7 +352,7 @@ export const CARD_OBJECT_DESIGN: ICard[] = [
         title: "1400$",
       },
     ],
-    title: "Дизайн двухкомнатной квартиры",
+    title: "дедский",
   },
   {
     images: [
@@ -376,7 +367,6 @@ export const CARD_OBJECT_DESIGN: ICard[] = [
       "/images/NeoCasik/Holl/9.jpg",
     ],
     process: "Законченный проект",
-    location: "Ташкент, Чиланзар",
     props: [
       {
         image: "icons/global.svg",
@@ -395,7 +385,7 @@ export const CARD_OBJECT_DESIGN: ICard[] = [
         title: "1400$",
       },
     ],
-    title: "Дизайн двухкомнатной квартиры",
+    title: "холл",
   },
   {
     images: [
@@ -411,7 +401,6 @@ export const CARD_OBJECT_DESIGN: ICard[] = [
       "/images/NeoCasik/Holl/19.jpg",
     ],
     process: "Законченный проект",
-    location: "Ташкент, Чиланзар",
     props: [
       {
         image: "icons/global.svg",
@@ -430,7 +419,7 @@ export const CARD_OBJECT_DESIGN: ICard[] = [
         title: "1400$",
       },
     ],
-    title: "Дизайн двухкомнатной квартиры",
+    title: "холл",
   },
   {
     images: [
@@ -442,7 +431,6 @@ export const CARD_OBJECT_DESIGN: ICard[] = [
       "/images/NeoCasik/Kabinet/6.jpg",
     ],
     process: "Законченный проект",
-    location: "Ташкент, Чиланзар",
     props: [
       {
         image: "icons/global.svg",
@@ -461,7 +449,7 @@ export const CARD_OBJECT_DESIGN: ICard[] = [
         title: "1400$",
       },
     ],
-    title: "Дизайн двухкомнатной квартиры",
+    title: "кабинет",
   },
   {
     images: [
@@ -473,7 +461,6 @@ export const CARD_OBJECT_DESIGN: ICard[] = [
       "/images/NeoCasik/Kuxnya/6.jpg",
     ],
     process: "Законченный проект",
-    location: "Ташкент, Чиланзар",
     props: [
       {
         image: "icons/global.svg",
@@ -492,7 +479,7 @@ export const CARD_OBJECT_DESIGN: ICard[] = [
         title: "1400$",
       },
     ],
-    title: "Дизайн двухкомнатной квартиры",
+    title: "кухния",
   },
   {
     images: [
@@ -506,7 +493,6 @@ export const CARD_OBJECT_DESIGN: ICard[] = [
       "/images/NeoCasik/Spalnya/8.jpg",
     ],
     process: "Законченный проект",
-    location: "Ташкент, Чиланзар",
     props: [
       {
         image: "icons/global.svg",
@@ -525,7 +511,7 @@ export const CARD_OBJECT_DESIGN: ICard[] = [
         title: "1400$",
       },
     ],
-    title: "Дизайн двухкомнатной квартиры",
+    title: "спальня",
   },
 ];
 

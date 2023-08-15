@@ -106,7 +106,7 @@
 .global {
     display: flex;
     justify-content: space-between;
-    padding-top: 26px;
+    padding-top: 40px;
     text-align: center;
 }
 
@@ -175,10 +175,6 @@
         width: 100%;
     }
 
-
-    .global {
-        padding-top: 20px;
-    }
 }
 
 @media only screen and (max-width: 996px) and (min-width: 768px) {
@@ -204,10 +200,6 @@
         width: 100%;
     }
 
-
-    .global {
-        padding-top: 20px;
-    }
 }
 
 @media only screen and (max-width: 780px) and (min-width: 620px) {
@@ -232,10 +224,6 @@
         width: 100%;
     }
 
-
-    .global {
-        padding-top: 20px;
-    }
 }
 
 @media only screen and (max-width: 620px) and (min-width: 380px) {
@@ -260,10 +248,6 @@
         width: 100%;
     }
 
-
-    .global {
-        padding-top: 18px;
-    }
 }
 
 @media screen and (max-width: 380px) and (min-width: 340px) {
@@ -289,9 +273,6 @@
     }
 
 
-    .global {
-        padding-top: 18px;
-    }
 }
 
 @media screen and (max-width: 340px) and (min-width: 300px) {
@@ -327,8 +308,4 @@
         width: 100%;
     }
 
-
-    .global {
-        padding-top: 18px;
-    }
 }

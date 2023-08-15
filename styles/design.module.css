@@ -97,13 +97,6 @@
     color: #454545;
 }
 
-.location {
-    padding-top: 11px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 9px;
-}
 
 
 .cardSection {
@@ -113,7 +106,7 @@
 .global {
     display: flex;
     justify-content: space-between;
-    padding-top: 26px;
+    padding-top: 40px;
     text-align: center;
 }
 
@@ -143,12 +136,12 @@
         width: 100%;
     }
 
-    .cardTitle {
+    /* .cardTitle {
         font-size: 18px;
-    }
+    } */
 
     .global {
-        padding-top: 20px;
+        padding-top: 35px;
     }
 
     .swiper {
@@ -171,10 +164,10 @@
         width: 100%;
     }
 
-
+/* 
     .cardTitle {
         font-size: 18px;
-    }
+    } */
 
     .image img {
         width: 100%;
@@ -182,7 +175,7 @@
 
 
     .global {
-        padding-top: 20px;
+        padding-top: 40px;
     }
 }
 
@@ -208,10 +201,6 @@
         width: 100%;
     }
 
-
-    .global {
-        padding-top: 20px;
-    }
 }
 
 @media only screen and (max-width: 780px) and (min-width: 620px) {
@@ -228,18 +217,13 @@
         margin: auto !important;
         width: 100%;
     }
-
+/* 
     .cardTitle {
         font-size: 18px;
-    }
+    } */
 
     .image img {
         width: 100%;
-    }
-
-
-    .global {
-        padding-top: 20px;
     }
 }
 
@@ -256,18 +240,13 @@
         margin: auto !important;
         width: 340px;
     }
-
+/* 
     .cardTitle {
         font-size: 16px;
-    }
+    } */
 
     .image img {
         width: 100%;
-    }
-
-
-    .global {
-        padding-top: 18px;
     }
 
     .designTitle p{
@@ -292,18 +271,14 @@
         width: 300px;
     }
 
-    .cardTitle {
+    /* .cardTitle {
         font-size: 16px;
-    }
+    } */
 
     .image img {
         width: 100%;
     }
 
-
-    .global {
-        padding-top: 18px;
-    }
 }
 
 
@@ -328,16 +303,12 @@
         padding: 15px 20px;
     }
 
-    .cardTitle {
+    /* .cardTitle {
         font-size: 16px;
-    }
+    } */
 
     .image img {
         width: 100%;
     }
 
-
-    .global {
-        padding-top: 18px;
-    }
 }
