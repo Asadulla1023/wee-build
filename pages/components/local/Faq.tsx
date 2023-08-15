@@ -20,7 +20,7 @@ const Faq = () => {
             {[1, 2, 3, 4, 5].map((e: number) => {
               return <div key={e} onClick={() => {
                 setIsOpened(!isOpened)      
-                if(isSelected) {
+                if(isSelected === e) {
                   setIsSelected(null)
                 }else{
                   setIsSelected(e)
