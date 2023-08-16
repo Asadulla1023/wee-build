@@ -14,7 +14,7 @@
 }
 
 .designTitle h1 {
-    font-size: 62px;
+    font-size: 56px;
     font-weight: 400;
     text-align: center;
     color: #454545;
@@ -179,6 +179,12 @@
     }
 }
 
+@media screen and (max-width:840px) {
+    .designTitle h1 {
+      font-size: 35px !important;
+    }
+}  
+
 @media only screen and (max-width: 996px) and (min-width: 768px) {
     .container {
         width: 100%;
@@ -282,7 +288,7 @@
 }
 
 
-@media only screen and (max-width: 340px) and (min-width: 300px) {
+@media only screen and (max-width: 340px) and (min-width: 0px) {
     .design {
         border-radius: 20px;
     }

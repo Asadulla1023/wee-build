@@ -248,7 +248,7 @@ const Cost = () => {
                                                         }) : <div className={selected2 === ads2[0] ? styles.checkboxInput : styles.checkboxInput} onClick={() => {
                                                             setSelected2(ads2[0])
                                                         }}>
-                                                            <input onClick={()=> {
+                                                            <input onClick={() => {
                                                                 setSelected2("")
                                                             }} style={selected2 === "Межкомнатные перегородки" ? {
                                                                 background: "#46247c"
@@ -266,22 +266,18 @@ const Cost = () => {
                                                 </div>
                                                 <div className={styles.rooms}>
                                                     <h3>Количество комнат</h3>
-                                                    <div onDoubleClick={() => {
+                                                    <div onClick={() => {
                                                         setAbled(!abled)
-                                                    }}><input max={6} maxLength={2} disabled={!abled} value={value} onChange={(t) => {
-                                                        const test = /d/.test(t.target.value)
-                                                        if (test === false) {
-                                                            console.log(t.target.value[0])
-                                                            setSelectedRoom(Number(t.target.value))
-                                                            if (Number(t.target.value) === 0) {
-                                                                setSelectedRoom(1)
-                                                            }
-                                                            if (Number(t.target.value) >= 6) {
-                                                                console.log(t.target.value);
-                                                                setSelectedRoom(6)
-                                                            }
-                                                        }
-                                                    }} type='text' className={styles.seletedRooms} /></div>
+                                                    }} className={styles.seletedRooms}>{selectedRoom}</div>
+                                                    <div className={styles.selectRoom}>
+                                                        {[1, 2, 3, 4, 5, 6].map((iterable: number) => {
+                                                            return <div key={uuidv4()} onClick={() => {
+                                                                setSelectedRoom(iterable)
+                                                            }} className={selectedRoom === iterable ? `${styles.selectImageS} ${styles.selectImage}` : styles.selectImage}>
+                                                                <p>{iterable}</p>
+                                                            </div>
+                                                        })}
+                                                    </div>
                                                 </div>
                                                 <div className={styles.roomType}>
                                                     <div className={styles.type}>
@@ -321,9 +317,9 @@ const Cost = () => {
                                                         <div className={styles.line} />
                                                         <p>{prop.desc}</p>
                                                     </div>
-                                                    <button className={overed === prop.title ? styles.animate: styles.noneAnimation} onMouseOver={()=> {
+                                                    <button className={overed === prop.title ? styles.animate : styles.noneAnimation} onMouseOver={() => {
                                                         setOvered(prop.title)
-                                                    }} onMouseLeave={()=> {
+                                                    }} onMouseLeave={() => {
                                                         setOvered("")
                                                     }} onClick={() => {
                                                         setOrderOpen(!orderOpen)
