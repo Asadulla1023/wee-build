@@ -101,7 +101,8 @@
   margin-bottom: 20px;
 }
 
-.checks, .checksRep {
+.checks,
+.checksRep {
   display: flex;
   width: 100%;
   justify-content: center;
@@ -155,7 +156,6 @@
   transition: 0.2s linear;
   box-shadow: 0px 1px 17px 0px rgba(68, 33, 123, 0.73) !important;
 }
-
 
 .checkbox > p,
 .checkboxRep > p {
@@ -240,10 +240,10 @@
   border: 5px solid #44217b;
   border-radius: 20px;
   height: 80px;
-  background-image: linear-gradient(-90deg, #44217b,#500bc0);
+  background-image: linear-gradient(-90deg, #44217b, #500bc0);
   background-size: 0 100%;
   background-repeat: no-repeat;
-  transition: .4s;
+  transition: 0.4s;
   font-size: 19px;
   cursor: pointer;
   width: 300px;
@@ -352,12 +352,14 @@
   font-size: 19px !important;
 }
 
-.rooms input {
+.rooms .seletedRooms {
   background: #fbfbfb;
   outline: none;
   border: none;
   /* padding: 10px; */
-  padding-left: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 20px;
   font-size: 20px;
   width: 100px;
@@ -390,16 +392,18 @@
 .cardPriceItem > .animate {
   width: 100%;
   margin-top: auto;
-  border: 5px solid #44217b;
   border-radius: 20px;
   height: 80px;
-  background-image: linear-gradient(-90deg, #44217b,#500bc0);
+  background-image: linear-gradient(-90deg, #44217b, #500bc0);
   background-size: 0 100%;
   background-repeat: no-repeat;
-  transition: .4s;
+  transition: 0.4s;
   font-weight: 450;
   font-size: 20px;
   color: #44217b;
+  border: 5px solid #44217b;
+  border-radius: 20px;
+  cursor: pointer;
 }
 
 .noneAnimation {
@@ -446,6 +450,28 @@
   width: 55px;
   height: 2px;
   background: #000;
+}
+
+.selectRoom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  width: 70%;
+  justify-content: center;
+  background: #fff;
+  padding: 10px;
+  box-shadow: 0px 1px 17px 0px rgba(53, 50, 50, 0.616);
+  border-radius: 10px;
+}
+
+.selectRoom > .selectImage {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.selectRoom > .selectImage > p {
+  font-size: 16px !important;
 }
 
 @media screen and (max-width: 1200px) {
@@ -535,7 +561,8 @@
     width: 100%;
     height: auto;
   }
-  .checkbox > p, .checkboxRep > p {
+  .checkbox > p,
+  .checkboxRep > p {
     font-size: 1em;
   }
 }
@@ -577,7 +604,7 @@
   .line {
     width: 60px;
   }
-  
+
   .checkboxRep > img {
     height: 200px;
   }
@@ -598,7 +625,6 @@
     width: 30px;
   }
 
-
   .selection {
     padding: 1rem 0;
   }
@@ -615,7 +641,8 @@
     /* font-size: 20px !important; */
   }
 
-  .checkbox > p, .checkboxRep > p {
+  .checkbox > p,
+  .checkboxRep > p {
     font-size: 13px;
   }
   .controller {

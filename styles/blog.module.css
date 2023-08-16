@@ -15,7 +15,7 @@
 
 .blogTitle h1 {
     text-align: center;
-    font-size: 62px;
+    font-size: 56px !important;
     font-weight: 400;
 }
 

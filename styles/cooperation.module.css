@@ -16,8 +16,9 @@
 
 .cooperationTitle h1 {
     text-align: center;
-    font-size: 62px;
+    font-size: 56px;
     font-weight: 400;
+    text-transform: uppercase;
     color: #454545;
 }
 
@@ -87,6 +88,13 @@
     }
 
 }
+
+@media screen and (max-width:840px) {
+    .cooperationTitle h1 {
+      font-size: 35px !important;
+      text-transform: uppercase;
+    }
+}  
 
 @media screen and (max-width: 620px) {
     .container {

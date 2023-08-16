@@ -30,3 +30,13 @@
     font-size: 17px !important;
   } */
 }
+
+@media screen and (max-width:840px) {
+  .container h1 {
+    font-size: 35px !important;
+  }
+  .container p {
+    font-size: 18px;
+  }
+}
+

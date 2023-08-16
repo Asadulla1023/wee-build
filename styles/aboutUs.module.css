@@ -117,7 +117,14 @@
   }
 }
 
-@media screen and (max-width: 800px) {
+
+@media screen and (max-width:840px) {
+  .container h1 {
+    font-size: 35px !important;
+  }
+  .container p {
+    font-size: 18px;
+  }
   .container p {
     font-size: 16px !important;
   }
@@ -130,7 +137,8 @@
   .right > img {
     height: 180px;
   }
-}
+} 
+
 
 @media screen and (max-width: 600px) {
   .container p {

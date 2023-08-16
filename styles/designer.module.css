@@ -18,10 +18,12 @@
   gap: 1rem;
 }
 
+
+
 .container > h1 {
   color: #454545;
   font-family: Futura PT;
-  font-size: 62px;
+  font-size: 56px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -46,10 +48,8 @@
 }
 
 .buttonHoverAnimation {
-  margin-top: 2rem;
-  background-image: linear-gradient(-90deg, #44217b, #500bc0);
-  background-size: 0 100%;
-  background-repeat: no-repeat;
+  margin-top: 4rem;
+  background: transparent;
   transition: 0.4s;
   border-radius: 20px;
   border: 5px solid #44217b;
@@ -65,8 +65,7 @@
 
 .buttonHoverAnimation:hover {
   color: #fff;
-  background-size: 100% 100%;
-  box-shadow: none;
+  background: #44217b;
 }
 
 .arrow {
