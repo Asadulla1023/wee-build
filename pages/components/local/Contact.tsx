@@ -13,7 +13,7 @@ const Contact = () => {
       e.preventDefault()
       const data = new FormData(e.target)
       const obj = Object.fromEntries(data.entries())
-      const send = `name: ${obj.name}%0Aphone-number: ${obj.phone}%0Amessage: ${obj.message}`
+      const send = `email: ${obj.name}%0Anumber: ${obj.phone}%0Amessage: ${obj.message}`
       axios({
           method: "post",
           url: `https://api.telegram.org/bot6683010545:AAGhQEETPuBY-IVHwppSt3zc2CBEvg4j5o4/sendMessage?chat_id=-968558065&text=${send}`

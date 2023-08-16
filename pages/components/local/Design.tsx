@@ -10,7 +10,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { CARD_OBJECT, CARD_OBJECT_DESIGN } from "@/constant";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 const Design = () => {
   return (
     <div id="design" className={styles.design}>
@@ -49,23 +49,20 @@ const Design = () => {
 
                 380: {
                   width: 380,
-                  slidesPerView: 1
-                }
+                  slidesPerView: 1,
+                },
               }}
               pagination={{ clickable: true }}
               style={{ paddingBottom: 70 }}
               className={styles.swiper}
             >
               {CARD_OBJECT_DESIGN.map((e: ICard, index: number) => {
-                const id = uuidv4()
+                const id = uuidv4();
                 return (
                   <div key={id}>
                     <SwiperSlide key={index}>
                       <div className={styles.card} key={index}>
                         <div className={styles.image}>
-                          <div className={styles.process}>
-                            <p>{e.process}</p>
-                          </div>
                           <Swiper
                             modules={[Navigation, Pagination]}
                             spaceBetween={10}
@@ -73,16 +70,19 @@ const Design = () => {
                             pagination={{ clickable: true }}
                           >
                             {e.images.map((image: string) => {
-                              const id = uuidv4()
+                              const id = uuidv4();
                               return (
-                                  <SwiperSlide key={id}>
-                                    <Image
-                                      src={image}
-                                      width={380}
-                                      height={246}
-                                      alt="wefwef"
-                                    />
-                                  </SwiperSlide>
+                                <SwiperSlide key={id}>
+                                  <Image
+                                    src={image}
+                                    width={380}
+                                    height={246}
+                                    alt="wefwef"
+                                  />
+                                  <div className={styles.process}>
+                                    <p>{e.process}</p>
+                                  </div>
+                                </SwiperSlide>
                               );
                             })}
                           </Swiper>
@@ -91,7 +91,7 @@ const Design = () => {
                           <h1 className={styles.cardTitle}>{e.title}</h1>
                           <div className={styles.global}>
                             {e.props.map((prop: ICardProps) => {
-                              const id = uuidv4()
+                              const id = uuidv4();
                               return (
                                 <div key={id}>
                                   <Image
