@@ -27,15 +27,13 @@
   margin-top: -40px;
 }
 
+.contact:hover {
+  background: #43217bcb;
+}
+
 .contact > img {
   border-radius: 100px;
 }
-
-/* @media screen and (max-width: 768px) {
-  .contact {
-    left: 86%;
-  }
-} */
 
 .modalContact {
   display: flex;
@@ -48,7 +46,7 @@
 .subModal {
   position: fixed;
   top: 100%;
-  margin-top: -360px;
+  margin-top: -400px;
   height: 350px;
   border-radius: 100px;
   left: 100%;

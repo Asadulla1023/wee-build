@@ -26,7 +26,7 @@ const Cost = () => {
     const [abled, setAbled] = useState(false)
     const [orderOpen, setOrderOpen] = useState(false)
     const [props, setProps] = useState<ICardPrice | undefined>()
-
+    const [overed, setOvered] = useState<string>("")
     const router = useRouter()
 
     const pushToCostBlock = () => {
@@ -182,7 +182,7 @@ const Cost = () => {
                                     <div className={styles.selection}>
                                         <div className={styles.container}>
                                             <h3>Стиль ремонта</h3>
-                                            <div className={styles.checks}>
+                                            <div className={styles.checksRep}>
                                                 {ads3.map((e: string, index: number) => {
                                                     return <div key={uuidv4()} className={e === selectedRepair ? `${styles.checkboxRep} ${styles.boxShadowRep}` : styles.checkboxRep} onClick={() => {
                                                         setSelectedRepair(e)
@@ -321,7 +321,11 @@ const Cost = () => {
                                                         <div className={styles.line} />
                                                         <p>{prop.desc}</p>
                                                     </div>
-                                                    <button onClick={() => {
+                                                    <button className={overed === prop.title ? styles.animate: styles.noneAnimation} onMouseOver={()=> {
+                                                        setOvered(prop.title)
+                                                    }} onMouseLeave={()=> {
+                                                        setOvered("")
+                                                    }} onClick={() => {
                                                         setOrderOpen(!orderOpen)
                                                         setProps(prop)
                                                     }}>{prop.price}.000$</button>

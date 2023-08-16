@@ -7,19 +7,13 @@ import { v4 as uuidv4 } from "uuid";
 import Link from "next/link";
 import axios from "axios";
 
-interface IOrderProps {
-  email: string | undefined;
-  phone: string | undefined;
-  message: string | undefined;
-}
-
-const Contact = ({ email, phone, message }: IOrderProps) => {
+const Contact = () => {
 
     const Post = (e: React.FormEvent<HTMLFormElement> | any): void => {
       e.preventDefault()
       const data = new FormData(e.target)
       const obj = Object.fromEntries(data.entries())
-      const send = `email: ${obj.email}%0Aphone: ${obj.phone}%0Amessage: ${obj.message}`
+      const send = `name: ${obj.name}%0Aphone-number: ${obj.phone}%0Amessage: ${obj.message}`
       axios({
           method: "post",
           url: `https://api.telegram.org/bot6683010545:AAGhQEETPuBY-IVHwppSt3zc2CBEvg4j5o4/sendMessage?chat_id=-968558065&text=${send}`
@@ -124,13 +118,13 @@ const Contact = ({ email, phone, message }: IOrderProps) => {
               </div>
               <form onSubmit={Post} className={styles.form}>
                 <h1>ОБРАТНАЯ СВЯЗЬ</h1>
-                <div className={styles.inputForm}>
-                  <p>Почта</p>
-                  <input name="email" type="email" />
+                <div className={styles.inputForm}> 
+                  <p>Имя</p>
+                  <input name="name" type="text" />
                 </div>
                 <div style={{ marginTop: 10 }} className={styles.inputForm}>
                   <p>Номер телефона</p>
-                  <input name="phone" type="text" />
+                  <input name="phoneNumber" type="text" />
                 </div>
                 <div style={{ marginTop: 10 }} className={styles.inputForm}>
                   <p>Cообщение</p>

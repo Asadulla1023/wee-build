@@ -101,7 +101,7 @@
   margin-bottom: 20px;
 }
 
-.checks {
+.checks, .checksRep {
   display: flex;
   width: 100%;
   justify-content: center;
@@ -285,9 +285,9 @@
 
 .selectImageOfLivingRoom {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  width: fit-content;
   gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
 .selectImage,
@@ -387,12 +387,12 @@
   width: 380px;
 }
 
-.cardPriceItem > button {
+.cardPriceItem > .animate {
   width: 100%;
   margin-top: auto;
   border: 5px solid #44217b;
   border-radius: 20px;
-  height: 100px;
+  height: 80px;
   background-image: linear-gradient(-90deg, #44217b,#500bc0);
   background-size: 0 100%;
   background-repeat: no-repeat;
@@ -402,7 +402,20 @@
   color: #44217b;
 }
 
-.cardPriceItem > button:hover {
+.noneAnimation {
+  margin-top: auto;
+  transition: 0.4s;
+  font-size: 20px;
+  color: #44217b;
+  font-weight: 450;
+  background: transparent;
+  height: 80px;
+  width: 100%;
+  border-radius: 20px;
+  border: 5px solid #44217b;
+}
+
+.cardPriceItem > .animate:hover {
   background-size: 100% 100%;
   color: #fff;
   cursor: pointer;
@@ -458,9 +471,31 @@
   }
 }
 
-@media screen and (max-width: 1080px) {
-  .checks {
+@media screen and (max-width: 1150px) {
+  .roomType {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .checkboxInput > p {
+    width: auto;
+  }
+  .checksRep {
     flex-wrap: wrap;
+  }
+  .checkboxRep {
+    width: 45%;
+    height: fit-content;
+    padding-bottom: 1rem;
+  }
+  .checkboxRep > img {
+    width: 100%;
+    height: 250px;
+    border-radius: 20px;
+    object-fit: cover;
+  }
+  .checkboxRep > p {
+    margin-top: 1rem;
   }
 }
 
@@ -476,21 +511,32 @@
   }
 } */
 
-@media screen and (max-width: 814px) {
+@media screen and (max-width: 840px) {
   .checks {
-    flex-wrap: wrap !important;
     justify-content: center;
     display: flex;
-    flex-direction: column;
-    margin: auto;
+    align-items: center;
+    gap: 1rem;
+  }
+  .selection {
+    padding: 0.5rem;
+    padding-bottom: 1rem;
   }
 
-  .checkboxRep {
-    width: 244px;
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    margin-top: 20px;
+  .selection h3 {
+    font-size: 23px;
+  }
+  .checkbox {
+    width: 45%;
+    height: auto;
+    padding-bottom: 1rem;
+  }
+  .checkbox > img {
+    width: 100%;
+    height: auto;
+  }
+  .checkbox > p, .checkboxRep > p {
+    font-size: 1em;
   }
 }
 
@@ -498,20 +544,6 @@
   .content h1 {
     font-size: 30px !important;
   }
-
-  .checks {
-    display: block;
-  }
-
-  .checkbox {
-    width: 380px;
-    margin: 0 auto;
-  }
-
-  .checkbox:nth-child(2) {
-    margin-top: 50px;
-  }
-
   .multiRange {
     width: 100%;
   }
@@ -520,15 +552,20 @@
     width: 100%;
     height: auto;
   }
+  .container {
+    gap: 0.5rem !important;
+  }
+  .selection button {
+    width: 50%;
+    height: 60px;
+    font-size: 16px;
+    padding: 0;
+  }
 }
 
 @media screen and (max-width: 670px) {
   .content h1 {
     font-size: 25px !important;
-  }
-
-  .checkbox:nth-child(2) {
-    margin-top: 50px;
   }
 
   .circle {
@@ -540,15 +577,15 @@
   .line {
     width: 60px;
   }
+  
+  .checkboxRep > img {
+    height: 200px;
+  }
 }
 
 @media screen and (max-width: 550px) {
   .content h1 {
-    font-size: 16px !important;
-  }
-
-  .checkbox:nth-child(2) {
-    margin-top: 50px;
+    font-size: 20px !important;
   }
 
   .circle {
@@ -561,8 +598,12 @@
     width: 30px;
   }
 
+
   .selection {
-    padding: 0;
+    padding: 1rem 0;
+  }
+  .selection button {
+    font-size: 14px;
   }
 }
 
@@ -574,22 +615,23 @@
     /* font-size: 20px !important; */
   }
 
-  .selection button {
-    padding: 15px 50px;
+  .checkbox > p, .checkboxRep > p {
+    font-size: 13px;
+  }
+  .controller {
+    gap: 0.3rem;
+  }
+  .control {
+    gap: 0.3rem;
   }
 }
 
 @media screen and (max-width: 460px) {
-  .checkbox:nth-child(2) {
-    margin-top: 50px;
-  }
-
-  .checkbox {
-    width: 100%;
-  }
-
   .images img {
     width: 100% !important;
+  }
+  .checkboxRep {
+    width: 80%;
   }
 }
 
@@ -600,6 +642,13 @@
     height: 46px;
     font-size: 15px !important;
     border-radius: 10px;
+  }
+
+  .checks {
+    flex-direction: column;
+  }
+  .checkbox {
+    width: 70%;
   }
 
   .selection h3 {
@@ -613,11 +662,6 @@
 
   .val {
     font-size: 25px;
-  }
-
-  .selection button {
-    padding: 10px 35px;
-    font-size: 20px;
   }
 
   .circle {

@@ -30,6 +30,7 @@ const RoundSlider = ({max, min, val, setVal}: IProps) => {
             min={min}
             dataIndex={val}
             onChange={(value: string) => { setVal(Number(value.split("м²")[0])) }}
+            
         />
     )
 }
