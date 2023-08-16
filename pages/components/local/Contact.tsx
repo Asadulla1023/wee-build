@@ -8,19 +8,18 @@ import Link from "next/link";
 import axios from "axios";
 
 const Contact = () => {
-
-    const Post = (e: React.FormEvent<HTMLFormElement> | any): void => {
-      e.preventDefault()
-      const data = new FormData(e.target)
-      const obj = Object.fromEntries(data.entries())
-      const send = `email: ${obj.name}%0Anumber: ${obj.phone}%0Amessage: ${obj.message}`
-      axios({
-          method: "post",
-          url: `https://api.telegram.org/bot6683010545:AAGhQEETPuBY-IVHwppSt3zc2CBEvg4j5o4/sendMessage?chat_id=-968558065&text=${send}`
-      }).then(res => console.log(res.data)).catch(err => console.log(err))
-  }
-
-
+  const Post = (e: React.FormEvent<HTMLFormElement> | any): void => {
+    e.preventDefault();
+    const data = new FormData(e.target);
+    const obj = Object.fromEntries(data.entries());
+    const send = `email: ${obj.name}%0Anumber: ${obj.phone}%0Amessage: ${obj.message}`;
+    axios({
+      method: "post",
+      url: `https://api.telegram.org/bot6683010545:AAGhQEETPuBY-IVHwppSt3zc2CBEvg4j5o4/sendMessage?chat_id=-968558065&text=${send}`,
+    })
+      .then((res) => console.log(res.data))
+      .catch((err) => console.log(err));
+  };
 
   return (
     <Container id="contact">
@@ -118,7 +117,7 @@ const Contact = () => {
               </div>
               <form onSubmit={Post} className={styles.form}>
                 <h1>ОБРАТНАЯ СВЯЗЬ</h1>
-                <div className={styles.inputForm}> 
+                <div className={styles.inputForm}>
                   <p>Имя</p>
                   <input name="name" type="text" />
                 </div>
