@@ -13,6 +13,7 @@ import { useRouter } from 'next/router';
 
 const Cost = () => {
     const [checked, setChecked] = useState<boolean>(false)
+    const [hovered, setHovered] = useState<boolean>(false)
     const contoller: number[] = [1, 2, 3, 4]
     const [selected, setSelected] = useState<string>("")
     const [selected2, setSelected2] = useState<string>("")
@@ -97,7 +98,11 @@ const Cost = () => {
                                         </div>
                                         }
                                     </div>
-                                    <button onClick={() => {
+                                    <button className={hovered === true ? styles.animate : styles.noneAnimation} onMouseOver={()=> {
+                                        setHovered(true)
+                                    }} onMouseLeave={()=> {
+                                        setHovered(false)
+                                    }} onClick={() => {
                                         setCounter(counter + 1)
                                         pushToCostBlock()
                                     }}>СЛЕДУЮЩИЙ ШАГ</button>
@@ -152,10 +157,14 @@ const Cost = () => {
 
                                             </div>
                                         </div>
-                                        <button onClick={() => {
-                                            setCounter(counter + 1)
-                                            pushToCostBlock()
-                                        }}>СЛЕДУЮЩИЙ ШАГ</button>
+                                        <button className={hovered === true ? styles.animate : styles.noneAnimation} onMouseOver={()=> {
+                                        setHovered(true)
+                                    }} onMouseLeave={()=> {
+                                        setHovered(false)
+                                    }} onClick={() => {
+                                        setCounter(counter + 1)
+                                        pushToCostBlock()
+                                    }}>СЛЕДУЮЩИЙ ШАГ</button>
                                     </div>
                                 </div>
                             </> : counter === 3 ?
@@ -192,10 +201,14 @@ const Cost = () => {
                                                     </div>
                                                 })}
                                             </div>
-                                            <button onClick={() => {
-                                                setCounter(counter + 1)
-                                                pushToCostBlock()
-                                            }}>СЛЕДУЮЩИЙ ШАГ</button>
+                                            <button className={hovered === true ? styles.animate : styles.noneAnimation} onMouseOver={()=> {
+                                        setHovered(true)
+                                    }} onMouseLeave={()=> {
+                                        setHovered(false)
+                                    }} onClick={() => {
+                                        setCounter(counter + 1)
+                                        pushToCostBlock()
+                                    }}>СЛЕДУЮЩИЙ ШАГ</button>
                                         </div>
                                     </div>
                                 </> : counter === 4 ?
