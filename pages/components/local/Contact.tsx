@@ -40,7 +40,7 @@ const Contact = () => {
                         height={23}
                         alt="box"
                       />
-                      <a href="https://mail.google.com/mail/u/0/#search/weebuild.official%40gmail.com?compose=new">
+                      <a href="https://mail.google.com/mail/u/0/#search/weebuild.official%40gmail.com?compose=new" target="_blank">
                         weebuild.official@gmail.com
                       </a>
                     </div>
@@ -60,6 +60,7 @@ const Contact = () => {
                           href={
                             "https://www.facebook.com/profile.php?id=100095136643324&mibextid=LQQJ4d"
                           }
+                          target="_blank"
                         >
                           <Image
                             src={"/icons/faceebook.svg"}
@@ -68,7 +69,7 @@ const Contact = () => {
                             alt="face"
                           />
                         </Link>
-                        <Link href={"https://t.me/Weebuild"}>
+                        <Link href={"https://t.me/Weebuild"} target="_blank">
                           <Image
                             src={"/icons/telegram.svg"}
                             width={29}
@@ -78,6 +79,7 @@ const Contact = () => {
                         </Link>
                         <Link
                           href={"https://www.instagram.com/weebuild_official/"}
+                          target="_blank"
                         >
                           <Image
                             src={"/icons/instagram.svg"}
@@ -96,6 +98,7 @@ const Contact = () => {
                         href={
                           "https://www.google.com/maps/place/41%C2%B016'49.6%22N+69%C2%B014'50.5%22E/@41.2804373,69.2447741,17z/data=!3m1!4b1!4m4!3m3!8m2!3d41.2804333!4d69.247349?hl=ru-RU&entry=ttu"
                         }
+                        target="_blank"
                       >
                         <Image
                           src={"/icons/location.svg"}
@@ -104,7 +107,7 @@ const Contact = () => {
                           alt="locate"
                         />
                       </Link>
-                      <a href="https://www.google.com/maps/place/41%C2%B016'49.6%22N+69%C2%B014'50.5%22E/@41.2804373,69.2447741,17z/data=!3m1!4b1!4m4!3m3!8m2!3d41.2804333!4d69.247349?hl=ru-RU&entry=ttu">
+                      <a href="https://www.google.com/maps/place/41%C2%B016'49.6%22N+69%C2%B014'50.5%22E/@41.2804373,69.2447741,17z/data=!3m1!4b1!4m4!3m3!8m2!3d41.2804333!4d69.247349?hl=ru-RU&entry=ttu"  target="_blank">
                         Шота Руставели 58
                       </a>
                     </div>
@@ -113,7 +116,7 @@ const Contact = () => {
               </div>
               <form onSubmit={Post} className={styles.form}>
                 <h1>ОБРАТНАЯ СВЯЗЬ</h1>
-                <div className={styles.inputForm}> 
+                <div className={styles.inputForm}>
                   <p>Имя</p>
                   <input name="name" required type="text" />
                 </div>

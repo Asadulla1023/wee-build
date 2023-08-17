@@ -61,6 +61,9 @@ const Portfolio = () => {
                     <SwiperSlide className={styles.addItem}>
                       <div className={styles.card}>
                         <div className={styles.image}>
+                          <div className={styles.process}>
+                            <p>{e.process}</p>
+                          </div>
                           <Swiper
                             modules={[Navigation, Pagination]}
                             spaceBetween={10}
@@ -77,9 +80,6 @@ const Portfolio = () => {
                                     height={246}
                                     alt="wefwef"
                                   />
-                                  <div className={styles.process}>
-                                    <p>{e.process}</p>
-                                  </div>
                                 </SwiperSlide>
                               );
                             })}
