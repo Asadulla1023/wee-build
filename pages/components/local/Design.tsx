@@ -9,7 +9,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import { CARD_OBJECT, CARD_OBJECT_DESIGN } from "@/constant";
+import { CARD_OBJECT_DESIGN } from "@/constant";
 import { v4 as uuidv4 } from "uuid";
 const Design = () => {
   return (
