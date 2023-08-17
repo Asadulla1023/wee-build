@@ -579,10 +579,6 @@ export const NAV = [
     url: "#coop",
   },
   {
-    title: "Блог",
-    url: "#blog",
-  },
-  {
     title: "FAQ",
     url: "#faq",
   },
