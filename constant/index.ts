@@ -630,7 +630,7 @@ export const LOGO = [
     image: "/images/dmLogo.webp",
   },
   {
-    image: "/images/vitraLogo.png",
+    image: "/images/vLogo.png",
   },
 ];
 
