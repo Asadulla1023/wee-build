@@ -271,7 +271,7 @@ export const CARD_OBJECT_DESIGN: ICard[] = [
       "/images/Minimalizm/Kolidor/66.jpg",
       "/images/Minimalizm/Kolidor/77.jpg",
     ],
-    process: "Колидор",
+    process: "На рассмотрении",
     props: [
       {
         image: "icons/global.svg",
@@ -290,7 +290,7 @@ export const CARD_OBJECT_DESIGN: ICard[] = [
         title: "1400$",
       },
     ],
-    title: "Дизайн двухкомнатной квартиры",
+    title: "колидор",
   },
   {
     images: [

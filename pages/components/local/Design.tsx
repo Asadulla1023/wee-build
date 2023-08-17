@@ -63,6 +63,9 @@ const Design = () => {
                     <SwiperSlide key={index}>
                       <div className={styles.card} key={index}>
                         <div className={styles.image}>
+                          <div className={styles.process}>
+                            <p>{e.process}</p>
+                          </div>
                           <Swiper
                             modules={[Navigation, Pagination]}
                             spaceBetween={10}
@@ -79,9 +82,6 @@ const Design = () => {
                                     height={246}
                                     alt="wefwef"
                                   />
-                                  <div className={styles.process}>
-                                    <p>{e.process}</p>
-                                  </div>
                                 </SwiperSlide>
                               );
                             })}
