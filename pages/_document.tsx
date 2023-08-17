@@ -5,7 +5,6 @@ export default function Document() {
     <Html lang="en">
       <Head >
         <meta name="description" content="WEE BUILD - repairing website made with next js" />
-
       </Head>
       <body>
         <Main />

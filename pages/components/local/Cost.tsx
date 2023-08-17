@@ -29,7 +29,7 @@ const Cost = () => {
     const [props, setProps] = useState<ICardPrice | undefined>()
     const [overed, setOvered] = useState<string>("")
     const router = useRouter()
-
+    const [totalPrice, setTotalPrice] = useState<number>(0)
     const [addPrice, setAddPrice] = useState<number>(0)
     const [addPrice1, setAddPrice1] = useState<number>(0)
     const [addPrice2, setAddPrice2] = useState<number>(0)
@@ -37,9 +37,6 @@ const Cost = () => {
     const pushToCostBlock = () => {
         router.push("#cost")
     }
-
-    console.log(addPrice);
-
     useEffect(() => {
         if (orderOpen === true) {
             document.body.style.overflow = "hidden"
@@ -47,7 +44,8 @@ const Cost = () => {
             document.body.style.overflow = "auto"
         }
     }, [orderOpen])
-    const value = String(selectedRoom).split("")[0]
+
+
     return (
         <Container id='cost' >
             {<>
@@ -328,18 +326,7 @@ const Cost = () => {
                                                         {ads3.map((e: string, index: number) => {
                                                             return <div key={uuidv4()} className={e === selectedRepair ? styles.checkboxInput : styles.checkboxInput} onClick={() => {
                                                                 setSelectedRepair(e)
-                                                                if (e === "Стандарт") {
-                                                                    setAddPrice1(111)
-                                                                }
-                                                                if (e === "Неоклассика") {
-                                                                    setAddPrice1(1000)
-                                                                }
-                                                                if (e === "Классика") {
-                                                                    setAddPrice1(200)
-                                                                }
-                                                                if (e === "Под дизайн") {
-                                                                    setAddPrice1(150)
-                                                                }
+                                                                setAddPrice1(0)
                                                             }}>
                                                                 <input style={e === selectedRepair ? {
                                                                     background: "#46247c"
@@ -380,11 +367,12 @@ const Cost = () => {
                                                     }} onClick={() => {
                                                         setOrderOpen(!orderOpen)
                                                         setProps(prop)
+                                                        setTotalPrice((prop.price * val) + addPrice + addPrice1 + addPrice2)
                                                     }}>{(prop.price * val) + addPrice + addPrice1 + addPrice2}$</button>
                                                 </div>
                                             })}
                                         </div>
-                                        <OrderModal roomType={selectedRoom} addService={selected2} repStyle={selectedRepair} design={checked} totalArea={`${val}м²`} setOrderOpen={setOrderOpen} price={props?.price} title={props?.title} orderOpen={orderOpen} />
+                                        <OrderModal roomType={selectedRoom} totalPrice={totalPrice} addService={selected2} repStyle={selectedRepair} design={checked} totalArea={`${val}м²`} setOrderOpen={setOrderOpen} price={props?.price} title={props?.title} orderOpen={orderOpen} />
                                     </> : null}
                 </div></>}
 

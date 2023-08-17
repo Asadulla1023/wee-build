@@ -13,15 +13,15 @@ interface IOrderProps {
     repStyle: string
     design: boolean
     totalArea: string
+    totalPrice: number
 }
 
-const OrderModal = ({ title, price, orderOpen, setOrderOpen, roomType, addService, design, repStyle, totalArea }: IOrderProps) => {
-    const router = useRouter()
+const OrderModal = ({ title, price, orderOpen, setOrderOpen, roomType, addService, design, repStyle, totalArea, totalPrice }: IOrderProps) => {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement> | any): void => {
         e.preventDefault()
         const data = new FormData(e.target)
         const obj = Object.fromEntries(data.entries())
-        const send = `name: ${obj.name}%0Aemail: ${obj.email}%0Aphone-number: ${obj.phoneNumber}%0Aselected-title: ${title}%0Aprice: ${price}.000$%0Arooms: ${roomType}%0Aadditional-service: ${addService}%0Adesign: ${design === true ? "necessary" : "unnecessary"}%0Arepair-style: ${repStyle}%0Atotal-area: ${totalArea}`
+        const send = `name: ${obj.name}%0Aemail: ${obj.email}%0Aphone-number: ${obj.phoneNumber}%0Aselected-title: ${title}%0Aprice: ${totalPrice}$%0Arooms: ${roomType}%0Aadditional-service: ${addService}%0Adesign: ${design === true ? "necessary" : "unnecessary"}%0Arepair-style: ${repStyle}%0Atotal-area: ${totalArea}`
         axios({
             method: "post",
             url: `https://api.telegram.org/bot6683010545:AAGhQEETPuBY-IVHwppSt3zc2CBEvg4j5o4/sendMessage?chat_id=-968558065&text=${send}`
@@ -49,12 +49,12 @@ const OrderModal = ({ title, price, orderOpen, setOrderOpen, roomType, addServic
             transition: "0.4s"
         }}>
                 <h3>{title}</h3>
-                <p>{price}.000$</p>
+                <p>{totalPrice}$</p>
                 <form action="#" onSubmit={handleSubmit}>
-                    <input type="text" name='name' placeholder='Name' required />
-                    <input maxLength={13} minLength={9} type="text" name='phoneNumber' placeholder='phoneNumber' required />
-                    <input type="email" name='email' placeholder='email' required />
-                    <button>submit</button>
+                    <input type="text" name='name' placeholder='Имя' required />
+                    <input maxLength={13} minLength={9} type="text" name='phoneNumber' placeholder='Номер телефона' required />
+                    <input type="email" name='email' placeholder='Электрон почта' required />
+                    <button>ОТПРАВИТЬ</button>
                 </form>
             </div>
             <div style={orderOpen === true ? {

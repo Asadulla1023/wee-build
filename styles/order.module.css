@@ -23,7 +23,7 @@
   gap: 1rem;
   position: fixed;
   left: 50%;
-  margin-left: -150px;
+  margin-left: -200px;
   top: 50%;
   margin-top: -180px;
 }
@@ -49,7 +49,8 @@
   height: 70px;
   border-radius: 20px;
   border: 3px solid #3d0892;
-  background: #6969692a;
+  background: #fff;
+  outline: none;
   padding: 1rem 10px;
   width: 100%;
   font-size: 18px;
@@ -61,6 +62,7 @@
   background-repeat: no-repeat;
   transition: 0.4s;
   border-radius: 20px;
+  background: transparent;
   border: 5px solid #44217b;
   cursor: pointer;
   color: #44217b;
@@ -72,5 +74,6 @@
 
 .container > form > button:hover {
     color: #fff;
+    background: #44217b;
   background-size: 100% 100%;
 }
