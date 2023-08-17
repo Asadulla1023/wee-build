@@ -27,9 +27,7 @@ const Navigation = ({ open, setOpen }: Open) => {
                 <ul className={styles.navigate}>
                     {NAV.map(({ title, url }) => {
                         return <li key={uuidv4()}>
-                            <Link onClick={()=> {
-                                setOpen(!open)
-                            }} href={url}>{title}</Link>
+                            <Link href={url}>{title}</Link>
                         </li>
                     })}
                 </ul>
