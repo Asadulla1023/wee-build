@@ -1,13 +1,14 @@
 import { NAV } from '@/constant'
 import Link from 'next/link'
-import React from 'react'
+import React, { Dispatch, SetStateAction } from 'react'
 import styles from "@/styles/header.module.css"
 import { v4 as uuidv4 } from "uuid"
 import Image from 'next/image'
 interface Open {
     open: boolean
+    setOpen: Dispatch<SetStateAction<boolean>>
 }
-const Navigation = ({ open }: Open) => {
+const Navigation = ({ open, setOpen }: Open) => {
     return (
         <div style={open === true ? {
             transition: "0.2s",
@@ -26,7 +27,9 @@ const Navigation = ({ open }: Open) => {
                 <ul className={styles.navigate}>
                     {NAV.map(({ title, url }) => {
                         return <li key={uuidv4()}>
-                            <Link href={url}>{title}</Link>
+                            <Link onClick={()=> {
+                                setOpen(!open)
+                            }} href={url}>{title}</Link>
                         </li>
                     })}
                 </ul>

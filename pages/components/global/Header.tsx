@@ -42,7 +42,7 @@ const Header = () => {
                 }} >
                     <Burger setOpen={setOpen} open={open} />
                 </div>
-                <Navigation open={open} />
+                <Navigation setOpen={setOpen} open={open} />
             </div>
         </header>
     )
