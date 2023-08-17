@@ -15,7 +15,7 @@ const center = {
 const Maps = () => {
   const { isLoaded } = useLoadScript({
     id: "google-maps-scripts",
-    googleMapsApiKey: "AIzaSyBCEicVIKQxCaQrMBkvfrAB71GG8OKovXU",
+    googleMapsApiKey: "AIzaSyCoMtd7r21tetH1XMUTP9iee4R6qSGbn4k"
   });
 
   const [map, setMap] = useState(null);

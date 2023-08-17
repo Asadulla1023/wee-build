@@ -6,7 +6,6 @@ import Designer from "./components/local/Designer";
 import Company from "./components/local/Company";
 import AboutUs from "./components/local/AboutUs";
 import Cost from "./components/local/Cost";
-import Portfolio from "./components/local/Portfolio";
 import Design from "./components/local/Design";
 import Cooperation from "./components/local/Cooperation";
 import Faq from "./components/local/Faq";
@@ -43,7 +42,6 @@ export default function Home() {
         <Company />
         <AboutUs />
         <Cost />
-        <Portfolio />
         <Design />
         <Cooperation />
         <Faq />
