@@ -3,7 +3,6 @@ import styles from "@/styles/contact.module.css";
 import Image from "next/image";
 import Container from "../global/Container";
 import Maps from "./Map";
-import { v4 as uuidv4 } from "uuid";
 import Link from "next/link";
 import axios from "axios";
 

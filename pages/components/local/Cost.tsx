@@ -30,9 +30,15 @@ const Cost = () => {
     const [overed, setOvered] = useState<string>("")
     const router = useRouter()
 
+    const [addPrice, setAddPrice] = useState<number>(0)
+    const [addPrice1, setAddPrice1] = useState<number>(0)
+    const [addPrice2, setAddPrice2] = useState<number>(0)
+
     const pushToCostBlock = () => {
         router.push("#cost")
     }
+
+    console.log(addPrice);
 
     useEffect(() => {
         if (orderOpen === true) {
@@ -73,7 +79,6 @@ const Cost = () => {
                                     <div className={styles.checks}>
                                         {ads.map((e: string, index: number) => {
                                             return <div key={e} className={e === selected ? `${styles.checkbox} ${styles.boxShadow}` : styles.checkbox} onClick={() => {
-                                                setChecked(!checked)
                                                 setSelected(e)
                                             }}>
                                                 <Image src={`/images/select${index + 1}.png`} alt='decorate' width={380} height={245} />
@@ -86,21 +91,23 @@ const Cost = () => {
                                         {selected !== "Новостройка" ? ads2.map((e: string, index: number) => {
                                             return <div key={e} className={e === selected2 ? `${styles.checkbox} ${styles.boxShadow}` : styles.checkbox} onClick={() => {
                                                 setSelected2(e)
+                                                setAddPrice(e === "Межкомнатные перегородки" ? 17 : 15)
                                             }}>
                                                 <Image src={`/images/select${index + 3}.png`} alt='decorate' width={380} height={245} />
                                                 <p>{e}</p>
                                             </div>
                                         }) : <div className={selected2 === ads2[0] ? `${styles.checkbox} ${styles.boxShadow}` : styles.checkbox} onClick={() => {
                                             setSelected2(ads2[0])
+                                            setAddPrice(17)
                                         }}>
                                             <Image src={`/images/select3.png`} alt='decorate' width={380} height={245} />
                                             <p>{ads2[0]}</p>
                                         </div>
                                         }
                                     </div>
-                                    <button className={hovered === true ? styles.animate : styles.noneAnimation} onMouseOver={()=> {
+                                    <button className={hovered === true ? styles.animate : styles.noneAnimation} onMouseOver={() => {
                                         setHovered(true)
-                                    }} onMouseLeave={()=> {
+                                    }} onMouseLeave={() => {
                                         setHovered(false)
                                     }} onClick={() => {
                                         setCounter(counter + 1)
@@ -157,14 +164,14 @@ const Cost = () => {
 
                                             </div>
                                         </div>
-                                        <button className={hovered === true ? styles.animate : styles.noneAnimation} onMouseOver={()=> {
-                                        setHovered(true)
-                                    }} onMouseLeave={()=> {
-                                        setHovered(false)
-                                    }} onClick={() => {
-                                        setCounter(counter + 1)
-                                        pushToCostBlock()
-                                    }}>СЛЕДУЮЩИЙ ШАГ</button>
+                                        <button className={hovered === true ? styles.animate : styles.noneAnimation} onMouseOver={() => {
+                                            setHovered(true)
+                                        }} onMouseLeave={() => {
+                                            setHovered(false)
+                                        }} onClick={() => {
+                                            setCounter(counter + 1)
+                                            pushToCostBlock()
+                                        }}>СЛЕДУЮЩИЙ ШАГ</button>
                                     </div>
                                 </div>
                             </> : counter === 3 ?
@@ -195,20 +202,32 @@ const Cost = () => {
                                                 {ads3.map((e: string, index: number) => {
                                                     return <div key={uuidv4()} className={e === selectedRepair ? `${styles.checkboxRep} ${styles.boxShadowRep}` : styles.checkboxRep} onClick={() => {
                                                         setSelectedRepair(e)
+                                                        if (e === "Стандарт") {
+                                                            setAddPrice1(111)
+                                                        }
+                                                        if (e === "Неоклассика") {
+                                                            setAddPrice1(1000)
+                                                        }
+                                                        if (e === "Классика") {
+                                                            setAddPrice1(200)
+                                                        }
+                                                        if (e === "Под дизайн") {
+                                                            setAddPrice1(300)
+                                                        }
                                                     }}>
                                                         <Image src={`/images/repair${index + 1}.png`} alt='decorate' width={244} height={211} />
                                                         <p>{e}</p>
                                                     </div>
                                                 })}
                                             </div>
-                                            <button className={hovered === true ? styles.animate : styles.noneAnimation} onMouseOver={()=> {
-                                        setHovered(true)
-                                    }} onMouseLeave={()=> {
-                                        setHovered(false)
-                                    }} onClick={() => {
-                                        setCounter(counter + 1)
-                                        pushToCostBlock()
-                                    }}>СЛЕДУЮЩИЙ ШАГ</button>
+                                            <button className={hovered === true ? styles.animate : styles.noneAnimation} onMouseOver={() => {
+                                                setHovered(true)
+                                            }} onMouseLeave={() => {
+                                                setHovered(false)
+                                            }} onClick={() => {
+                                                setCounter(counter + 1)
+                                                pushToCostBlock()
+                                            }}>СЛЕДУЮЩИЙ ШАГ</button>
                                         </div>
                                     </div>
                                 </> : counter === 4 ?
@@ -252,6 +271,7 @@ const Cost = () => {
                                                         {selected !== "Новостройка" ? ads2.map((e: string, index: number) => {
                                                             return <div key={e} className={e === selected2 ? styles.checkboxInput : styles.checkboxInput} onClick={() => {
                                                                 setSelected2(e)
+                                                                setAddPrice(e === "Межкомнатные перегородки" ? 17 : 15)
                                                             }}>
                                                                 <input style={e === selected2 ? {
                                                                     background: "#46247c"
@@ -260,6 +280,7 @@ const Cost = () => {
                                                             </div>
                                                         }) : <div className={selected2 === ads2[0] ? styles.checkboxInput : styles.checkboxInput} onClick={() => {
                                                             setSelected2(ads2[0])
+                                                            setAddPrice(17)
                                                         }}>
                                                             <input onClick={() => {
                                                                 setSelected2("")
@@ -287,7 +308,7 @@ const Cost = () => {
                                                         transition: "0.4s",
                                                         zIndex: 100,
                                                         marginTop: "1rem"
-                                                    }: {
+                                                    } : {
                                                         opacity: 0,
                                                         transition: "0.4s",
                                                         zIndex: -1000,
@@ -307,6 +328,18 @@ const Cost = () => {
                                                         {ads3.map((e: string, index: number) => {
                                                             return <div key={uuidv4()} className={e === selectedRepair ? styles.checkboxInput : styles.checkboxInput} onClick={() => {
                                                                 setSelectedRepair(e)
+                                                                if (e === "Стандарт") {
+                                                                    setAddPrice1(111)
+                                                                }
+                                                                if (e === "Неоклассика") {
+                                                                    setAddPrice1(1000)
+                                                                }
+                                                                if (e === "Классика") {
+                                                                    setAddPrice1(200)
+                                                                }
+                                                                if (e === "Под дизайн") {
+                                                                    setAddPrice1(150)
+                                                                }
                                                             }}>
                                                                 <input style={e === selectedRepair ? {
                                                                     background: "#46247c"
@@ -319,6 +352,7 @@ const Cost = () => {
                                                         <h3>Дизайн</h3>
                                                         <div className={checked ? styles.checkboxInput : styles.checkboxInput} onClick={() => {
                                                             setChecked(!checked)
+                                                            checked === true ? setAddPrice2(15) : setAddPrice2(0)
                                                         }}>
                                                             <input style={checked ? {
                                                                 background: '#46247c'
@@ -346,7 +380,7 @@ const Cost = () => {
                                                     }} onClick={() => {
                                                         setOrderOpen(!orderOpen)
                                                         setProps(prop)
-                                                    }}>{prop.price}.000$</button>
+                                                    }}>{(prop.price * val) + addPrice + addPrice1 + addPrice2}$</button>
                                                 </div>
                                             })}
                                         </div>
