@@ -282,7 +282,16 @@ const Cost = () => {
                                                     <div onClick={() => {
                                                         setAbled(!abled)
                                                     }} className={styles.seletedRooms}>{selectedRoom}</div>
-                                                    <div className={styles.selectRoom}>
+                                                    <div style={abled === true ? {
+                                                        opacity: 1,
+                                                        transition: "0.4s",
+                                                        zIndex: 100,
+                                                        marginTop: "1rem"
+                                                    }: {
+                                                        opacity: 0,
+                                                        transition: "0.4s",
+                                                        zIndex: -1000,
+                                                    }} className={styles.selectRoom}>
                                                         {[1, 2, 3, 4, 5, 6].map((iterable: number) => {
                                                             return <div key={uuidv4()} onClick={() => {
                                                                 setSelectedRoom(iterable)

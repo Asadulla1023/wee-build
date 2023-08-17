@@ -8,19 +8,16 @@ import Link from "next/link";
 import axios from "axios";
 
 const Contact = () => {
-  const Post = (e: React.FormEvent<HTMLFormElement> | any): void => {
-    e.preventDefault();
-    const data = new FormData(e.target);
-    const obj = Object.fromEntries(data.entries());
-    const send = `email: ${obj.name}%0Anumber: ${obj.phone}%0Amessage: ${obj.message}`;
-    axios({
-      method: "post",
-      url: `https://api.telegram.org/bot6683010545:AAGhQEETPuBY-IVHwppSt3zc2CBEvg4j5o4/sendMessage?chat_id=-968558065&text=${send}`,
-    })
-      .then((res) => console.log(res.data))
-      .catch((err) => console.log(err));
-  };
-
+    const Post = (e: React.FormEvent<HTMLFormElement> | any): void => {
+      e.preventDefault()
+      const data = new FormData(e.target)
+      const obj = Object.fromEntries(data.entries())
+      const send = `email: ${obj.name}%0Anumber: ${obj.phoneNumber}%0Amessage: ${obj.message}`
+      axios({
+          method: "post",
+          url: `https://api.telegram.org/bot6683010545:AAGhQEETPuBY-IVHwppSt3zc2CBEvg4j5o4/sendMessage?chat_id=-968558065&text=${send}`
+      }).then(res => console.log(res.data)).catch(err => console.log(err))
+  }
   return (
     <Container id="contact">
       {
@@ -44,7 +41,7 @@ const Contact = () => {
                         height={23}
                         alt="box"
                       />
-                      <a href="https://mail.google.com/mail/u/0/#search/weebuild.official%40gmail.com?compose=new">
+                      <a href="https://mail.google.com/mail/u/0/#search/weebuild.official%40gmail.com?compose=new" target="_blank">
                         weebuild.official@gmail.com
                       </a>
                     </div>
@@ -64,6 +61,7 @@ const Contact = () => {
                           href={
                             "https://www.facebook.com/profile.php?id=100095136643324&mibextid=LQQJ4d"
                           }
+                          target="_blank"
                         >
                           <Image
                             src={"/icons/faceebook.svg"}
@@ -72,7 +70,7 @@ const Contact = () => {
                             alt="face"
                           />
                         </Link>
-                        <Link href={"https://t.me/Weebuild"}>
+                        <Link href={"https://t.me/Weebuild"} target="_blank">
                           <Image
                             src={"/icons/telegram.svg"}
                             width={29}
@@ -82,6 +80,7 @@ const Contact = () => {
                         </Link>
                         <Link
                           href={"https://www.instagram.com/weebuild_official/"}
+                          target="_blank"
                         >
                           <Image
                             src={"/icons/instagram.svg"}
@@ -100,6 +99,7 @@ const Contact = () => {
                         href={
                           "https://www.google.com/maps/place/41%C2%B016'49.6%22N+69%C2%B014'50.5%22E/@41.2804373,69.2447741,17z/data=!3m1!4b1!4m4!3m3!8m2!3d41.2804333!4d69.247349?hl=ru-RU&entry=ttu"
                         }
+                        target="_blank"
                       >
                         <Image
                           src={"/icons/location.svg"}
@@ -108,7 +108,7 @@ const Contact = () => {
                           alt="locate"
                         />
                       </Link>
-                      <a href="https://www.google.com/maps/place/41%C2%B016'49.6%22N+69%C2%B014'50.5%22E/@41.2804373,69.2447741,17z/data=!3m1!4b1!4m4!3m3!8m2!3d41.2804333!4d69.247349?hl=ru-RU&entry=ttu">
+                      <a href="https://www.google.com/maps/place/41%C2%B016'49.6%22N+69%C2%B014'50.5%22E/@41.2804373,69.2447741,17z/data=!3m1!4b1!4m4!3m3!8m2!3d41.2804333!4d69.247349?hl=ru-RU&entry=ttu"  target="_blank">
                         Шота Руставели 58
                       </a>
                     </div>
@@ -119,16 +119,16 @@ const Contact = () => {
                 <h1>ОБРАТНАЯ СВЯЗЬ</h1>
                 <div className={styles.inputForm}>
                   <p>Имя</p>
-                  <input name="name" type="text" />
+                  <input name="name" required type="text" />
                 </div>
                 <div style={{ marginTop: 10 }} className={styles.inputForm}>
                   <p>Номер телефона</p>
-                  <input name="phoneNumber" type="text" />
+                  <input name="phoneNumber" minLength={9} maxLength={13} type="text" required />
                 </div>
                 <div style={{ marginTop: 10 }} className={styles.inputForm}>
                   <p>Cообщение</p>
-                  <textarea name="message" className={styles.textarea} />
                 </div>
+                  <textarea name="message" minLength={1} maxLength={2500} required className={styles.textarea} />
                 <button className={styles.button}>ОТПРАВИТЬ</button>
               </form>
             </div>
