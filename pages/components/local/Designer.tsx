@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import styles from "@/styles/designer.module.css";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useSpring, animated } from 'react-spring';
+import { delay } from "framer-motion";
 
 export default function Designer() {
   const router = useRouter()
@@ -29,9 +31,9 @@ export default function Designer() {
             <span></span>
           </div>
         </Link>
-        <button className={styles.buttonHoverAnimation} onClick={() => {
+        <button onClick={()=> {
           router.push("#cost")
-        }}>ОБСУДИТЬ ПРОЕКТ</button>
+        }} className={styles.buttonHoverAnimation}>ОБСУДИТЬ ПРОЕКТ</button>
       </div>
     </div>
   );

@@ -211,6 +211,7 @@ const Cost = () => {
                                                         }
                                                         if (e === "Под дизайн") {
                                                             setAddPrice1(300)
+                                                            setChecked(true)
                                                         }
                                                     }}>
                                                         <Image src={`/images/repair${index + 1}.png`} alt='decorate' width={244} height={211} />
@@ -327,6 +328,9 @@ const Cost = () => {
                                                             return <div key={uuidv4()} className={e === selectedRepair ? styles.checkboxInput : styles.checkboxInput} onClick={() => {
                                                                 setSelectedRepair(e)
                                                                 setAddPrice1(0)
+                                                                if (e === "Под дизайн") {
+                                                                    setChecked(true)
+                                                                }
                                                             }}>
                                                                 <input style={e === selectedRepair ? {
                                                                     background: "#46247c"
@@ -367,8 +371,8 @@ const Cost = () => {
                                                     }} onClick={() => {
                                                         setOrderOpen(!orderOpen)
                                                         setProps(prop)
-                                                        setTotalPrice((prop.price * val) + addPrice + addPrice1 + addPrice2)
-                                                    }}>{(prop.price * val) + addPrice + addPrice1 + addPrice2}$</button>
+                                                        setTotalPrice((prop.price * val) + addPrice*val + addPrice1 + addPrice2*val)
+                                                    }}>{(prop.price * val) + addPrice*val + addPrice1 + addPrice2*val}$</button>
                                                 </div>
                                             })}
                                         </div>
