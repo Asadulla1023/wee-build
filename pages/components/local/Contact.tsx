@@ -8,20 +8,16 @@ import Link from "next/link";
 import axios from "axios";
 
 const Contact = () => {
-
     const Post = (e: React.FormEvent<HTMLFormElement> | any): void => {
       e.preventDefault()
       const data = new FormData(e.target)
       const obj = Object.fromEntries(data.entries())
-      const send = `email: ${obj.name}%0Anumber: ${obj.phone}%0Amessage: ${obj.message}`
+      const send = `email: ${obj.name}%0Anumber: ${obj.phoneNumber}%0Amessage: ${obj.message}`
       axios({
           method: "post",
           url: `https://api.telegram.org/bot6683010545:AAGhQEETPuBY-IVHwppSt3zc2CBEvg4j5o4/sendMessage?chat_id=-968558065&text=${send}`
       }).then(res => console.log(res.data)).catch(err => console.log(err))
   }
-
-
-
   return (
     <Container id="contact">
       {
@@ -120,16 +116,16 @@ const Contact = () => {
                 <h1>ОБРАТНАЯ СВЯЗЬ</h1>
                 <div className={styles.inputForm}> 
                   <p>Имя</p>
-                  <input name="name" type="text" />
+                  <input name="name" required type="text" />
                 </div>
                 <div style={{ marginTop: 10 }} className={styles.inputForm}>
                   <p>Номер телефона</p>
-                  <input name="phoneNumber" type="text" />
+                  <input name="phoneNumber" minLength={9} maxLength={13} type="text" required />
                 </div>
                 <div style={{ marginTop: 10 }} className={styles.inputForm}>
                   <p>Cообщение</p>
-                  <textarea name="message" className={styles.textarea} />
                 </div>
+                  <textarea name="message" minLength={1} maxLength={2500} required className={styles.textarea} />
                 <button className={styles.button}>ОТПРАВИТЬ</button>
               </form>
             </div>

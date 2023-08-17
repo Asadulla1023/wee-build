@@ -58,7 +58,7 @@ export default function Home() {
             zIndex: 100,
             transition: "0.4s",
           } : {
-            transform: "translate(80px, 1px)",
+            transform: "translate(80px, -10px)",
             opacity: 0,
             zIndex: -1,
             transition: "0.4s",
