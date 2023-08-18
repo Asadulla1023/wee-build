@@ -25,7 +25,7 @@
   align-items: center;
   border-radius: 100px;
   margin-top: -40px;
-  animation: animationForContact 2s infinite;
+  animation: animationForContact 1s infinite;
 }
 
 .contact:hover {
