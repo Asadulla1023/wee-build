@@ -171,9 +171,12 @@
 
 @media screen and (max-width: 416px) {
     .card img {
-        width: 100%;
+        width: 70%;
     }
 
+    .card {
+        width: 80%;
+    }
 }
 
 @media screen and (max-width: 360px) {
