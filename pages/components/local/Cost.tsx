@@ -201,16 +201,16 @@ const Cost = () => {
                                                     return <div key={uuidv4()} className={e === selectedRepair ? `${styles.checkboxRep} ${styles.boxShadowRep}` : styles.checkboxRep} onClick={() => {
                                                         setSelectedRepair(e)
                                                         if (e === "Стандарт") {
-                                                            setAddPrice1(111)
+                                                            setAddPrice1(0)
                                                         }
                                                         if (e === "Неоклассика") {
-                                                            setAddPrice1(1000)
+                                                            setAddPrice1(0)
                                                         }
                                                         if (e === "Классика") {
-                                                            setAddPrice1(200)
+                                                            setAddPrice1(0)
                                                         }
                                                         if (e === "Под дизайн") {
-                                                            setAddPrice1(300)
+                                                            setAddPrice1(0)
                                                             setChecked(true)
                                                         }
                                                     }}>
@@ -270,7 +270,7 @@ const Cost = () => {
                                                         {selected !== "Новостройка" ? ads2.map((e: string, index: number) => {
                                                             return <div key={e} className={e === selected2 ? styles.checkboxInput : styles.checkboxInput} onClick={() => {
                                                                 setSelected2(e)
-                                                                setAddPrice(e === "Межкомнатные перегородки" ? 17 : 15)
+                                                                setAddPrice(e === "Межкомнатные перегородки" ? 17 : 17)
                                                             }}>
                                                                 <input style={e === selected2 ? {
                                                                     background: "#46247c"
@@ -328,9 +328,6 @@ const Cost = () => {
                                                             return <div key={uuidv4()} className={e === selectedRepair ? styles.checkboxInput : styles.checkboxInput} onClick={() => {
                                                                 setSelectedRepair(e)
                                                                 setAddPrice1(0)
-                                                                if (e === "Под дизайн") {
-                                                                    setChecked(true)
-                                                                }
                                                             }}>
                                                                 <input style={e === selectedRepair ? {
                                                                     background: "#46247c"
@@ -342,10 +339,10 @@ const Cost = () => {
                                                     <div className={styles.type}>
                                                         <h3>Дизайн</h3>
                                                         <div className={checked ? styles.checkboxInput : styles.checkboxInput} onClick={() => {
-                                                            setChecked(!checked)
+                                                            checked === true ? setChecked(false) : setChecked(true)
                                                             checked === true ? setAddPrice2(15) : setAddPrice2(0)
                                                         }}>
-                                                            <input style={checked ? {
+                                                            <input style={checked !== true ? {
                                                                 background: '#46247c'
                                                             } : {}} type="checkbox" />
                                                             <p>Нужен</p>
@@ -371,8 +368,8 @@ const Cost = () => {
                                                     }} onClick={() => {
                                                         setOrderOpen(!orderOpen)
                                                         setProps(prop)
-                                                        setTotalPrice((prop.price * val) + addPrice*val + addPrice1 + addPrice2*val)
-                                                    }}>{(prop.price * val) + addPrice*val + addPrice1 + addPrice2*val}$</button>
+                                                        setTotalPrice((prop.price * val) + (addPrice * val) + addPrice2 * val)
+                                                    }}>{(prop.price * val) + (addPrice * val) + (addPrice2 * val)}$</button>
                                                 </div>
                                             })}
                                         </div>
