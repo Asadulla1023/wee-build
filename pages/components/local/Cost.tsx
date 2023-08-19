@@ -89,7 +89,7 @@ const Cost = () => {
                                         {selected !== "Новостройка" ? ads2.map((e: string, index: number) => {
                                             return <div key={e} className={e === selected2 ? `${styles.checkbox} ${styles.boxShadow}` : styles.checkbox} onClick={() => {
                                                 setSelected2(e)
-                                                setAddPrice(e === "Межкомнатные перегородки" ? 17 : 15)
+                                                setAddPrice(e === "Межкомнатные перегородки" ? 17 : 17)
                                             }}>
                                                 <Image src={`/images/select${index + 3}.png`} alt='decorate' width={380} height={245} />
                                                 <p>{e}</p>
@@ -328,6 +328,11 @@ const Cost = () => {
                                                             return <div key={uuidv4()} className={e === selectedRepair ? styles.checkboxInput : styles.checkboxInput} onClick={() => {
                                                                 setSelectedRepair(e)
                                                                 setAddPrice1(0)
+                                                                if (e === "Под дизайн") {
+                                                                    setChecked(true)
+                                                                }else {
+                                                                    setChecked(false)
+                                                                }
                                                             }}>
                                                                 <input style={e === selectedRepair ? {
                                                                     background: "#46247c"
@@ -344,7 +349,7 @@ const Cost = () => {
                                                         }}>
                                                             <input style={checked !== true ? {
                                                                 background: '#46247c'
-                                                            } : {}} type="checkbox" />
+                                                            } : {}} checked={checked} type="checkbox" />
                                                             <p>Нужен</p>
                                                         </div>
                                                     </div>
