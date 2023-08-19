@@ -12,7 +12,7 @@ const Maps = () => {
   return  (
     <div className={styles.map}>
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2998.3063207946107!2d69.2447740765906!3d41.28043730262158!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDHCsDE2JzQ5LjYiTiA2OcKwMTQnNTAuNSJF!5e0!3m2!1sru!2s!4v1692285130293!5m2!1sru!2s"
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d187.3925713652575!2d69.24778466195166!3d41.28098536322159!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8a8cc0b4d257%3A0x2ec0c697f05ae9fc!2zNTgg0YPQu9C40YbQsCDQo9GB0LzQsNC90LAg0J3QsNGB0YvRgNCwLCDQotCw0YjQutC10L3Rgiwg0KPQt9Cx0LXQutC40YHRgtCw0L0!5e0!3m2!1sru!2sus!4v1692427601407!5m2!1sru!2sus"
         width="100%"
         height="339"
         style={{ border: 0 }}
