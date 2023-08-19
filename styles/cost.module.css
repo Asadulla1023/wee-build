@@ -46,13 +46,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   background: linear-gradient(156deg, #46247c 0%, #a66fff 0%, #46247c 55.21%);
   filter: drop-shadow(0px 4px 4px #1e1132);
   border-radius: 100px;
   color: #fff;
-  font-size: 40px;
+  font-size: 35px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -114,7 +114,7 @@
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  height: 350px;
+  height: 300px;
   box-shadow: 0px 1px 17px 0px rgba(87, 87, 87, 0.14);
   border-radius: 20px;
   transition: 0.5s linear;
