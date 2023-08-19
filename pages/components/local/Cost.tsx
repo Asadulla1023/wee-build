@@ -374,6 +374,7 @@ const Cost = () => {
                               if (e === "Под дизайн") {
                                 setAddPrice1(0);
                                 setChecked(true);
+                                setAddPrice2(15)
                               }
                             }}
                           >
@@ -658,7 +659,7 @@ const Cost = () => {
                         >
                           <input
                             style={
-                              checked !== true
+                              addPrice2 === 15
                                 ? {
                                     background: "#46247c",
                                   }

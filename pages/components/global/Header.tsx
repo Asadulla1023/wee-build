@@ -12,25 +12,51 @@ const Header = () => {
     useEffect(() => {
         if (open === true) {
             document.body.style.overflow = "hidden"
-        }else {
+        } else {
             document.body.style.overflow = "auto"
         }
     }, [open])
+    const [isHeaderVisible, setIsHeaderVisible] = useState(true);
+    const [lastScrollPosition, setLastScrollPosition] = useState(0);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollPosition = window.pageYOffset;
+            if (currentScrollPosition > lastScrollPosition && isHeaderVisible) {
+                setIsHeaderVisible(false);
+            } else if (currentScrollPosition < lastScrollPosition && !isHeaderVisible) {
+                setIsHeaderVisible(true);
+            }
+            setLastScrollPosition(currentScrollPosition);
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [isHeaderVisible, lastScrollPosition]);
     return (
-        <header className={styles.header}>
+        <header style={isHeaderVisible === true ? { 
+            transition: "0.3s",
+            opacity: 1,
+            transform: "translate3d(0px, 0px, 0px)"
+         }:{
+            opacity: 0,
+            transform: "translate3d(0px, -113px, 0px)",
+            transition: "0.3s"
+         }} className={styles.header}>
             <div className={styles.container}>
                 <Link href={"/"} className={styles.logo}>
                     <Image src={"/images/logo.png"} alt='wee logo' width={98} height={82} />
                 </Link>
                 <ul className={styles.navigation}>
                     {NAV.map(({ title, url }) => {
-                        return <li onMouseOver={()=> {
+                        return <li onMouseOver={() => {
                             setHovered(title)
-                        }} onMouseLeave={()=> {
+                        }} onMouseLeave={() => {
                             setHovered("")
                         }} key={uuidv4()}>
                             <Link href={url}>{title}</Link>
-                            <div className={hovered === title ? `${styles.line} ${styles.hovered}`: styles.line} />
+                            <div className={hovered === title ? `${styles.line} ${styles.hovered}` : styles.line} />
                         </li>
                     })}
                 </ul>
