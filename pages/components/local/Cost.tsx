@@ -80,13 +80,17 @@ const Cost = () => {
                               </div>
                             ) : null}
                             <div
+                            onClick={() => {
+                          router.push("#cost")
+                          setCounter(e)
+                            }}
                               className={styles.circle}
                               style={
                                 counter < e
                                   ? {
-                                      background: "#F2F2F2",
-                                      filter: "none",
-                                    }
+                                    background: "#F2F2F2",
+                                    filter: "none",
+                                  }
                                   : {}
                               }
                             >
@@ -221,13 +225,17 @@ const Cost = () => {
                           </div>
                         ) : null}
                         <div
+                        onClick={() => {
+                          setCounter(e)
+                          router.push("#cost")
+                        }}
                           className={styles.circle}
                           style={
                             counter < e
                               ? {
-                                  background: "#F2F2F2",
-                                  filter: "none",
-                                }
+                                background: "#F2F2F2",
+                                filter: "none",
+                              }
                               : {}
                           }
                         >
@@ -331,13 +339,17 @@ const Cost = () => {
                           </div>
                         ) : null}
                         <div
+                        onClick={() => {
+                          router.push("#cost")
+                          setCounter(e)
+                        }}
                           className={styles.circle}
                           style={
                             counter < e
                               ? {
-                                  background: "#F2F2F2",
-                                  filter: "none",
-                                }
+                                background: "#F2F2F2",
+                                filter: "none",
+                              }
                               : {}
                           }
                         >
@@ -436,13 +448,17 @@ const Cost = () => {
                           </div>
                         ) : null}
                         <div
+                          onClick={() => {
+                          router.push("#cost")
+                          setCounter(e)
+                          }}
                           className={styles.circle}
                           style={
                             counter < e
                               ? {
-                                  background: "#F2F2F2",
-                                  filter: "none",
-                                }
+                                background: "#F2F2F2",
+                                filter: "none",
+                              }
                               : {}
                           }
                         >
@@ -475,8 +491,8 @@ const Cost = () => {
                                 style={
                                   e === selected
                                     ? {
-                                        background: "#46247c",
-                                      }
+                                      background: "#46247c",
+                                    }
                                     : {}
                                 }
                                 type="checkbox"
@@ -509,8 +525,8 @@ const Cost = () => {
                                   style={
                                     e === selected2
                                       ? {
-                                          background: "#46247c",
-                                        }
+                                        background: "#46247c",
+                                      }
                                       : {}
                                   }
                                   type="checkbox"
@@ -538,11 +554,11 @@ const Cost = () => {
                               style={
                                 selected2 === "Межкомнатные перегородки"
                                   ? {
-                                      background: "#46247c",
-                                    }
+                                    background: "#46247c",
+                                  }
                                   : {
-                                      background: "#f2f2f2",
-                                    }
+                                    background: "#f2f2f2",
+                                  }
                               }
                               type="checkbox"
                             />
@@ -576,16 +592,16 @@ const Cost = () => {
                         style={
                           abled === true
                             ? {
-                                opacity: 1,
-                                transition: "0.4s",
-                                zIndex: 100,
-                                marginTop: "1rem",
-                              }
+                              opacity: 1,
+                              transition: "0.4s",
+                              zIndex: 100,
+                              marginTop: "1rem",
+                            }
                             : {
-                                opacity: 0,
-                                transition: "0.4s",
-                                zIndex: -1000,
-                              }
+                              opacity: 0,
+                              transition: "0.4s",
+                              zIndex: -1000,
+                            }
                         }
                         className={styles.selectRoom}
                       >
@@ -629,8 +645,8 @@ const Cost = () => {
                                 style={
                                   e === selectedRepair
                                     ? {
-                                        background: "#46247c",
-                                      }
+                                      background: "#46247c",
+                                    }
                                     : {}
                                 }
                                 type="checkbox"
@@ -661,8 +677,8 @@ const Cost = () => {
                             style={
                               addPrice2 === 15
                                 ? {
-                                    background: "#46247c",
-                                  }
+                                  background: "#46247c",
+                                }
                                 : {}
                             }
                             type="checkbox"
@@ -705,8 +721,8 @@ const Cost = () => {
                             setProps(prop);
                             setTotalPrice(
                               prop.price * val +
-                                addPrice * val +
-                                addPrice2 * val
+                              addPrice * val +
+                              addPrice2 * val
                             );
                           }}
                         >
