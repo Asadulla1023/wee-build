@@ -28,6 +28,10 @@
   animation: animationForContact 1s infinite;
 }
 
+.noneAnimation {
+  animation: none !important;
+}
+
 .contact:hover {
   background: #43217b;
 }

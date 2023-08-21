@@ -639,6 +639,10 @@ const Cost = () => {
                               onClick={() => {
                                 setSelectedRepair(e);
                                 setAddPrice1(0);
+                                if (e === "Под дизайн") {
+                                  setChecked(true);
+                                  setAddPrice2(15)
+                                }
                               }}
                             >
                               <input

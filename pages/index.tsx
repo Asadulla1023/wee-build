@@ -54,7 +54,7 @@ export default function Home() {
             zIndex: 100,
             transition: "0.4s",
           } : {
-            transform: "translate(80px, -10px)",
+            transform: "translate(0px, 300px)",
             opacity: 0,
             zIndex: -1,
             transition: "0.4s",
@@ -111,7 +111,7 @@ export default function Home() {
               </svg>
             </div>
           </div>
-          <button className={styles.contact} style={modal === true ? {
+          <button className={modal === false ? styles.contact: `${styles.contact} ${styles.noneAnimation}`} style={modal === true ? {
             background: "#fff",
             transition: "0.3s"
           } : {
