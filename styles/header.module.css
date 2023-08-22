@@ -19,7 +19,7 @@
 
 .navigation {
   display: flex;
-  margin: auto4;
+  margin: auto;
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
