@@ -67,7 +67,7 @@ export const CARD_OBJECT_DESIGN: ICard[] = [
       "/images/Minimalizm/Sanuzel/5.jpg",
       "/images/Minimalizm/Sanuzel/6.jpg",
     ],
-    process: "На рассмотрении",
+    process: "Законченный проект",
     props: [
       {
         image: "icons/global.svg",
@@ -101,7 +101,7 @@ export const CARD_OBJECT_DESIGN: ICard[] = [
       "/images/Minimalizm/Kolidor/66.jpg",
       "/images/Minimalizm/Kolidor/77.jpg",
     ],
-    process: "На рассмотрении",
+    process: "Законченный проект",
     props: [
       {
         image: "icons/global.svg",
