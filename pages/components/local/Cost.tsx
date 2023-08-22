@@ -14,6 +14,8 @@ import { useRouter } from "next/router";
 const Cost = () => {
   const [checked, setChecked] = useState<boolean>(false);
   const [hovered, setHovered] = useState<boolean>(false);
+  const [peregorki, setPeregorki] = useState<boolean>(false);
+  const [demontaj, setDemontaj] = useState<boolean>(false);
   const contoller: number[] = [1, 2, 3, 4];
   const [selected, setSelected] = useState<string>("");
   const [selected2, setSelected2] = useState<string>("");
@@ -26,6 +28,8 @@ const Cost = () => {
   const [selectedRepair, setSelectedRepair] = useState<string>("");
   const [abled, setAbled] = useState(false);
   const [orderOpen, setOrderOpen] = useState(false);
+  const [demontajPr, setDemontajPr] = useState<number>(0)
+  const [peregorkiPr, setPeregorkiPr] = useState<number>(0)
   const [props, setProps] = useState<ICardPrice | undefined>();
   const [overed, setOvered] = useState<string>("");
   const router = useRouter();
@@ -80,10 +84,10 @@ const Cost = () => {
                               </div>
                             ) : null}
                             <div
-                            onClick={() => {
-                          router.push("#cost")
-                          setCounter(e)
-                            }}
+                              onClick={() => {
+                                router.push("#cost")
+                                setCounter(e)
+                              }}
                               className={styles.circle}
                               style={
                                 counter < e
@@ -112,7 +116,8 @@ const Cost = () => {
                                 : styles.checkbox
                             }
                             onClick={() => {
-                              setSelected(e);
+                              setSelected(e)
+                              setDemontaj(false)
                             }}
                           >
                             <Image
@@ -128,43 +133,16 @@ const Cost = () => {
                     </div>
                     <h3>Доп.услуги</h3>
                     <div className={styles.checks}>
-                      {selected !== "Новостройка" ? (
-                        ads2.map((e: string, index: number) => {
-                          return (
-                            <div
-                              key={e}
-                              className={
-                                e === selected2
-                                  ? `${styles.checkbox} ${styles.boxShadow}`
-                                  : styles.checkbox
-                              }
-                              onClick={() => {
-                                setSelected2(e);
-                                setAddPrice(
-                                  e === "Межкомнатные перегородки" ? 17 : 15
-                                );
-                              }}
-                            >
-                              <Image
-                                src={`/images/select${index + 3}.png`}
-                                alt="decorate"
-                                width={380}
-                                height={245}
-                              />
-                              <p>{e}</p>
-                            </div>
-                          );
-                        })
-                      ) : (
+                      {selected !== "Новостройка" ? <>
                         <div
                           className={
-                            selected2 === ads2[0]
+                            peregorki === true
                               ? `${styles.checkbox} ${styles.boxShadow}`
                               : styles.checkbox
                           }
                           onClick={() => {
-                            setSelected2(ads2[0]);
-                            setAddPrice(17);
+                            setPeregorkiPr(17)
+                            setPeregorki(!peregorki)
                           }}
                         >
                           <Image
@@ -173,9 +151,51 @@ const Cost = () => {
                             width={380}
                             height={245}
                           />
-                          <p>{ads2[0]}</p>
+                          <p>Межкомнатные перегородки</p>
                         </div>
-                      )}
+                        <div
+                          className={
+                            demontaj === true
+                              ? `${styles.checkbox} ${styles.boxShadow}`
+                              : styles.checkbox
+                          }
+                          onClick={() => {
+                            setDemontajPr(
+                              15
+                            );
+                            demontaj === true ? setDemontaj(false) : setDemontaj(true)
+                          }}
+                        >
+                          <Image
+                            src={`/images/select4.png`}
+                            alt="decorate"
+                            width={380}
+                            height={245}
+                          />
+                          <p>Демонтаж</p>
+                        </div>
+                      </>
+                        : (
+                          <div
+                            className={
+                              peregorki === true
+                                ? `${styles.checkbox} ${styles.boxShadow}`
+                                : styles.checkbox
+                            }
+                            onClick={() => {
+                              setPeregorki(!peregorki)
+                              setPeregorkiPr(17);
+                            }}
+                          >
+                            <Image
+                              src={`/images/select3.png`}
+                              alt="decorate"
+                              width={380}
+                              height={245}
+                            />
+                            <p>{ads2[0]}</p>
+                          </div>
+                        )}
                     </div>
                     <button
                       className={
@@ -225,10 +245,10 @@ const Cost = () => {
                           </div>
                         ) : null}
                         <div
-                        onClick={() => {
-                          setCounter(e)
-                          router.push("#cost")
-                        }}
+                          onClick={() => {
+                            setCounter(e)
+                            router.push("#cost")
+                          }}
                           className={styles.circle}
                           style={
                             counter < e
@@ -339,10 +359,10 @@ const Cost = () => {
                           </div>
                         ) : null}
                         <div
-                        onClick={() => {
-                          router.push("#cost")
-                          setCounter(e)
-                        }}
+                          onClick={() => {
+                            router.push("#cost")
+                            setCounter(e)
+                          }}
                           className={styles.circle}
                           style={
                             counter < e
@@ -449,8 +469,8 @@ const Cost = () => {
                         ) : null}
                         <div
                           onClick={() => {
-                          router.push("#cost")
-                          setCounter(e)
+                            router.push("#cost")
+                            setCounter(e)
                           }}
                           className={styles.circle}
                           style={
@@ -485,6 +505,9 @@ const Cost = () => {
                               }
                               onClick={() => {
                                 setSelected(e);
+                                if (e === "Новостройка") {
+                                  setDemontajPr(0)
+                                }
                               }}
                             >
                               <input
@@ -505,54 +528,79 @@ const Cost = () => {
                       <div className={styles.type}>
                         <h3>Доп.Услуги</h3>
                         {selected !== "Новостройка" ? (
-                          ads2.map((e: string, index: number) => {
-                            return (
-                              <div
-                                key={e}
-                                className={
-                                  e === selected2
-                                    ? styles.checkboxInput
-                                    : styles.checkboxInput
+                          <>
+                            <div
+                              className={
+                                styles.checkboxInput
+                              }
+                              onClick={() => {
+                                if (peregorkiPr === 17) {
+                                  setPeregorkiPr(0)
                                 }
-                                onClick={() => {
-                                  setSelected2(e);
-                                  setAddPrice(
-                                    e === "Межкомнатные перегородки" ? 17 : 17
-                                  );
-                                }}
-                              >
-                                <input
-                                  style={
-                                    e === selected2
-                                      ? {
-                                        background: "#46247c",
-                                      }
-                                      : {}
-                                  }
-                                  type="checkbox"
-                                />
-                                <p>{e}</p>
-                              </div>
-                            );
-                          })
+                                if (peregorkiPr === 0) {
+                                  setPeregorkiPr(17)
+                                }
+                                setPeregorki(!peregorki)
+                              }}
+                            >
+                              <input
+                                style={
+                                  peregorkiPr === 17
+                                    ? {
+                                      background: "#46247c",
+                                    }
+                                    : {}
+                                }
+                                type="checkbox"
+                              />
+                              <p>Межкомнатные перегородки</p>
+                            </div>
+                            <div
+                              className={
+                                styles.checkboxInput
+                              }
+                              onClick={() => {
+                                if (demontajPr === 15) {
+                                  setDemontajPr(0)
+                                }
+                                if (demontajPr === 0) {
+                                  setDemontajPr(15)
+                                }
+                                setDemontaj(!demontaj)
+                              }}
+                            >
+                              <input
+                                style={
+                                  demontajPr === 15
+                                    ? {
+                                      background: "#46247c",
+                                    }
+                                    : {}
+                                }
+                                type="checkbox"
+                              />
+                              <p>Демонтаж</p>
+                            </div>
+                          </>
                         ) : (
                           <div
-                            className={
-                              selected2 === ads2[0]
-                                ? styles.checkboxInput
-                                : styles.checkboxInput
-                            }
+                            className={styles.checkboxInput}
                             onClick={() => {
                               setSelected2(ads2[0]);
-                              setAddPrice(17);
                             }}
                           >
                             <input
                               onClick={() => {
-                                setSelected2("");
+                                setPeregorki(!peregorki)
+                                if (peregorkiPr === 17) {
+                                  setPeregorkiPr(0)
+                                }
+                                if (peregorkiPr === 0) {
+                                  setPeregorkiPr(17)
+                                }
                               }}
                               style={
-                                selected2 === "Межкомнатные перегородки"
+                                peregorkiPr === 17
                                   ? {
                                     background: "#46247c",
                                   }
@@ -724,13 +772,11 @@ const Cost = () => {
                             setOrderOpen(!orderOpen);
                             setProps(prop);
                             setTotalPrice(
-                              prop.price * val +
-                              addPrice * val +
-                              addPrice2 * val
+                              prop.price * val + demontajPr * val + peregorkiPr * val + addPrice2 * val
                             );
                           }}
                         >
-                          {prop.price * val + addPrice * val + addPrice2 * val}$
+                          {prop.price * val + demontajPr * val + peregorkiPr * val + addPrice2 * val}$
                         </button>
                       </div>
                     );
