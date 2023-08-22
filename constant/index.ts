@@ -41,11 +41,11 @@ export const CARD_OBJECT_DESIGN: ICard[] = [
     props: [
       {
         image: "icons/global.svg",
-        title: "1000m2",
+        title: "73m2",
       },
       {
         image: "icons/watch.svg",
-        title: "2 мес.",
+        title: "1 нед.",
       },
       {
         image: "icons/kom.svg",
@@ -53,7 +53,7 @@ export const CARD_OBJECT_DESIGN: ICard[] = [
       },
       {
         image: "icons/payme.svg",
-        title: "1400$",
+        title: "1095$",
       },
     ],
     title: "зал",
@@ -71,11 +71,11 @@ export const CARD_OBJECT_DESIGN: ICard[] = [
     props: [
       {
         image: "icons/global.svg",
-        title: "1000m2",
+        title: "73m2",
       },
       {
         image: "icons/watch.svg",
-        title: "2 мес.",
+        title: "1 нед.",
       },
       {
         image: "icons/kom.svg",
@@ -83,7 +83,7 @@ export const CARD_OBJECT_DESIGN: ICard[] = [
       },
       {
         image: "icons/payme.svg",
-        title: "1400$",
+        title: "1095$",
       },
     ],
     title: "Санузел",
@@ -105,11 +105,11 @@ export const CARD_OBJECT_DESIGN: ICard[] = [
     props: [
       {
         image: "icons/global.svg",
-        title: "1000m2",
+        title: "73m2",
       },
       {
         image: "icons/watch.svg",
-        title: "2 мес.",
+        title: "1 нед.",
       },
       {
         image: "icons/kom.svg",
@@ -117,10 +117,10 @@ export const CARD_OBJECT_DESIGN: ICard[] = [
       },
       {
         image: "icons/payme.svg",
-        title: "1400$",
+        title: "1095$",
       },
     ],
-    title: "колидор",
+    title: "коридор",
   },
   {
     images: [
@@ -136,11 +136,11 @@ export const CARD_OBJECT_DESIGN: ICard[] = [
     props: [
       {
         image: "icons/global.svg",
-        title: "1000m2",
+        title: "73ь2",
       },
       {
         image: "icons/watch.svg",
-        title: "2 мес.",
+        title: "1 нед.",
       },
       {
         image: "icons/kom.svg",
@@ -148,201 +148,11 @@ export const CARD_OBJECT_DESIGN: ICard[] = [
       },
       {
         image: "icons/payme.svg",
-        title: "1400$",
+        title: "1095$",
       },
     ],
     title: "Спальня",
-  },
-
-  {
-    images: [
-      "/images/NeoCasik/Detiski/1.jpg",
-      "/images/NeoCasik/Detiski/2.jpg",
-      "/images/NeoCasik/Detiski/3.jpg",
-      "/images/NeoCasik/Detiski/4.jpg",
-      "/images/NeoCasik/Detiski/5.jpg",
-      "/images/NeoCasik/Detiski/6.jpg",
-    ],
-    process: "На рассмотрении",
-    props: [
-      {
-        image: "icons/global.svg",
-        title: "1000m2",
-      },
-      {
-        image: "icons/watch.svg",
-        title: "2 мес.",
-      },
-      {
-        image: "icons/kom.svg",
-        title: "2 ком.",
-      },
-      {
-        image: "icons/payme.svg",
-        title: "1400$",
-      },
-    ],
-    title: "дедский",
-  },
-  {
-    images: [
-      "/images/NeoCasik/Holl/1.jpg",
-      "/images/NeoCasik/Holl/2.jpg",
-      "/images/NeoCasik/Holl/3.jpg",
-      "/images/NeoCasik/Holl/4.jpg",
-      "/images/NeoCasik/Holl/5.jpg",
-      "/images/NeoCasik/Holl/6.jpg",
-      "/images/NeoCasik/Holl/7.jpg",
-      "/images/NeoCasik/Holl/8.jpg",
-      "/images/NeoCasik/Holl/9.jpg",
-    ],
-    process: "Законченный проект",
-    props: [
-      {
-        image: "icons/global.svg",
-        title: "1000m2",
-      },
-      {
-        image: "icons/watch.svg",
-        title: "2 мес.",
-      },
-      {
-        image: "icons/kom.svg",
-        title: "2 ком.",
-      },
-      {
-        image: "icons/payme.svg",
-        title: "1400$",
-      },
-    ],
-    title: "холл",
-  },
-  {
-    images: [
-      "/images/NeoCasik/Holl/10.jpg",
-      "/images/NeoCasik/Holl/11.jpg",
-      "/images/NeoCasik/Holl/12.jpg",
-      "/images/NeoCasik/Holl/13.jpg",
-      "/images/NeoCasik/Holl/14.jpg",
-      "/images/NeoCasik/Holl/15.jpg",
-      "/images/NeoCasik/Holl/16.jpg",
-      "/images/NeoCasik/Holl/17.jpg",
-      "/images/NeoCasik/Holl/18.jpg",
-      "/images/NeoCasik/Holl/19.jpg",
-    ],
-    process: "Законченный проект",
-    props: [
-      {
-        image: "icons/global.svg",
-        title: "1000m2",
-      },
-      {
-        image: "icons/watch.svg",
-        title: "2 мес.",
-      },
-      {
-        image: "icons/kom.svg",
-        title: "2 ком.",
-      },
-      {
-        image: "icons/payme.svg",
-        title: "1400$",
-      },
-    ],
-    title: "холл",
-  },
-  {
-    images: [
-      "/images/NeoCasik/Kabinet/1.jpg",
-      "/images/NeoCasik/Kabinet/2.jpg",
-      "/images/NeoCasik/Kabinet/3.jpg",
-      "/images/NeoCasik/Kabinet/4.jpg",
-      "/images/NeoCasik/Kabinet/5.jpg",
-      "/images/NeoCasik/Kabinet/6.jpg",
-    ],
-    process: "Законченный проект",
-    props: [
-      {
-        image: "icons/global.svg",
-        title: "1000m2",
-      },
-      {
-        image: "icons/watch.svg",
-        title: "2 мес.",
-      },
-      {
-        image: "icons/kom.svg",
-        title: "2 ком.",
-      },
-      {
-        image: "icons/payme.svg",
-        title: "1400$",
-      },
-    ],
-    title: "кабинет",
-  },
-  {
-    images: [
-      "/images/NeoCasik/Kuxnya/1.jpg",
-      "/images/NeoCasik/Kuxnya/2.jpg",
-      "/images/NeoCasik/Kuxnya/3.jpg",
-      "/images/NeoCasik/Kuxnya/4.jpg",
-      "/images/NeoCasik/Kuxnya/5.jpg",
-      "/images/NeoCasik/Kuxnya/6.jpg",
-    ],
-    process: "Законченный проект",
-    props: [
-      {
-        image: "icons/global.svg",
-        title: "1000m2",
-      },
-      {
-        image: "icons/watch.svg",
-        title: "2 мес.",
-      },
-      {
-        image: "icons/kom.svg",
-        title: "2 ком.",
-      },
-      {
-        image: "icons/payme.svg",
-        title: "1400$",
-      },
-    ],
-    title: "кухния",
-  },
-  {
-    images: [
-      "/images/NeoCasik/Spalnya/1.jpg",
-      "/images/NeoCasik/Spalnya/2.jpg",
-      "/images/NeoCasik/Spalnya/3.jpg",
-      "/images/NeoCasik/Spalnya/4.jpg",
-      "/images/NeoCasik/Spalnya/5.jpg",
-      "/images/NeoCasik/Spalnya/6.jpg",
-      "/images/NeoCasik/Spalnya/7.jpg",
-      "/images/NeoCasik/Spalnya/8.jpg",
-    ],
-    process: "Законченный проект",
-    props: [
-      {
-        image: "icons/global.svg",
-        title: "1000m2",
-      },
-      {
-        image: "icons/watch.svg",
-        title: "2 мес.",
-      },
-      {
-        image: "icons/kom.svg",
-        title: "2 ком.",
-      },
-      {
-        image: "icons/payme.svg",
-        title: "1400$",
-      },
-    ],
-    title: "спальня",
-  },
+  }
 ];
 
 export const ADVANTAGES: IAdvantages[] = [
